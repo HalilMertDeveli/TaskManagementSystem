@@ -1,0 +1,11 @@
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\bin\Debug\net8.0\HMD.TaskManagement.Persistence.deps.json
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\bin\Debug\net8.0\HMD.TaskManagement.Persistence.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\bin\Debug\net8.0\HMD.TaskManagement.Persistence.pdb
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.AssemblyInfoInputs.cache
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.AssemblyInfo.cs
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\refint\HMD.TaskManagement.Persistence.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.pdb
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\ref\HMD.TaskManagement.Persistence.dll

@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.domain\\entities\\taskreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|solutionrelative:hmd.taskmanagement.domain\\entities\\taskreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.domain\\entities\\priority.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|solutionrelative:hmd.taskmanagement.domain\\entities\\priority.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.domain\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|solutionrelative:hmd.taskmanagement.domain\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.domain\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|solutionrelative:hmd.taskmanagement.domain\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.domain\\entities\\apptasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|solutionrelative:hmd.taskmanagement.domain\\entities\\apptasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.domain\\entities\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|solutionrelative:hmd.taskmanagement.domain\\entities\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\Notification.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Domain\\Entities\\Notification.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\Notification.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Domain\\Entities\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T10:38:50.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskReport.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\TaskReport.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Domain\\Entities\\TaskReport.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\TaskReport.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Domain\\Entities\\TaskReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T10:37:23.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppTasks.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\AppTasks.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Domain\\Entities\\AppTasks.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\AppTasks.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Domain\\Entities\\AppTasks.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T10:36:58.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Priority.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\Priority.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Domain\\Entities\\Priority.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\Priority.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Domain\\Entities\\Priority.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T10:18:22.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppRole.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\AppRole.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Domain\\Entities\\AppRole.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\AppRole.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Domain\\Entities\\AppRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T10:18:03.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\AppUser.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Domain\\Entities\\AppUser.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\AppUser.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Domain\\Entities\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T10:17:53.181Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

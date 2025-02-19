@@ -1,0 +1,11 @@
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\bin\Debug\net8.0\HMD.TaskManagement.Domain.deps.json
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\bin\Debug\net8.0\HMD.TaskManagement.Domain.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\bin\Debug\net8.0\HMD.TaskManagement.Domain.pdb
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\obj\Debug\net8.0\HMD.TaskManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\obj\Debug\net8.0\HMD.TaskManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\obj\Debug\net8.0\HMD.TaskManagement.Domain.AssemblyInfo.cs
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\obj\Debug\net8.0\HMD.TaskManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\obj\Debug\net8.0\HMD.TaskManagement.Domain.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\obj\Debug\net8.0\refint\HMD.TaskManagement.Domain.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\obj\Debug\net8.0\HMD.TaskManagement.Domain.pdb
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Domain\obj\Debug\net8.0\ref\HMD.TaskManagement.Domain.dll

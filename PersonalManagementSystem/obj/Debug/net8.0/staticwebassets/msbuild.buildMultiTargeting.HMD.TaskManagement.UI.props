@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\HMD.TaskManagement.UI.props" />
+</Project>
