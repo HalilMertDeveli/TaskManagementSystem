@@ -32,3 +32,4 @@ C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalMan
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\obj\Debug\net8.0\HMD.TaskManagement.UI.pdb
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\obj\Debug\net8.0\HMD.TaskManagement.UI.genruntimeconfig.cache
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\obj\Debug\net8.0\ref\HMD.TaskManagement.UI.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\obj\Debug\net8.0\HMD.TaskManagement.UI.sourcelink.json

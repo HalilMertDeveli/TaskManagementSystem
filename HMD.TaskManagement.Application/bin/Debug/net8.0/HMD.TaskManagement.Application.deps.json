@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "HMD.TaskManagement.Application/1.0.0": {
+        "dependencies": {
+          "HMD.TaskManagement.Domain": "1.0.0"
+        },
         "runtime": {
           "HMD.TaskManagement.Application.dll": {}
+        }
+      },
+      "HMD.TaskManagement.Domain/1.0.0": {
+        "runtime": {
+          "HMD.TaskManagement.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "HMD.TaskManagement.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMD.TaskManagement.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

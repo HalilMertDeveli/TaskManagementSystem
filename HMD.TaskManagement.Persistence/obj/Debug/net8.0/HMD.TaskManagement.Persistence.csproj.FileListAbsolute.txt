@@ -9,3 +9,12 @@ C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskMan
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\refint\HMD.TaskManagement.Persistence.dll
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.pdb
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\ref\HMD.TaskManagement.Persistence.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\bin\Debug\net8.0\HMD.TaskManagement.Persistence.runtimeconfig.json
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\bin\Debug\net8.0\HMD.TaskManagement.Application.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\bin\Debug\net8.0\HMD.TaskManagement.Domain.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\bin\Debug\net8.0\HMD.TaskManagement.Application.pdb
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\bin\Debug\net8.0\HMD.TaskManagement.Domain.pdb
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.csproj.AssemblyReference.cache
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.sourcelink.json
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.Task.0A07831D.Up2Date
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Persistence\obj\Debug\net8.0\HMD.TaskManagement.Persistence.genruntimeconfig.cache

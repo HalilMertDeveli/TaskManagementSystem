@@ -12,5 +12,11 @@ namespace HMD.TaskManagement.Domain.Entities
         public string  Detail { get; set; }
         public int AppTaskId { get; set; }
 
+        #region NavigationProperty
+
+        public AppTasks? AppTask { get; set; }
+
+        #endregion
+
     }
 }

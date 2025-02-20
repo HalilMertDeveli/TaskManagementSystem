@@ -9,3 +9,8 @@ C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskMan
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Application\obj\Debug\net8.0\refint\HMD.TaskManagement.Application.dll
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Application\obj\Debug\net8.0\HMD.TaskManagement.Application.pdb
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Application\obj\Debug\net8.0\ref\HMD.TaskManagement.Application.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Application\bin\Debug\net8.0\HMD.TaskManagement.Domain.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Application\bin\Debug\net8.0\HMD.TaskManagement.Domain.pdb
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Application\obj\Debug\net8.0\HMD.TaskManagement.Application.csproj.AssemblyReference.cache
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Application\obj\Debug\net8.0\HMD.TaskManagement.Application.sourcelink.json
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\HMD.TaskManagement.Application\obj\Debug\net8.0\HMD.Task.0ED13027.Up2Date
