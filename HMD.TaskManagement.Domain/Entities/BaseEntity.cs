@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace HMD.TaskManagement.Domain.Entities
 {
-    public class Priority : BaseEntity
+    public class BaseEntity
     {
-        public string Defination { get; set; } = null!;
-
-
+        public int Id { get; set; }
     }
 }

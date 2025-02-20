@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace HMD.TaskManagement.Domain.Entities
 {
-    public class AppRole
+    public class AppRole : BaseEntity
     {
-        public int Id { get; set; }
         public string Defination { get; set; } = null!; //null olamaz
 
 
