@@ -1,3 +1,5 @@
+using HMD.TaskManagement.Persistence;
+
 namespace PersonalManagementSystem
 {
     public class Program
@@ -8,6 +10,9 @@ namespace PersonalManagementSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //IOC
+            builder.Services.AddPersistenceServices(builder.Configuration);
 
             var app = builder.Build();
 
