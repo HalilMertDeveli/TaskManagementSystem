@@ -15,6 +15,13 @@ namespace HMD.TaskManagement.Persistence.Context
         {
             
         }
+        public DbSet<AppRole> AppRoles { get; set; }
+        public DbSet<AppTasks> AppTasks { get; set; }
+        public DbSet<AppUser> Users { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Priority> Priorities { get; set; }
+        public DbSet<TaskReport> TaskReports { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,12 +35,6 @@ namespace HMD.TaskManagement.Persistence.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<AppRole> AppRoles { get; set; }
-        public DbSet<AppTasks> AppTasks { get; set; }
-        public DbSet<AppUser> Users { get; set; }
-        public DbSet<Notification> Notifications { get; set; }
-        public DbSet<Priority> Priorities { get; set; }
-        public DbSet<TaskReport> TaskReports { get; set; }
-
+        
     }
 }
