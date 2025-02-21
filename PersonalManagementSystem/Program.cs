@@ -1,4 +1,4 @@
-using HMD.TaskManagement.Persistence;
+﻿using HMD.TaskManagement.Persistence;
 
 namespace PersonalManagementSystem
 {
@@ -25,7 +25,8 @@ namespace PersonalManagementSystem
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles();//dışarı açmak wwwroot içerisinde olanları
+
 
             app.UseRouting();
 
