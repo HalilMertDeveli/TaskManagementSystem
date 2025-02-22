@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<form class="row g-3">
+<form action="~/Account/Login" class="row g-3" method="post">
     <div class="text-center">
         <div class="text-center">
             <h5>Personel Yönetim sistemi</h5>
@@ -22,13 +22,13 @@
 
     <div class="col-12">
         <label for="username" class="form-label">İsminiz</label>
-        <input type="text" class="form-control" id="username" placeholder="">
+        <input type="text" class="form-control" id="username" placeholder="" name="UserName">
 
     </div>
 
     <div class="col-12">
         <label for="password" class="form-label">Şifre</label>
-        <input type="password" class="form-control" id="password">
+        <input type="password" class="form-control" id="password" name="Password">
     </div>
 
     <div class="col-12">
