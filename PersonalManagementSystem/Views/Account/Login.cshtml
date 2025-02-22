@@ -1,3 +1,41 @@
-﻿@{
-    Layout = null;
-}
+﻿
+<html>
+<head>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/twitter-bootstrap/css/bootstrap.rtl.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/twitter-bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" asp-append-version="true" />
+
+</head>
+<body>
+<form class="row g-3">
+    <div class="text-center">
+        <div class="text-center">
+            <h5>Personel Yönetim sistemi</h5>
+            <p class="lead">
+                <i>
+                        Giriş ekranı
+                </i>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <label for="username" class="form-label">İsminiz</label>
+        <input type="text" class="form-control" id="username" placeholder="">
+
+    </div>
+
+    <div class="col-12">
+        <label for="password" class="form-label">Şifre</label>
+        <input type="password" class="form-control" id="password">
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary w-100 mt-3">Giriş yap</button>
+        <a href="#" class="btn btn-primary btn-info w-100 mt-3">Kayıt ol</a>
+
+    </div>
+</form>
+</body>
+</html>
