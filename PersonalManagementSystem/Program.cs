@@ -1,5 +1,6 @@
 ﻿using HMD.TaskManagement.Application.Extensions;
 using HMD.TaskManagement.Persistence;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace PersonalManagementSystem
 {
@@ -16,6 +17,15 @@ namespace PersonalManagementSystem
             builder.Services.AddPersistenceServices(builder.Configuration);
             builder.Services.AddApplicationServices();
 
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(opt =>
+                {
+                    opt.Cookie.Name = "PersonalManagementLCookie";
+                    opt.Cookie.HttpOnly = true;
+                    opt.Cookie.SameSite = SameSiteMode.Strict;
+                    opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+                });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline".
@@ -28,11 +38,14 @@ namespace PersonalManagementSystem
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();//dışarı açmak wwwroot içerisinde olanları
-
-
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+        
+
+           
 
             //halil.com/admin/home/Index
             //hallil.com/home/index //ikisinde de özel olan, önde olan ilk olarak denenmesi gerekemektedir. 
