@@ -148,3 +148,6 @@ C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalMan
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\bin\Debug\net8.0\package-lock.json
 C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\bin\Debug\net8.0\package.json
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\bin\Debug\net8.0\MediatR.dll
+C:\Users\halil\source\repos\murder_game_asp\PersonalManagementSystem\PersonalManagementSystem\bin\Debug\net8.0\MediatR.Contracts.dll

@@ -1,4 +1,5 @@
-﻿using HMD.TaskManagement.Persistence;
+﻿using HMD.TaskManagement.Application.Extensions;
+using HMD.TaskManagement.Persistence;
 
 namespace PersonalManagementSystem
 {
@@ -13,6 +14,7 @@ namespace PersonalManagementSystem
 
             //IOC
             builder.Services.AddPersistenceServices(builder.Configuration);
+            builder.Services.AddApplicationServices();
 
             var app = builder.Build();
 

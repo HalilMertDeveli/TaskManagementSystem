@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HMD.TaskManagement.Application.Dtos;
+using HMD.TaskManagement.Application.Extensions;
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Application.Requests;
 using HMD.TaskManagement.Application.Validators;
@@ -27,19 +28,26 @@ namespace HMD.TaskManagement.Application.Handlers
 
             if (validationResult.IsValid)
             {
-                return new Result<LoginResponseDto?>(new LoginResponseDto("", "", 1), true, null, null);
+                var user = await this.userRepository.GetByFilter(x =>
+                    x.Password == request.Password && x.UserName == request.UserName);
+                if (user != null)
+                {
+                    return new Result<LoginResponseDto?>(new LoginResponseDto(user.Name, user.Surname, user.AppRoleId),
+                        true, null, null);
+
+                }
+                else
+                {
+                    return new Result<LoginResponseDto?>(null, false, "Kullanıcı adı veya şifre hatalı", null);
+
+                }
+
             }
             else
             {
-                var errorList = new List<ValidationError>();
-                var errors = validationResult.Errors.ToList();
+                var errorList = validationResult.Errors.ToMap();
 
-                foreach (var error in errors)
-                {
-                    errorList.Add(new ValidationError(error.PropertyName,error.ErrorMessage));
-                }
-
-                return new Result<LoginResponseDto?>(null, false, "Bir Hata oluştu", errorList);
+                return new Result<LoginResponseDto?>(null, false, null, errorList);
 
             }
 
