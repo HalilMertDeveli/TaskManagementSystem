@@ -34,9 +34,18 @@ namespace PersonalManagementSystem
 
             app.UseAuthorization();
 
+            //halil.com/admin/home/Index
+            //hallil.com/home/index //ikisinde de özel olan, önde olan ilk olarak denenmesi gerekemektedir. 
+
+            //özel olan önde olacak 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{Area}/{Controller=Home}/{Action=Index}/{id?}");
+
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Account}/{action=Login}/{id?}");
+
 
             app.Run();
         }
