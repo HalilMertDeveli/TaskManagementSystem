@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace HMD.TaskManagement.Application.Dtos
 {
-    public record LoginResponseDto(string Name, string SurName, int RoleId);
+    public record LoginResponseDto(string Name, string Surname, int RoleId);
 }

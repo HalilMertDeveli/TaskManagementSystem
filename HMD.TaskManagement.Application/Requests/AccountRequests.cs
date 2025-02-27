@@ -8,5 +8,5 @@ using MediatR;
 
 namespace HMD.TaskManagement.Application.Requests
 {
-    public record LoginRequest(string UserName, string Password):IRequest<Result<LoginResponseDto>>;
+    public record LoginRequest(string UserName, string Password):IRequest<Result<LoginResponseDto?>>;
 }
