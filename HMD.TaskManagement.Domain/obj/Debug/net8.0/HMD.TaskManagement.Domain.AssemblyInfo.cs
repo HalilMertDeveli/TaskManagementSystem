@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMD.TaskManagement.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eeb692794b061ed513ad4407651f6653d8de2215")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcc38bbd94889fb816149d14cbaee88c28b9c2e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMD.TaskManagement.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMD.TaskManagement.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
