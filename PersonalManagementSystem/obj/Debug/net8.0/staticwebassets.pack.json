@@ -789,6 +789,22 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\theme\\assets\\favicon.ico",
+      "PackagePath": "staticwebassets\\theme\\assets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\theme\\css\\styles.css",
+      "PackagePath": "staticwebassets\\theme\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\theme\\index.html",
+      "PackagePath": "staticwebassets\\theme\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\theme\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\theme\\js\\scripts.js"
+    },
+    {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\twitter-bootstrap\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\twitter-bootstrap\\css\\bootstrap-grid.css"
     },

@@ -194,6 +194,10 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\theme\assets\favicon.ico
+wwwroot\theme\css\styles.css
+wwwroot\theme\index.html
+wwwroot\theme\js\scripts.js
 wwwroot\twitter-bootstrap\css\bootstrap.css
 wwwroot\twitter-bootstrap\css\bootstrap.css.map
 wwwroot\twitter-bootstrap\css\bootstrap.min.css
