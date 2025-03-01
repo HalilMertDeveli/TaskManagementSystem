@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
 using HMD.TaskManagement.Application.Dtos;
 
 namespace HMD.TaskManagement.Application.Extensions
@@ -16,7 +11,7 @@ namespace HMD.TaskManagement.Application.Extensions
 
             foreach (var error in errors)
             {
-                errorList.Add(new ValidationError(error.PropertyName,error.ErrorMessage));
+                errorList.Add(new ValidationError(error.PropertyName, error.ErrorMessage));
             }
 
             return errorList;

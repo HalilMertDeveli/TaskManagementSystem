@@ -1,10 +1,10 @@
-﻿using System.Security.Claims;
-using HMD.TaskManagement.Application.Dtos;
+﻿using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HMD.TaskManagement.UI.Controllers
 {
@@ -18,23 +18,21 @@ namespace HMD.TaskManagement.UI.Controllers
         }
 
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+     
         [HttpGet]
         public IActionResult Login()
         {
-            return View(new LoginRequest("",""));
+            return View(new LoginRequest("", ""));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginRequest request)//record
+        public async Task<IActionResult> Login(LoginRequest request)
         {
             var result = await this.mediator.Send(request);
-            if (result.IsSuccess && result.Data !=null)
+            if (result.IsSuccess && result.Data != null)
             {
-                await SetAuthCookie(result.Data,request.RememberMe);
+                await SetAuthCookie(result.Data, request.RememberMe);
+
                 return RedirectToAction("Index", "Home", new { area = "Admin" });
             }
             else
@@ -48,20 +46,44 @@ namespace HMD.TaskManagement.UI.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu");
+                    ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu, sistem üreticinize başvurun.");
+                }
 
+                return View(request);
+            }
+        }
+
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterRequest request)
+        {
+            var result = await this.mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                if (result.Errors != null && result.Errors.Count > 0)
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu, sistem üreticinize  başvurun");
                 }
                 return View(request);
             }
 
-
-
-
-        }
-
-        public IActionResult Register()
-        {
-            return View();
         }
 
         public async Task<IActionResult> LogOut()
@@ -70,12 +92,12 @@ namespace HMD.TaskManagement.UI.Controllers
             return RedirectToAction("Login");
         }
 
-        private async Task SetAuthCookie(LoginResponseDto dto,bool RememberMe)
+        private async Task SetAuthCookie(LoginResponseDto dto, bool RememberMe)
         {
             var claims = new List<Claim>
             {
                 new Claim("Name", dto.Name),
-                new Claim("SurName", dto.Surname),
+                new Claim("Surname", dto.Surname),
                 new Claim(ClaimTypes.Role, dto.Role.ToString()),
             };
 

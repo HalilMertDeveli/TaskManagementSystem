@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HMD.TaskManagement.Domain.Entities;
+﻿using HMD.TaskManagement.Domain.Entities;
 using HMD.TaskManagement.Persistence.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace HMD.TaskManagement.Persistence.Context
 {
-    public class TaskManagementContext:DbContext
+    public class TaskManagementContext : DbContext
     {
-        public TaskManagementContext(DbContextOptions<TaskManagementContext> options):base(options)
+        public TaskManagementContext(DbContextOptions<TaskManagementContext> options) : base(options)
         {
-            
+
         }
         public DbSet<AppRole> AppRoles { get; set; }
         public DbSet<AppTasks> AppTasks { get; set; }
@@ -31,10 +26,10 @@ namespace HMD.TaskManagement.Persistence.Context
             modelBuilder.ApplyConfiguration(new NotificationConfiguration());
             modelBuilder.ApplyConfiguration(new PriorityConfiguration());
             modelBuilder.ApplyConfiguration(new TaskReportConfiguration());
-             
+
             base.OnModelCreating(modelBuilder);
         }
 
-        
+
     }
 }

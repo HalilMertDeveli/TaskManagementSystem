@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HMD.TaskManagement.Domain.Entities
+﻿namespace HMD.TaskManagement.Domain.Entities
 {
     public class AppTasks : BaseEntity
     {

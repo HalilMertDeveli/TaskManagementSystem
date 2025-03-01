@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HMD.TaskManagement.Application.Dtos;
+﻿using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Enums;
 using HMD.TaskManagement.Application.Extensions;
 using HMD.TaskManagement.Application.Interfaces;
@@ -29,8 +24,8 @@ namespace HMD.TaskManagement.Application.Handlers
 
             if (validationResult.IsValid)
             {
-                var user = await this.userRepository.GetByFilter(x =>
-                    x.Password == request.Password && x.UserName == request.UserName);
+                var user = await this.userRepository.GetByFilterAsync(x =>
+                    x.Password == request.Password && x.UserName == request.Username);
 
 
 

@@ -43,9 +43,9 @@ namespace PersonalManagementSystem
             app.UseAuthentication();
             app.UseAuthorization();
 
-        
 
-           
+
+
 
             //halil.com/admin/home/Index
             //hallil.com/home/index //ikisinde de özel olan, önde olan ilk olarak denenmesi gerekemektedir. 
