@@ -1,5 +1,46 @@
-﻿@{
+﻿@model List<PriorityListDto>
+@{
     Layout = "_AdminLayout";
     ViewBag.Title = "Acilyet tanımlama";
 }
 <p>Aciliyet durumları</p>
+<a asp-action="Create" asp-controller="Priority" asp-area="Admin"  class="btn btn-sm btn-warning mb-2">Yeni Acilyet ekle</a>
+
+<table class="table table-success table-striped-columns">
+    <thead>
+    <tr>
+
+        <th scope="col">Tanım</th>
+        <th scope="col">İşlem</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model?.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.Definition</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Priority" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Düzenle</a>
+                    <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz? ')" asp-controller="Priority" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+                </td>
+           
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+
+            <td colspan="2">Herhangi bir açiliyet bulunamadı</td>
+           
+           
+        </tr>
+    }
+    
+   
+
+    </tbody>
+</table>

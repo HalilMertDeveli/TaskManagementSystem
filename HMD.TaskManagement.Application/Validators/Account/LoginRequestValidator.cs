@@ -7,8 +7,8 @@ namespace HMD.TaskManagement.Application.Validators
     {
         public LoginRequestValidator()
         {
-            this.RuleFor(x => x.Username).NotEmpty().WithMessage("Kullanıcı adı boş geçilemez");
-            this.RuleFor(x => x.Password).NotEmpty().WithMessage("Parola boş geçilemez");
+            RuleFor(x => x.Username).NotEmpty().WithMessage("Kullanıcı adı boş geçilemez");
+            RuleFor(x => x.Password).NotEmpty().WithMessage("Parola boş geçilemez");
         }
     }
 }

@@ -19,5 +19,14 @@ namespace HMD.TaskManagement.Application.Extensions
 
             };
         }
+
+        public static Priority ToMap(this PriorityCreateRequest request)
+        {
+            return new Priority
+            {
+                Defination = request.Definition
+
+            };
+        }
     }
 }
