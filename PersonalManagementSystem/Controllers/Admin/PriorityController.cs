@@ -21,6 +21,7 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             var result = await this.mediator.Send(new PriorityListRequest());
             return View(result.Data);
         }
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -37,22 +38,34 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             }
             else
             {
-                if (result.Errors?.Count>0)
+                if (result.Errors?.Count > 0)
                 {
                     foreach (var error in result.Errors)
                     {
-                        ModelState.AddModelError(error.PropertyName,error.ErrorMessage);
+                        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                     }
 
-                    
+
                 }
                 else
                 {
-                    ModelState.AddModelError("",result.ErrorMessage?? "Ürüticiye başvur ");
+                    ModelState.AddModelError("", result.ErrorMessage ?? "Ürüticiye başvur ");
                 }
             }
 
             return View(request);
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await this.mediator.Send(new PriorityDeleteRequest(id));
+
+            return RedirectToAction("List");
+
+
+
+        }
     }
+
+
 }

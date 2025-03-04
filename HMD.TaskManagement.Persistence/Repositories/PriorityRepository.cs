@@ -1,4 +1,5 @@
-﻿using HMD.TaskManagement.Application.Interfaces;
+﻿using System.Linq.Expressions;
+using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Domain.Entities;
 using HMD.TaskManagement.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,22 @@ namespace HMD.TaskManagement.Persistence.Repositories
         {
             await this.context.Priorities.AddAsync(priority);
             return await this.context.SaveChangesAsync();
+        }
+
+        public async Task<Priority?> GetByFilterNoTrackingAsync(Expression<Func<Priority, bool>> filter)
+        {
+            return await this.context.Priorities.AsNoTracking().SingleOrDefaultAsync(filter);
+        }
+
+        public async Task<Priority?> GetByFilterAsync(Expression<Func<Priority, bool>> filter)
+        {
+            return await this.context.Priorities.SingleOrDefaultAsync(filter);
+        }
+
+        public async Task DeleteAsync(Priority priority)
+        {
+            this.context.Priorities.Remove(priority);
+            await this.context.SaveChangesAsync();
         }
     }
 }
