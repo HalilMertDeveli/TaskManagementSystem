@@ -8,9 +8,11 @@ namespace HMD.TaskManagement.Application.Interfaces
         Task<List<Priority>> GetAllAsync();
         Task<int> CreateAsync(Priority priority);
 
-        Task<Priority?> GetByFilterNoTrackingAsync(Expression<Func<Priority, bool>> filter);
+        Task<Priority?> GetByFilterAsNoTrackingAsync(Expression<Func<Priority, bool>> filter);
 
         Task<Priority?> GetByFilterAsync(Expression<Func<Priority, bool>> filter);
         Task DeleteAsync(Priority priority);
+
+        Task<int> SaveChangesAsync();
     }
 }

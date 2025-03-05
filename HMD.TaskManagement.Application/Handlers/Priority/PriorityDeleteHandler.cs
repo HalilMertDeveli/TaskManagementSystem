@@ -8,7 +8,7 @@ using HMD.TaskManagement.Application.Requests;
 using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Interfaces;
 
-namespace HMD.TaskManagement.Application.Handlers.Priority
+namespace HMD.TaskManagement.Application.Handlers
 {
     public class PriorityDeleteHandler : IRequestHandler<PriorityDeleteRequest,Result<NoData>>
     {

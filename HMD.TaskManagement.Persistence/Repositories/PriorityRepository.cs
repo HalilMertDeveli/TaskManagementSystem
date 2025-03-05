@@ -26,7 +26,7 @@ namespace HMD.TaskManagement.Persistence.Repositories
             return await this.context.SaveChangesAsync();
         }
 
-        public async Task<Priority?> GetByFilterNoTrackingAsync(Expression<Func<Priority, bool>> filter)
+        public async Task<Priority?> GetByFilterAsNoTrackingAsync(Expression<Func<Priority, bool>> filter)
         {
             return await this.context.Priorities.AsNoTracking().SingleOrDefaultAsync(filter);
         }
@@ -40,6 +40,11 @@ namespace HMD.TaskManagement.Persistence.Repositories
         {
             this.context.Priorities.Remove(priority);
             await this.context.SaveChangesAsync();
+        }
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await this.context.SaveChangesAsync();
         }
     }
 }

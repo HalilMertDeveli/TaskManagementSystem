@@ -10,8 +10,8 @@ namespace HMD.TaskManagement.Persistence.Context
         {
 
         }
-        public DbSet<AppRole> AppRoles { get; set; }
-        public DbSet<AppTasks> AppTasks { get; set; }
+        public DbSet<AppRole> Roles { get; set; }
+        public DbSet<AppTasks> Tasks { get; set; }
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Priority> Priorities { get; set; }

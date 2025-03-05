@@ -9,7 +9,7 @@ namespace HMD.TaskManagement.Persistence.Configurations
         public void Configure(EntityTypeBuilder<AppTasks> builder)
         {
             builder.Property(x => x.PriorityId).IsRequired(true);
-            builder.Property(x => x.AppUserId).IsRequired(true);
+            builder.Property(x => x.AppUserId).IsRequired(false);
 
             builder.Property(x => x.Description).IsRequired(true);
             builder.Property(x => x.Title).IsRequired(true);
