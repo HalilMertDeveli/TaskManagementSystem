@@ -1,8 +1,8 @@
-﻿using System.Linq.Expressions;
-using HMD.TaskManagement.Application.Interfaces;
+﻿using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Domain.Entities;
 using HMD.TaskManagement.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace HMD.TaskManagement.Persistence.Repositories
 {

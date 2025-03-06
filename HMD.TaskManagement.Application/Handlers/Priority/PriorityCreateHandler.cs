@@ -23,12 +23,12 @@ namespace HMD.TaskManagement.Application.Handlers
             if (validationResult.IsValid)
             {
                 var rowCount = await this.repository.CreateAsync(request.ToMap());
-                if (rowCount>0)
+                if (rowCount > 0)
                 {
                     return new Result<NoData>(new NoData(), true, null, null);
                 }
 
-                return new Result<NoData>(new NoData(), false, "Sistemsel hata öncelikler ",null);
+                return new Result<NoData>(new NoData(), false, "Sistemsel hata öncelikler ", null);
 
             }
             else

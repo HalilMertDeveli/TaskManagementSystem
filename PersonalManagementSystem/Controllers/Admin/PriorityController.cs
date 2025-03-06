@@ -97,16 +97,16 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             }
             else
             {
-                if (result.Errors?.Count>0)
+                if (result.Errors?.Count > 0)
                 {
                     foreach (var error in result.Errors)
                     {
-                        ModelState.AddModelError(error.PropertyName,error.ErrorMessage);
+                        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("",result.ErrorMessage ?? "Bilinmeyen bir hata oluştu");
+                    ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu");
                 }
 
                 return View(request);

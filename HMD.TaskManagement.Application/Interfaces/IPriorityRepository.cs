@@ -1,5 +1,5 @@
-﻿using System.Linq.Expressions;
-using HMD.TaskManagement.Domain.Entities;
+﻿using HMD.TaskManagement.Domain.Entities;
+using System.Linq.Expressions;
 
 namespace HMD.TaskManagement.Application.Interfaces
 {

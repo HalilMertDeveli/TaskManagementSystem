@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HMD.TaskManagement.Application.Dtos;
+﻿using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Extensions;
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Application.Requests;
@@ -12,7 +7,7 @@ using MediatR;
 
 namespace HMD.TaskManagement.Application.Handlers
 {
-    public class PriorityUpdateHandler:IRequestHandler<PriorityUpdateRequest,Result<NoData>>
+    public class PriorityUpdateHandler : IRequestHandler<PriorityUpdateRequest, Result<NoData>>
     {
         private readonly IPriorityRepository repository;
 
@@ -43,7 +38,7 @@ namespace HMD.TaskManagement.Application.Handlers
                 return new Result<NoData>(new NoData(), false, null, null);
             }
 
-         
+
 
         }
     }

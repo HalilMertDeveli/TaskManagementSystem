@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HMD.TaskManagement.Application.Dtos;
+﻿using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Application.Requests;
-using HMD.TaskManagement.Domain.Entities;
 using MediatR;
 
 namespace HMD.TaskManagement.Application.Handlers
@@ -23,7 +17,7 @@ namespace HMD.TaskManagement.Application.Handlers
 
         public async Task<Result<PriorityListDto?>> Handle(PriorityGetByIdRequest request, CancellationToken cancellationToken)
         {
-            var priority= await this.repository.GetByFilterAsNoTrackingAsync(x => x.Id == request.Id);
+            var priority = await this.repository.GetByFilterAsNoTrackingAsync(x => x.Id == request.Id);
             if (priority != null)
             {
                 return new Result<PriorityListDto?>(new PriorityListDto(priority.Id, priority.Defination), true, null,

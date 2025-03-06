@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace HMD.TaskManagement.UI.Controllers.Admin
 {
     [Area("Admin")]
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     public class AppTaskController : Controller
     {
         private readonly IMediator mediator;
@@ -16,9 +16,9 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             this.mediator = mediator;
         }
 
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(int activePage = 1)
         {
-            var result = await this.mediator.Send(new AppTaskListRequest());
+            var result = await this.mediator.Send(new AppTaskListRequest(activePage));
             return View(result.Data);
         }
     }

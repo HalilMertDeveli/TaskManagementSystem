@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Domain.Entities;
 using HMD.TaskManagement.Persistence.Context;
+using HMD.TaskManagement.Persistence.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace HMD.TaskManagement.Persistence.Repositories
 {
-    public class AppTaskRepository:IAppTaskRepository
+    public class AppTaskRepository : IAppTaskRepository
     {
         private readonly TaskManagementContext context;
 
@@ -19,10 +16,13 @@ namespace HMD.TaskManagement.Persistence.Repositories
             this.context = context;
         }
 
-        public async Task<List<AppTasks>> GetAllAsync()
+        public async Task<PagedData<AppTasks>> GetAllAsync(int activePage, int pageSize = 10)
         {
-            return await this.context.Tasks.Include(x=>x.Priority).AsNoTracking().ToListAsync();
-            
+            var list = await this.context.Tasks.Include(x => x.Priority).AsNoTracking()
+                .ToPagedAsync(activePage, pageSize);
+            return list;
         }
+
+
     }
 }
