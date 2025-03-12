@@ -3,7 +3,7 @@
     Layout = "_AdminLayout";
     ViewBag.Title = "İş Emri Tanımalama tanımlama";
 }
-<p>Aciliyet durumları</p>
+
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-9">
-        <form>
+        <form asp-action="List" asp-controller="AppTask" asp-area="Admin" method="get">
 
 
             <div class="container">
@@ -43,7 +43,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="search-container">
-                            <input type="text" class="form-control search-input" placeholder="Search...">
+                            <input type="text" name="s" class="form-control search-input" placeholder="Search..." >
                             <i class="fas fa-search search-icon"></i>
 
                         </div>
@@ -52,7 +52,7 @@
                     <div class="col-md-6">
 
                         <button class="btn btn-primary px-4" type="submit">
-                            <i class="bi bi-search">Ara</i>
+                            <i class="bi bi-search">İş Emri ara</i>
                         </button>
                     </div>
                 </div>
@@ -65,43 +65,41 @@
 
         <table class="table table-success table-striped-columns">
             <thead>
-            <tr>
+                <tr>
 
-                <th scope="col">İş Emri</th>
-                <th scope="col">Açıklama</th>>
-                <th scope="col">İşin Aciliyeti</th>>
-                <th scope="col">İşin Durumu</th>>
-                <th scope="col"></th>>
-            </tr>
+                    <th scope="col">İş Emri</th>
+                    <th scope="col">İşin Aciliyeti</th>>
+                    <th scope="col">İşin Durumu</th>>
+                    <th scope="col"></th>>
+                </tr>
             </thead>
             <tbody>
-            @if (Model.Data?.Count > 0)
-            {
-                foreach (var item in Model.Data)
+                @if (Model.Data?.Count > 0)
+                {
+                    foreach (var item in Model.Data)
+                    {
+                        <tr>
+
+                            <td>@item.Title</td>
+                            <td>@item.PriorityDefinition</td>
+                            <td>@(item.State ? "Tamamlandı" : "Tamamlanmadı")</td>
+                            <td>
+                                <a asp-action="Update" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detay</a>
+                                <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz? ')" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
                 {
                     <tr>
 
-                        <td>@item.Title</td>
-                        <td>@item.Description</td>
-                        <td>@item.PriorityDefinition</td>
-                        <td>@(item.State ? "Tamamlandı" : "Tamamlanmadı")</td>
-                        <td>
-                            <a asp-action="Update" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Düzenle</a>
-                            <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz? ')" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
-                        </td>
+                        <td colspan="5">Herhangi bir iş emri bulunamadı</td>
+
 
                     </tr>
                 }
-            }
-            else
-            {
-                <tr>
-
-                    <td colspan="5">Herhangi bir iş emri bulunamadı</td>
-
-
-                </tr>
-            }
 
 
 
@@ -110,10 +108,10 @@
         <div class="text-end">
             <nav aria-label="Page navigation example" class="float-end">
                 <ul class="pagination">
-                    @for (int i = 1; i <= Model.TotalPage;i++)
+                    @for (int i = 1; i <= Model.TotalPage; i++)
                     {
                         <li class="page-item">
-                            <a class="page-link" asp-route-activePage="@i" asp-action="List" asp-controller="AppTask" asp-area="Admin">@i</a>
+                            <a class="page-link @(Model.ActivePage==i ? "active":"")" asp-route-s="@ViewBag.s" asp-route-activePage="@i" asp-action="List" asp-controller="AppTask" asp-area="Admin">@i</a>
                         </li>
 
                     }
@@ -122,7 +120,7 @@
             </nav>
 
         </div>
-        
+
 
     </div>
 </div>

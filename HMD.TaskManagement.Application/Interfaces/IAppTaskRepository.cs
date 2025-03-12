@@ -5,6 +5,6 @@ namespace HMD.TaskManagement.Application.Interfaces
 {
     public interface IAppTaskRepository
     {
-        Task<PagedData<AppTasks>> GetAllAsync(int activePage, int pageSize=10);
+        Task<PagedData<AppTasks>> GetAllAsync(int activePage, string? s = null, int pageSize = 10);
     }
 }

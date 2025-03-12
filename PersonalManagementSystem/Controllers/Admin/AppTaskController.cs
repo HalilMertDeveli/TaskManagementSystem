@@ -18,12 +18,12 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             this.mediator = mediator;
         }
 
-      
+
         public async Task<IActionResult> List(string? s, int activePage = 1)
         {
             ViewBag.s = s;
             ViewBag.Active = "AppTask";
-            var result = await this.mediator.Send(new AppTaskListRequest(activePage));
+            var result = await this.mediator.Send(new AppTaskListRequest(activePage, s));
             return View(result);
         }
     }
