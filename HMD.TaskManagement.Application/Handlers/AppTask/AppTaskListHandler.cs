@@ -22,7 +22,7 @@ namespace HMD.TaskManagement.Application.Handlers
             foreach (var appTask in list.Data)
             {
                 var dto = new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description,
-                    appTask?.Priority?.Defination, appTask.State);
+                    appTask?.Priority?.Defination, appTask.State,appTask.AppUserId,appTask.AppUserId.HasValue? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname: null,appTask.PriorityId);
                 result.Add(dto);
             }
 

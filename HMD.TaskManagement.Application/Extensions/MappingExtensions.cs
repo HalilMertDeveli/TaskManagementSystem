@@ -1,4 +1,5 @@
 ﻿
+using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Enums;
 using HMD.TaskManagement.Application.Requests;
 using HMD.TaskManagement.Domain.Entities;
@@ -39,5 +40,15 @@ namespace HMD.TaskManagement.Application.Extensions
                 State = false,
             };
         }
+
+        public static AppTaskListDto ToMap(this AppTasks appTask)
+        {
+            return new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description, appTask.Priority.Defination,
+                appTask.State, appTask.AppUserId,
+                appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null,
+                appTask.PriorityId);
+
+        }
+
     }
 }

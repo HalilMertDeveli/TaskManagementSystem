@@ -19,7 +19,7 @@ namespace HMD.TaskManagement.Persistence.Repositories
 
         public async Task<PagedData<AppTasks>> GetAllAsync(int activePage, string? s = null, int pageSize = 10)
         {
-            var query = this.context.Tasks.AsQueryable();
+            var query = this.context.Tasks.Include(x=>x.AppUser).AsQueryable();
             if (!string.IsNullOrEmpty(s))
             {
                 query = query.Where(x => x.Title.ToLower().Contains(s.ToLower()));
