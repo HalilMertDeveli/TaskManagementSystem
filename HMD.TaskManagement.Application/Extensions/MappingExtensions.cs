@@ -28,5 +28,16 @@ namespace HMD.TaskManagement.Application.Extensions
 
             };
         }
+
+        public static AppTasks ToMap(this AppTaskCreateRequest request)
+        {
+            return new AppTasks()
+            {
+                Description = request.Description,
+                PriorityId = request.PriorityId,
+                Title = request.Title,
+                State = false,
+            };
+        }
     }
 }

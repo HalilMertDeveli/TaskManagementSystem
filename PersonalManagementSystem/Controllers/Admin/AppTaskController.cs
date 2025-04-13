@@ -1,9 +1,8 @@
-﻿using HMD.TaskManagement.Application.Dtos;
-using HMD.TaskManagement.Application.Requests;
+﻿using HMD.TaskManagement.Application.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HMD.TaskManagement.UI.Controllers.Admin
 {
@@ -25,6 +24,57 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             ViewBag.Active = "AppTask";
             var result = await this.mediator.Send(new AppTaskListRequest(activePage, s));
             return View(result);
+        }
+
+
+        public async Task<IActionResult> Create()
+        {
+            var result = await this.mediator.Send(new PriorityListRequest());
+
+            ViewBag.Priorities =
+                new List<SelectListItem>(result.Data.Select(x => new SelectListItem(x.Definition, x.Id.ToString())));
+
+            //Definition
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(AppTaskCreateRequest request)
+        {
+
+           
+
+           
+            
+            var result = await this.mediator.Send(request);
+
+
+            ViewBag.Priorities =
+                new List<SelectListItem>(
+                    result.Data.Priorities.Select(x => new SelectListItem(x.Definition, x.Id.ToString())));
+
+
+            if (result.IsSuccess)
+            {
+                return RedirectToAction("List");
+            }
+            else
+            {
+                if (result.Errors?.Count>0)
+                {
+                    foreach (var validationError in result.Errors)
+                    {
+                        ModelState.AddModelError(validationError.PropertyName,validationError.ErrorMessage);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("",result.ErrorMessage??"Sistem hatası var ");
+                }
+            }
+
+
+            return View(request);
         }
     }
 }

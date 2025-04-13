@@ -880,7 +880,7 @@
         },
         "runtime": {
           "HMD.TaskManagement.Application.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -888,7 +888,7 @@
       "HMD.TaskManagement.Domain/1.0.0": {
         "runtime": {
           "HMD.TaskManagement.Domain.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -901,7 +901,7 @@
         },
         "runtime": {
           "HMD.TaskManagement.Persistence.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

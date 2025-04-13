@@ -11,4 +11,7 @@ namespace HMD.TaskManagement.Application.Requests
         }
         public string? S { get; set; }
     }
+
+    public record AppTaskCreateRequest(string? Title, string? Description, int PriorityId):IRequest<Result<AppTaskDto>>;
+
 }

@@ -10,7 +10,7 @@
 <div class="row">
 
     <div class="col-3">
-        <a asp-action="Create" asp-controller="Priority" asp-area="Admin" class="btn btn-sm btn-warning mb-2">Yeni İş Emri Ekle</a>
+        <a asp-action="Create" asp-controller="AppTask" asp-area="Admin" class="btn btn-sm btn-warning mb-2">Yeni İş Emri Ekle</a>
 
     </div>
 
@@ -59,6 +59,18 @@
             </div>
         </form>
     </div>
+    @{
+        if (!string.IsNullOrEmpty(ViewBag.s))   
+        {
+            <div class="row">
+                <div class="alert alert-success" role="alert">
+                    Şuanda bu <strong>@ViewBag.s</strong>  arama filtresine göre kayıtları görmektesiniz
+                    <a asp-action="List" asp-controller="AppTask" asp-route-s="" asp-area="Admin" class="float-end">Filtreyi kaldır</a>
+                </div>
+            </div>
+        }
+    }
+   
     <div>
 
 
