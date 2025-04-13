@@ -42,10 +42,7 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
         public async Task<IActionResult> Create(AppTaskCreateRequest request)
         {
 
-           
 
-           
-            
             var result = await this.mediator.Send(request);
 
 
@@ -60,21 +57,28 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             }
             else
             {
-                if (result.Errors?.Count>0)
+                if (result.Errors?.Count > 0)
                 {
                     foreach (var validationError in result.Errors)
                     {
-                        ModelState.AddModelError(validationError.PropertyName,validationError.ErrorMessage);
+                        ModelState.AddModelError(validationError.PropertyName, validationError.ErrorMessage);
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("",result.ErrorMessage??"Sistem hatası var ");
+                    ModelState.AddModelError("", result.ErrorMessage ?? "Sistem hatası var ");
                 }
             }
 
 
             return View(request);
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            ViewBag.Active = "AppTask";
+            await this.mediator.Send(new AppTaskDeleteRequest(id));
+            return RedirectToAction("List");
         }
     }
 }

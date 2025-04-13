@@ -14,4 +14,6 @@ namespace HMD.TaskManagement.Application.Requests
 
     public record AppTaskCreateRequest(string? Title, string? Description, int PriorityId):IRequest<Result<AppTaskDto>>;
 
+    public record AppTaskDeleteRequest(int Id) : IRequest<Result<NoData>>;
+
 }

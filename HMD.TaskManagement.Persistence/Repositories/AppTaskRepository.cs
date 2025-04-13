@@ -1,4 +1,5 @@
-﻿using HMD.TaskManagement.Application.Dtos;
+﻿using System.Linq.Expressions;
+using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Domain.Entities;
 using HMD.TaskManagement.Persistence.Context;
@@ -33,6 +34,22 @@ namespace HMD.TaskManagement.Persistence.Repositories
             await this.context.Tasks.AddAsync(appTasks);
             return await this.context.SaveChangesAsync();
 
+        }
+
+        public async Task DeleteAsync(AppTasks deleted)
+        {
+             this.context.Tasks.Remove(deleted);
+             await this.context.SaveChangesAsync();
+        }
+
+        public async Task<AppTasks?> GetByFilterAsync(Expression<Func<AppTasks, bool>> filter)
+        {
+            return await this.context.Tasks.SingleOrDefaultAsync(filter);
+        }
+
+        public async Task<AppTasks?> GetByFilterAsNoTracking(Expression<Func<AppTasks, bool>> filter)
+        {
+            return await this.context.Tasks.AsNoTracking().SingleOrDefaultAsync(filter);
         }
     }
 }
