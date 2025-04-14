@@ -43,11 +43,21 @@ namespace HMD.TaskManagement.Application.Extensions
 
         public static AppTaskListDto ToMap(this AppTasks appTask)
         {
-            return new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description, appTask.Priority.Defination,
-                appTask.State, appTask.AppUserId,
+            return new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description, appTask?.Priority?.Defination,
+                appTask?.State ?? false, appTask.AppUserId,
                 appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null,
                 appTask.PriorityId);
 
+        }
+
+        public static List<MemberListDto> ToMap(this List<AppUser> users)
+        {
+            return users.Select(x => new MemberListDto(x.Id, x.Name, x.Surname, x.UserName)).ToList();
+        }
+
+        public static List<TaskReportListDto> ToMap(this List<TaskReport> list)
+        {
+            return list.Select(x => new TaskReportListDto(x.Id,x.Defination,x.Detail,x.AppTaskId)).ToList();
         }
 
     }
