@@ -1,0 +1,140 @@
+﻿@model PagedResult<MemberListDto>
+@{
+    Layout = "_AdminLayout";
+    ViewBag.Title = "Kullanıcı ekranı";
+}
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<div class="row">
+
+    <div class="col-3">
+        <a asp-action="Create" asp-controller="User" asp-area="Admin" class="btn btn-sm btn-warning mb-2">Yeni Kullanıcı ekle</a>
+
+    </div>
+
+    <div class="col-9">
+        <form asp-action="List" asp-controller="User" asp-area="Admin" method="get">
+
+
+            <div class="container">
+                <style>
+                    .search-container {
+                        position: relative;
+                    }
+
+                    .search-input {
+                        height: 50px;
+                        border-radius: 30px;
+                        padding-left: 35px;
+                        border: none;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .search-icon {
+                        position: absolute;
+                        top: 50%;
+                        left: 15px;
+                        transform: translateY(-50%);
+                        color: #888;
+                    }
+                </style>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="search-container">
+                            <input type="text" name="s" class="form-control search-input" placeholder="Search...">
+                            <i class="fas fa-search search-icon"></i>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <button class="btn btn-primary px-4" type="submit">
+                            <i class="bi bi-search">Kullanıcı ara</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    @{
+        if (!string.IsNullOrEmpty(ViewBag.s))
+        {
+            <div class="row">
+                <div class="alert alert-success" role="alert">
+                    Şuanda bu <strong>@ViewBag.s</strong>  arama filtresine göre kayıtları görmektesiniz
+                    <a asp-action="List" asp-controller="User" asp-route-s="" asp-area="Admin" class="float-end">Filtreyi kaldır</a>
+                </div>
+            </div>
+        }
+    }
+
+    <div>
+
+
+
+        <table class="table table-success table-striped-columns">
+            <thead>
+                <tr>
+
+                    <th scope="col">Kullanıcı İsmi</th>
+                    <th scope="col">Kullanıcı Soy İsmi</th>>
+                    <th scope="col">Kullanici adi</th>>
+                    <th scope="col"></th>>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Data?.Count > 0)
+                {
+                    foreach (var item in Model.Data)
+                    {
+                        <tr>
+
+                            <td>@item.Name</td>
+                            <td>@item.Surname</td>
+                            <td>@(item.Username)</td>
+
+                            <td>
+                                <a asp-action="Update" asp-controller="User" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detay</a>
+                                <a asp-action="ResetPassword" asp-controller="User" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Şifresini Sıfırla</a>
+                                <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz? ')" asp-controller="User" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+
+                        <td colspan="5">Herhangi bir kullanıcı bulunamadı</td>
+
+
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+        <div class="text-end">
+            <nav aria-label="Page navigation example" class="float-end">
+                <ul class="pagination">
+                    @for (int i = 1; i <= Model.TotalPage; i++)
+                    {
+                        <li class="page-item">
+                            <a class="page-link @(Model.ActivePage==i ? "active":"")" asp-route-s="@ViewBag.s" asp-route-activePage="@i" asp-action="List" asp-controller="User" asp-area="Admin">@i</a>
+                        </li>
+
+                    }
+
+                </ul>
+            </nav>
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,4 +1,5 @@
-﻿using HMD.TaskManagement.Domain.Entities;
+﻿using HMD.TaskManagement.Application.Dtos;
+using HMD.TaskManagement.Domain.Entities;
 using System.Linq.Expressions;
 
 namespace HMD.TaskManagement.Application.Interfaces
@@ -10,5 +11,7 @@ namespace HMD.TaskManagement.Application.Interfaces
         Task<int> CreateUserAsync(AppUser user);
 
         Task<List<AppUser>> GetAllByFilterAsync(Expression<Func<AppUser, bool>> filter, bool asNoTracking = true);
+
+        Task<PagedData<AppUser>> GetAllAsync(int activePage, string? s = null, int pageSize = 10);
     }
 }
