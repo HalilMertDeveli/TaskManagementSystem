@@ -6,6 +6,6 @@ namespace HMD.TaskManagement.Application.Dtos
 
     public record AppTaskCreateDto(string? Title, string? Description, int PriorityId);
 
-    public record AppTaskDto(List<PriorityListDto> Priorities,List<AppUser>? Employees=null);
+    public record AppTaskDto(List<PriorityListDto> Priorities,List<MemberListDto>? Employees=null);
 
 }

@@ -1,0 +1,168 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\controllers\\admin\\apptaskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\controllers\\admin\\apptaskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\handlers\\apptask\\apptaskupdatehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\handlers\\apptask\\apptaskupdatehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\interfaces\\iapptaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\interfaces\\iapptaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71C4EF5E-0ACE-4B85-B600-3839E7894E79}|HMD.TaskManagement.Persistence\\HMD.TaskManagement.Persistence.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.persistence\\repositories\\apptaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71C4EF5E-0ACE-4B85-B600-3839E7894E79}|HMD.TaskManagement.Persistence\\HMD.TaskManagement.Persistence.csproj|solutionrelative:hmd.taskmanagement.persistence\\repositories\\apptaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71C4EF5E-0ACE-4B85-B600-3839E7894E79}|HMD.TaskManagement.Persistence\\HMD.TaskManagement.Persistence.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.persistence\\repositories\\priorityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71C4EF5E-0ACE-4B85-B600-3839E7894E79}|HMD.TaskManagement.Persistence\\HMD.TaskManagement.Persistence.csproj|solutionrelative:hmd.taskmanagement.persistence\\repositories\\priorityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\interfaces\\ipriorityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\interfaces\\ipriorityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\dtos\\apptaskdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\dtos\\apptaskdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\validators\\apptask\\apptaskupdaterequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\validators\\apptask\\apptaskupdaterequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IAppTaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Interfaces\\IAppTaskRepository.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Interfaces\\IAppTaskRepository.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Interfaces\\IAppTaskRepository.cs*",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Interfaces\\IAppTaskRepository.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T07:06:08.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppTaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Persistence\\Repositories\\AppTaskRepository.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Persistence\\Repositories\\AppTaskRepository.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Persistence\\Repositories\\AppTaskRepository.cs*",
+              "RelativeToolTip": "HMD.TaskManagement.Persistence\\Repositories\\AppTaskRepository.cs*",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwDYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T07:05:26.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PriorityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Persistence\\Repositories\\PriorityRepository.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Persistence\\Repositories\\PriorityRepository.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Persistence\\Repositories\\PriorityRepository.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Persistence\\Repositories\\PriorityRepository.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T07:05:15.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IPriorityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Interfaces\\IPriorityRepository.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Interfaces\\IPriorityRepository.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Interfaces\\IPriorityRepository.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Interfaces\\IPriorityRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T07:04:40.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppTaskUpdateHandler.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\AppTask\\AppTaskUpdateHandler.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Handlers\\AppTask\\AppTaskUpdateHandler.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\AppTask\\AppTaskUpdateHandler.cs*",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Handlers\\AppTask\\AppTaskUpdateHandler.cs*",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAvwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T06:14:15.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppTaskController.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Controllers\\Admin\\AppTaskController.cs",
+              "RelativeDocumentMoniker": "PersonalManagementSystem\\Controllers\\Admin\\AppTaskController.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Controllers\\Admin\\AppTaskController.cs*",
+              "RelativeToolTip": "PersonalManagementSystem\\Controllers\\Admin\\AppTaskController.cs*",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAQwHwAAACKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T06:09:16.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppTaskDtos.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Dtos\\AppTaskDtos.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Dtos\\AppTaskDtos.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Dtos\\AppTaskDtos.cs*",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Dtos\\AppTaskDtos.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T06:26:47.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppTaskUpdateRequestValidator.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Validators\\AppTask\\AppTaskUpdateRequestValidator.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Validators\\AppTask\\AppTaskUpdateRequestValidator.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Validators\\AppTask\\AppTaskUpdateRequestValidator.cs*",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Validators\\AppTask\\AppTaskUpdateRequestValidator.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T06:11:14.91Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

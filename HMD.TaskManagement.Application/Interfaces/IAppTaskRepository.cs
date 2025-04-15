@@ -14,5 +14,6 @@ namespace HMD.TaskManagement.Application.Interfaces
         Task<AppTasks?> GetByFilterAsync(Expression<Func<AppTasks, bool>> filter);
 
         Task<AppTasks?> GetByFilterAsNoTracking(Expression<Func<AppTasks, bool>> filter);
+        Task<int> SaveChangesAsync();
     }
 }
