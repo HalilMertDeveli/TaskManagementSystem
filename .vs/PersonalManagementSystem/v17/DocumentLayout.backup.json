@@ -3,60 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\controllers\\admin\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\controllers\\admin\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\controllers\\admin\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\controllers\\admin\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\handlers\\notification\\notificationupdateahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\handlers\\notification\\notificationupdateahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\handlers\\account\\userdetailupdaterequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\handlers\\account\\userdetailupdaterequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\handlers\\notification\\notificationlistbyuseridhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\handlers\\notification\\notificationlistbyuseridhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\areas\\admin\\views\\user\\userdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\areas\\admin\\views\\user\\userdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\requests\\notificationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\requests\\notificationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\validators\\account\\userdetailupdaterequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\validators\\account\\userdetailupdaterequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\areas\\admin\\views\\notification\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\areas\\admin\\views\\notification\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\handlers\\account\\userdetailrequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\handlers\\account\\userdetailrequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\handlers\\apptask\\apptaskupdatehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\handlers\\apptask\\apptaskupdatehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\handlers\\account\\loginrequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\handlers\\account\\loginrequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\requests\\accountrequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\requests\\accountrequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\dtos\\accountdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\dtos\\accountdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\dtos\\notificationdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\dtos\\notificationdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.domain\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A79CE5DA-CCC7-480B-8A99-5175E142D68B}|HMD.TaskManagement.Domain\\HMD.TaskManagement.Domain.csproj|solutionrelative:hmd.taskmanagement.domain\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71C4EF5E-0ACE-4B85-B600-3839E7894E79}|HMD.TaskManagement.Persistence\\HMD.TaskManagement.Persistence.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.persistence\\iocextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71C4EF5E-0ACE-4B85-B600-3839E7894E79}|HMD.TaskManagement.Persistence\\HMD.TaskManagement.Persistence.csproj|solutionrelative:hmd.taskmanagement.persistence\\iocextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71C4EF5E-0ACE-4B85-B600-3839E7894E79}|HMD.TaskManagement.Persistence\\HMD.TaskManagement.Persistence.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.persistence\\repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71C4EF5E-0ACE-4B85-B600-3839E7894E79}|HMD.TaskManagement.Persistence\\HMD.TaskManagement.Persistence.csproj|solutionrelative:hmd.taskmanagement.persistence\\repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\hmd.taskmanagement.application\\interfaces\\inotificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D903143-5E26-432C-A035-BD891FC8F671}|HMD.TaskManagement.Application\\HMD.TaskManagement.Application.csproj|solutionrelative:hmd.taskmanagement.application\\interfaces\\inotificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,184 +54,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NotificationUpdateaHandler.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Notification\\NotificationUpdateaHandler.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Handlers\\Notification\\NotificationUpdateaHandler.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Notification\\NotificationUpdateaHandler.cs*",
-              "RelativeToolTip": "HMD.TaskManagement.Application\\Handlers\\Notification\\NotificationUpdateaHandler.cs*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T16:22:36.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccountDtos.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Dtos\\AccountDtos.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Dtos\\AccountDtos.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Dtos\\AccountDtos.cs",
-              "RelativeToolTip": "HMD.TaskManagement.Application\\Dtos\\AccountDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T16:08:20.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "NotificationListByUserIdHandler.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Notification\\NotificationListByUserIdHandler.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Handlers\\Notification\\NotificationListByUserIdHandler.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Notification\\NotificationListByUserIdHandler.cs*",
-              "RelativeToolTip": "HMD.TaskManagement.Application\\Handlers\\Notification\\NotificationListByUserIdHandler.cs*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAABxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T16:03:27.214Z",
+              "Title": "UserDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Admin\\Views\\User\\UserDetail.cshtml",
+              "RelativeDocumentMoniker": "PersonalManagementSystem\\Areas\\Admin\\Views\\User\\UserDetail.cshtml",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Admin\\Views\\User\\UserDetail.cshtml",
+              "RelativeToolTip": "PersonalManagementSystem\\Areas\\Admin\\Views\\User\\UserDetail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-17T16:54:37.889Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NotificationController.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Controllers\\Admin\\NotificationController.cs",
-              "RelativeDocumentMoniker": "PersonalManagementSystem\\Controllers\\Admin\\NotificationController.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Controllers\\Admin\\NotificationController.cs*",
-              "RelativeToolTip": "PersonalManagementSystem\\Controllers\\Admin\\NotificationController.cs*",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAswB8AAAAFAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Controllers\\Admin\\UserController.cs",
+              "RelativeDocumentMoniker": "PersonalManagementSystem\\Controllers\\Admin\\UserController.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Controllers\\Admin\\UserController.cs",
+              "RelativeToolTip": "PersonalManagementSystem\\Controllers\\Admin\\UserController.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAYwJAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:41:57.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppTaskUpdateHandler.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\AppTask\\AppTaskUpdateHandler.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Handlers\\AppTask\\AppTaskUpdateHandler.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\AppTask\\AppTaskUpdateHandler.cs",
-              "RelativeToolTip": "HMD.TaskManagement.Application\\Handlers\\AppTask\\AppTaskUpdateHandler.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwCgAAABpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:25:13.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Admin\\Views\\Notification\\List.cshtml",
-              "RelativeDocumentMoniker": "PersonalManagementSystem\\Areas\\Admin\\Views\\Notification\\List.cshtml",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Admin\\Views\\Notification\\List.cshtml*",
-              "RelativeToolTip": "PersonalManagementSystem\\Areas\\Admin\\Views\\Notification\\List.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T15:44:05.541Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginRequestHandler.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Account\\LoginRequestHandler.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Handlers\\Account\\LoginRequestHandler.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Account\\LoginRequestHandler.cs",
-              "RelativeToolTip": "HMD.TaskManagement.Application\\Handlers\\Account\\LoginRequestHandler.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCMAAABzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T16:09:55.829Z",
+              "WhenOpened": "2025-04-17T16:45:48.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "NotificationRequest.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Requests\\NotificationRequest.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Requests\\NotificationRequest.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Requests\\NotificationRequest.cs*",
-              "RelativeToolTip": "HMD.TaskManagement.Application\\Requests\\NotificationRequest.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABPAAAAAAAAAA==",
+              "Title": "UserDetailUpdateRequestValidator.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Validators\\Account\\UserDetailUpdateRequestValidator.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Validators\\Account\\UserDetailUpdateRequestValidator.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Validators\\Account\\UserDetailUpdateRequestValidator.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Validators\\Account\\UserDetailUpdateRequestValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T16:00:24.609Z",
+              "WhenOpened": "2025-04-17T16:44:28.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NotificationDtos.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Dtos\\NotificationDtos.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Dtos\\NotificationDtos.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Dtos\\NotificationDtos.cs",
-              "RelativeToolTip": "HMD.TaskManagement.Application\\Dtos\\NotificationDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UserDetailUpdateRequestHandler.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Account\\UserDetailUpdateRequestHandler.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Handlers\\Account\\UserDetailUpdateRequestHandler.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Account\\UserDetailUpdateRequestHandler.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Handlers\\Account\\UserDetailUpdateRequestHandler.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBoAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:45:04.863Z",
+              "WhenOpened": "2025-04-17T16:41:24.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "PersonalManagementSystem\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeToolTip": "PersonalManagementSystem\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwDkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T15:40:04.071Z",
+              "DocumentIndex": 4,
+              "Title": "UserDetailRequestHandler.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Account\\UserDetailRequestHandler.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Handlers\\Account\\UserDetailRequestHandler.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Handlers\\Account\\UserDetailRequestHandler.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Handlers\\Account\\UserDetailRequestHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T16:41:02.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\Notification.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Domain\\Entities\\Notification.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Domain\\Entities\\Notification.cs",
-              "RelativeToolTip": "HMD.TaskManagement.Domain\\Entities\\Notification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "AccountDtos.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Dtos\\AccountDtos.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Dtos\\AccountDtos.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Dtos\\AccountDtos.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Dtos\\AccountDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:36:03.637Z",
+              "WhenOpened": "2025-04-17T16:38:31.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IOCExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Persistence\\IOCExtensions.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Persistence\\IOCExtensions.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Persistence\\IOCExtensions.cs",
-              "RelativeToolTip": "HMD.TaskManagement.Persistence\\IOCExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABSAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "AccountRequests.cs",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Requests\\AccountRequests.cs",
+              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Requests\\AccountRequests.cs",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Requests\\AccountRequests.cs",
+              "RelativeToolTip": "HMD.TaskManagement.Application\\Requests\\AccountRequests.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:24:17.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "INotificationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Interfaces\\INotificationRepository.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Application\\Interfaces\\INotificationRepository.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Application\\Interfaces\\INotificationRepository.cs",
-              "RelativeToolTip": "HMD.TaskManagement.Application\\Interfaces\\INotificationRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:20:24.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "NotificationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Persistence\\Repositories\\NotificationRepository.cs",
-              "RelativeDocumentMoniker": "HMD.TaskManagement.Persistence\\Repositories\\NotificationRepository.cs",
-              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\HMD.TaskManagement.Persistence\\Repositories\\NotificationRepository.cs",
-              "RelativeToolTip": "HMD.TaskManagement.Persistence\\Repositories\\NotificationRepository.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwDQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:19:00.884Z",
+              "WhenOpened": "2025-04-17T16:37:18.535Z",
               "EditorCaption": ""
             }
           ]

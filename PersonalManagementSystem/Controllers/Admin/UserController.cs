@@ -30,6 +30,7 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             return RedirectToAction("List");
         }
 
+
         public async Task<IActionResult> Update(int id)
         {
             var result = await this.mediator.Send(new MemberGetByIdRequest(id));
@@ -101,6 +102,46 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
         {
             await this.mediator.Send(new MemberDeleteRequest(id));
             return RedirectToAction("List");
+        }
+
+        public async Task<IActionResult> UserDetail()
+        {
+            ViewBag.Active = "Profil";
+            var userId = int.Parse(User.Claims.SingleOrDefault(x => x.Type == "UserId")?.Value ?? "0");
+            var updated = await this.mediator.Send(new UserDetailRequest(userId));
+            return View(new UserDetailUpdateRequest(updated.Data.Id, updated.Data.Name, updated.Data.Surname, updated.Data.Password));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UserDetail(UserDetailUpdateRequest request)
+        {
+            ViewBag.Active = "Profil";
+
+            var result = await this.mediator.Send(request);
+
+            if (result.IsSuccess)
+            {
+                return RedirectToAction("UserDetail");
+            }
+            else
+            {
+                if (result.Errors?.Count > 0)
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", result.ErrorMessage ?? "Sistemsel bir hata oluştu, üreticinize başvurun");
+                }
+            }
+
+
+            return View(request);
+
+
         }
 
     }

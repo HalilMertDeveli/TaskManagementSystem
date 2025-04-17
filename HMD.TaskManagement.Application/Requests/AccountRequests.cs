@@ -29,4 +29,10 @@ namespace HMD.TaskManagement.Application.Requests
 
     public record MemberResetPasswordRequest(int Id):IRequest<Result<NoData>>;
     public record MemberDeleteRequest(int Id):IRequest<Result<NoData>>;
+
+    public record UserDetailRequest(int Id) : IRequest<Result<UserDetailDto>>;
+
+    public record UserDetailUpdateRequest(int Id, string Name, string Surname, string Password) : IRequest<Result<NoData>>;
+
+
 }
