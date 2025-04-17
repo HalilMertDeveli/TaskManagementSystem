@@ -1,0 +1,36 @@
+﻿@model MemberCreateRequest
+@{
+    Layout = "_AdminLayout";
+    ViewBag.Title = "İş Emri Ekleme Ekranı";
+}
+<form asp-action="Create" asp-controller="User" asp-area="Admin" method="post">
+
+    <div class="mb-3">
+        <label class="from-label">İsim :</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+
+    <div class="mb-3">
+        <label class="from-label">Soy isim:</label>
+        <textarea asp-for="Surname" class="form-control"></textarea>
+    </div>
+    
+    <div class="mb-3">
+        <label class="from-label">Kullanıcı Adı:</label>
+        <textarea asp-for="Username" class="form-control"></textarea>
+    </div>
+
+   
+
+
+    <div class="mb-3">
+        <a asp-action="List" asp-controller="User" asp-area="Admin" class="btn btn-secondary">Vazgeç</a>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger">
+    </div>
+
+
+</form>
