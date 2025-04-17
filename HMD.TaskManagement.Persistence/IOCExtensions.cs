@@ -20,6 +20,7 @@ namespace HMD.TaskManagement.Persistence
             services.AddScoped<IPriorityRepository, PriorityRepository>();
             services.AddScoped<IAppTaskRepository, AppTaskRepository>();
             services.AddScoped<ITaskReportRepository, TaskReportRepository>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
         }
 
     }
