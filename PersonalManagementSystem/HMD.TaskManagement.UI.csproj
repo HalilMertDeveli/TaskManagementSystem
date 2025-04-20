@@ -18,9 +18,4 @@
     <ProjectReference Include="..\HMD.TaskManagement.Persistence\HMD.TaskManagement.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Member\" />
-    <Folder Include="Controllers\Member\" />
-  </ItemGroup>
-
 </Project>

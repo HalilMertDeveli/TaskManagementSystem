@@ -1,4 +1,5 @@
 ﻿using HMD.TaskManagement.Application.Dtos;
+using HMD.TaskManagement.Application.Enums;
 using HMD.TaskManagement.Application.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
@@ -17,14 +18,13 @@ namespace HMD.TaskManagement.UI.Controllers
             this.mediator = mediator;
         }
 
-
-
         [HttpGet]
         public IActionResult Login()
         {
             return View(new LoginRequest("", ""));
         }
 
+        //Custom cookie based auth.
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequest request)
         {
@@ -33,7 +33,10 @@ namespace HMD.TaskManagement.UI.Controllers
             {
                 await SetAuthCookie(result.Data, request.RememberMe);
 
-                return RedirectToAction("Index", "Home", new { area = "Admin" });
+                if (result.Data.Role == RoleType.Admin)
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
+                else
+                    return RedirectToAction("UserDetail", "User", new { area = "Member" });
             }
             else
             {
@@ -92,15 +95,20 @@ namespace HMD.TaskManagement.UI.Controllers
             return RedirectToAction("Login");
         }
 
-        private async Task SetAuthCookie(LoginResponseDto dto, bool RememberMe)
+
+        private async Task SetAuthCookie(LoginResponseDto dto, bool rememberMe)
         {
+            // User => 
+
+            User.Claims.SingleOrDefault(x => x.Type == ClaimTypes.Name);
+
             var claims = new List<Claim>
-            {
-                new Claim("UserId",dto.Id+""),
-                new Claim("Name", dto.Name),
-                new Claim("Surname", dto.Surname),
-                new Claim(ClaimTypes.Role, dto.Role.ToString()),
-            };
+        {
+            new Claim("UserId",dto.Id+""),
+            new Claim("Name", dto.Name),
+            new Claim("Surname", dto.Surname),
+            new Claim(ClaimTypes.Role, dto.Role.ToString()),
+        };
 
             var claimsIdentity = new ClaimsIdentity(
                 claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -110,12 +118,12 @@ namespace HMD.TaskManagement.UI.Controllers
                 //AllowRefresh = <bool>,
                 // Refreshing the authentication session should be allowed.
 
-                ExpiresUtc = DateTimeOffset.UtcNow.AddDays(30),//time
+                ExpiresUtc = DateTimeOffset.UtcNow.AddDays(30),
                 // The time at which the authentication ticket expires. A 
                 // value set here overrides the ExpireTimeSpan option of 
                 // CookieAuthenticationOptions set with AddCookie.
 
-                IsPersistent = RememberMe,
+                IsPersistent = rememberMe,
                 // Whether the authentication session is persisted across 
                 // multiple requests. When used with cookies, controls
                 // whether the cookie's lifetime is absolute (matching the

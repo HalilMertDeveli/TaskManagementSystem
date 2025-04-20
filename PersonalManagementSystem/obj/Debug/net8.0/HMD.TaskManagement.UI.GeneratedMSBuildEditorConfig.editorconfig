@@ -76,6 +76,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Areas/Member/Views/AppTask/CreateReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWVtYmVyXFZpZXdzXEFwcFRhc2tcQ3JlYXRlUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Areas/Member/Views/AppTask/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWVtYmVyXFZpZXdzXEFwcFRhc2tcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Areas/Member/Views/AppTask/ReportList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWVtYmVyXFZpZXdzXEFwcFRhc2tcUmVwb3J0TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Areas/Member/Views/AppTask/UpdateReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWVtYmVyXFZpZXdzXEFwcFRhc2tcVXBkYXRlUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Areas/Member/Views/Notification/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWVtYmVyXFZpZXdzXE5vdGlmaWNhdGlvblxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Areas/Member/Views/Shared/_MemberLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWVtYmVyXFZpZXdzXFNoYXJlZFxfTWVtYmVyTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Areas/Member/Views/User/UserDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWVtYmVyXFZpZXdzXFVzZXJcVXNlckRldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Areas/Member/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWVtYmVyXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/halil/source/repos/murder_game_asp/PersonalManagementSystem/PersonalManagementSystem/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

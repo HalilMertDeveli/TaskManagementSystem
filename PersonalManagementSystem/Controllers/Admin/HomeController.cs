@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using HMD.TaskManagement.Application.Requests;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HMD.TaskManagement.UI.Controllers.Admin
@@ -7,10 +9,21 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
     [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IMediator mediator;
+
+        public HomeController(IMediator mediator)
         {
-            ViewBag.Title = "Index";
-            return View();
+            this.mediator = mediator;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var userId = int.Parse(User.Claims.SingleOrDefault(x => x.Type == "UserId")?.Value ?? "0");
+
+            ViewBag.Active = "Home";
+
+            var result = await this.mediator.Send(new DashboardRequest(userId));
+            return View(result.Data);
         }
     }
 }

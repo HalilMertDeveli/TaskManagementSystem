@@ -23,31 +23,27 @@ namespace HMD.TaskManagement.Application.Extensions
 
         public static Priority ToMap(this PriorityCreateRequest request)
         {
+
             return new Priority
             {
-                Defination = request.Definition
-
+                Defination = request.Definition,
             };
         }
 
         public static AppTasks ToMap(this AppTaskCreateRequest request)
         {
-            return new AppTasks()
+            return new AppTasks
             {
                 Description = request.Description,
-                PriorityId = request.PriorityId,
                 Title = request.Title,
-                State = false,
+                PriorityId = request.PriorityId,
+                State = false
             };
         }
 
         public static AppTaskListDto ToMap(this AppTasks appTask)
         {
-            return new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description, appTask?.Priority?.Defination,
-                appTask?.State ?? false, appTask.AppUserId,
-                appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null,
-                appTask.PriorityId);
-
+            return new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description, appTask?.Priority?.Defination, appTask?.State ?? false, appTask.AppUserId, appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null, appTask.PriorityId);
         }
 
         public static List<MemberListDto> ToMap(this List<AppUser> users)
@@ -57,7 +53,7 @@ namespace HMD.TaskManagement.Application.Extensions
 
         public static List<TaskReportListDto> ToMap(this List<TaskReport> list)
         {
-            return list.Select(x => new TaskReportListDto(x.Id,x.Defination,x.Detail,x.AppTaskId)).ToList();
+            return list.Select(x => new TaskReportListDto(x.Id, x.Defination, x.Detail, x.AppTaskId, x.AppTask.Title)).ToList();
         }
 
     }

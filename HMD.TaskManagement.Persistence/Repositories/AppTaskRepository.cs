@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System.Linq;
+using System.Linq.Expressions;
 using HMD.TaskManagement.Application.Dtos;
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Domain.Entities;
@@ -17,6 +18,12 @@ namespace HMD.TaskManagement.Persistence.Repositories
             this.context = context;
         }
 
+        public async Task<int> CreateAsync(AppTasks task)
+        {
+            await this.context.Tasks.AddAsync(task);
+            return await this.context.SaveChangesAsync();
+        }
+
         public async Task<PagedData<AppTasks>> GetAllAsync(int activePage, string? s = null, int pageSize = 10)
         {
             var query = this.context.Tasks.AsQueryable();
@@ -25,21 +32,30 @@ namespace HMD.TaskManagement.Persistence.Repositories
                 query = query.Where(x => x.Title.ToLower().Contains(s.ToLower()));
             }
 
-            var list = await query.Include(x => x.AppUser).Include(x => x.Priority). Include(x => x.Priority).AsNoTracking().ToPagedAsync(activePage, pageSize);
+            var list = await query.Include(x => x.AppUser).Include(x => x.Priority).AsNoTracking().ToPagedAsync(activePage, pageSize);
             return list;
         }
 
-        public async Task<int> CreateAsync(AppTasks appTasks)
+        public async Task<PagedData<AppTasks>> GetAllByUserIdAsync(int activePage, int userId, string? s = null, int pageSize = 10)
         {
-            await this.context.Tasks.AddAsync(appTasks);
-            return await this.context.SaveChangesAsync();
+            var query = this.context.Tasks.AsQueryable();
+            if (!string.IsNullOrEmpty(s))
+            {
+                query = query.Where(x => x.Title.ToLower().Contains(s.ToLower()));
+            }
 
+            var list = await query.Where(x => x.AppUserId == userId).Include(x => x.AppUser).Include(x => x.Priority).AsNoTracking().ToPagedAsync(activePage, pageSize);
+            return list;
         }
 
         public async Task DeleteAsync(AppTasks deleted)
         {
-             this.context.Tasks.Remove(deleted);
-             await this.context.SaveChangesAsync();
+            this.context.Tasks.Remove(deleted);
+            await this.context.SaveChangesAsync();
+        }
+        public async Task<List<AppTasks>?> GetAllByFilter(Expression<Func<AppTasks, bool>> filter)
+        {
+            return await this.context.Tasks.Where(filter).ToListAsync();
         }
 
         public async Task<AppTasks?> GetByFilterAsync(Expression<Func<AppTasks, bool>> filter)
@@ -47,7 +63,7 @@ namespace HMD.TaskManagement.Persistence.Repositories
             return await this.context.Tasks.SingleOrDefaultAsync(filter);
         }
 
-        public async Task<AppTasks?> GetByFilterAsNoTracking(Expression<Func<AppTasks, bool>> filter)
+        public async Task<AppTasks?> GetByFilterAsNoTrackingAsync(Expression<Func<AppTasks, bool>> filter)
         {
             return await this.context.Tasks.AsNoTracking().SingleOrDefaultAsync(filter);
         }
@@ -56,5 +72,6 @@ namespace HMD.TaskManagement.Persistence.Repositories
         {
             return await this.context.SaveChangesAsync();
         }
+
     }
 }

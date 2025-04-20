@@ -25,7 +25,7 @@ namespace HMD.TaskManagement.Application.Handlers.AppTask
         {
             
 
-            var result= await this.repository.GetByFilterAsNoTracking(x => x.Id == request.Id);
+            var result= await this.repository.GetByFilterAsNoTrackingAsync(x => x.Id == request.Id);
             return new Result<AppTaskListDto>(result.ToMap(), true, null, null);
         }
     }
