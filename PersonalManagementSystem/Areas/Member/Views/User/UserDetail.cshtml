@@ -1,4 +1,4 @@
-﻿@model UserDetailUpdateRequest
+﻿@* @model UserDetailUpdateRequest
 @{
     Layout = "_MemberLayout";
     ViewBag.Title = "Profil Ekranı";
@@ -34,4 +34,79 @@
 
     <div asp-validation-summary="All" class="text-danger">
     </div>
-</form>
+</form> *@
+
+
+@model UserDetailUpdateRequest
+@{
+    Layout = "_MemberLayout";
+    ViewBag.Title = "Profil Ekranı";
+}
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="~/areas/Member/User/ProfileCard.css" asp-append-version="true" />
+
+</head>
+
+<body>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-xl-6 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white">
+                                    <div class="m-b-25">
+                                        <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+                                    </div>
+                                    <h6 class="f-w-600">@Model.Name @Model.Surname</h6>
+                                    <p>Üye</p>
+                                    <i class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-block">
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Profil Bilgileri</h6>
+                                    <form asp-action="UserDetail" asp-controller="User" asp-area="Member" method="post">
+                                        <input type="hidden" asp-for="Id" />
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Ad :</label>
+                                            <input asp-for="Name" class="form-control" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Soyad :</label>
+                                            <input asp-for="Surname" class="form-control" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Parola :</label>
+                                            <input asp-for="Password" class="form-control" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                                        </div>
+
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+

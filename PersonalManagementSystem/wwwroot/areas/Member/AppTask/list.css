@@ -1,0 +1,88 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+/* SEARCH STYLING */
+#search {
+    align-items: center;
+    background: #1E3A8A;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em auto;
+    padding: 0.5em 1em;
+    transition: all 0.5s;
+    width: 500px;
+}
+
+    #search:hover,
+    #search:focus {
+        background: #1E3A8A;
+    }
+
+    #search button,
+    #search input {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        color: white;
+        font: inherit;
+        outline: 0;
+    }
+
+    #search input {
+        flex: 1;
+        font-size: 23px;
+        font-weight: 500;
+    }
+
+        #search input::placeholder {
+            color: #fff;
+        }
+
+#button i {
+    font-size: 23px;
+}
+
+.note {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* TABLE STYLING */
+body {
+    font-family: 'Calibri', sans-serif !important;
+}
+
+.card {
+    background-color: #F4F6F8;
+    border: none;
+    border-radius: 0px;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.table {
+    width: 100%;
+    background-color: transparent;
+}
+
+    .table thead th {
+        font-weight: 500;
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+        padding: 1rem;
+    }
+
+    .table td {
+        vertical-align: middle;
+        padding: 1rem;
+    }

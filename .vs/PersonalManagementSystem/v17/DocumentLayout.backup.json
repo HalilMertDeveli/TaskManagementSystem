@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\areas\\member\\views\\shared\\_memberlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\areas\\member\\views\\shared\\_memberlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\areas\\member\\views\\apptask\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\areas\\member\\views\\apptask\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\areas\\member\\views\\apptask\\createreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\areas\\member\\views\\apptask\\createreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\wwwroot\\areas\\member\\apptask\\list.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\wwwroot\\areas\\member\\apptask\\list.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|c:\\users\\halil\\source\\repos\\murder_game_asp\\personalmanagementsystem\\personalmanagementsystem\\areas\\member\\views\\apptask\\reportlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71092922-5154-47C1-A354-8E16C57AC417}|PersonalManagementSystem\\HMD.TaskManagement.UI.csproj|solutionrelative:personalmanagementsystem\\areas\\member\\views\\apptask\\reportlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +43,71 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_MemberLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Member\\Views\\Shared\\_MemberLayout.cshtml",
+              "RelativeDocumentMoniker": "PersonalManagementSystem\\Areas\\Member\\Views\\Shared\\_MemberLayout.cshtml",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Member\\Views\\Shared\\_MemberLayout.cshtml*",
+              "RelativeToolTip": "PersonalManagementSystem\\Areas\\Member\\Views\\Shared\\_MemberLayout.cshtml*",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAwwHMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-23T07:49:06.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateReport.cshtml",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\CreateReport.cshtml",
+              "RelativeDocumentMoniker": "PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\CreateReport.cshtml",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\CreateReport.cshtml",
+              "RelativeToolTip": "PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\CreateReport.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-23T07:32:30.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "list.css",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Member\\AppTask\\list.css",
+              "RelativeDocumentMoniker": "PersonalManagementSystem\\wwwroot\\areas\\Member\\AppTask\\list.css",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Member\\AppTask\\list.css",
+              "RelativeToolTip": "PersonalManagementSystem\\wwwroot\\areas\\Member\\AppTask\\list.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-23T07:26:59.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReportList.cshtml",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\ReportList.cshtml",
+              "RelativeDocumentMoniker": "PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\ReportList.cshtml",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\ReportList.cshtml",
+              "RelativeToolTip": "PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\ReportList.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-23T07:25:11.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\List.cshtml",
+              "RelativeDocumentMoniker": "PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\List.cshtml",
+              "ToolTip": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\List.cshtml",
+              "RelativeToolTip": "PersonalManagementSystem\\Areas\\Member\\Views\\AppTask\\List.cshtml",
+              "ViewState": "AgIAANoAAAAAAAAAAAAcwOgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T15:03:04.858Z",
+              "EditorCaption": ""
             }
           ]
         }

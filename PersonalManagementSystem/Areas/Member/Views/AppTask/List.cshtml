@@ -1,4 +1,4 @@
-﻿@model PagedResult<AppTaskListDto>
+﻿@* @model PagedResult<AppTaskListDto>
 @{
     Layout = "_MemberLayout";
     ViewBag.Title = "İş Emri Tanımlama Ekranı";
@@ -117,4 +117,212 @@
         </ul>
     </nav>
 
+</div> *@
+
+    
+@* @model PagedResult<AppTaskListDto>
+@{
+    Layout = "_MemberLayout";
+    ViewBag.Title = "İş Emri Tanımlama Ekranı";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/areas/Member/AppTask/list.css" asp-append-version="true" />
+
+<div class="container mt-5">
+
+    <form asp-action="List" asp-controller="AppTask" asp-area="Member" method="get">
+        <div id="search" class="mx-auto">
+            <input id="input" type="text" name="s" placeholder="İş Emri Ara..." />
+            <button id="button" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="note text-center">Kelime gir & enter'a bas</div>
+    </form>
+
+    @if (!string.IsNullOrEmpty(ViewBag.s))
+    {
+        <div class="alert alert-secondary mt-3" role="alert">
+            Şu anda <strong> @ViewBag.s </strong> arama filtresine göre kayıtları görmektesiniz
+            <a asp-action="List" asp-controller="AppTask" asp-route-s="" asp-area="Member" class="float-end">Filtreyi Kaldır</a>
+        </div>
+    }
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title m-b-0">İş Emirleri</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>İş Emri</th>
+                                <th>Aciliyet</th>
+                                <th>Durum</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Data?.Count > 0)
+                            {
+                                foreach (var item in Model.Data)
+                                {
+                                    <tr>
+                                        <td>@item.Title</td>
+                                        <td>@item.PriorityDefinition</td>
+                                        <td>@(item.State ? "Tamamlandı" : "Tamamlanmadı")</td>
+                                        <td>
+                                            @if (!item.State)
+                                            {
+                                                <a onclick="return confirm('Tamamlamak istediğinizden emin misiniz?')"
+                                                   asp-action="CompleteTask"
+                                                   asp-controller="AppTask"
+                                                   asp-area="Member"
+                                                   asp-route-id="@item.Id"
+                                                   class="btn btn-sm btn-secondary">
+                                                    Tamamla
+                                                </a>
+                                            }
+                                            <a asp-action="ReportList"
+                                               asp-controller="AppTask"
+                                               asp-area="Member"
+                                               asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-primary">
+                                                Raporları Görüntüle
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center">Herhangi bir iş emri bulunamadı.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="float-end mt-3">
+        <nav aria-label="Sayfalama">
+            <ul class="pagination">
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+                    <li class="page-item @(Model.ActivePage == i ? "active" : "")">
+                        <a class="page-link" asp-route-activePage="@i" asp-route-s="@ViewBag.s" asp-action="List" asp-controller="AppTask" asp-area="Member">@i</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+ *@
+ 
+@model PagedResult<AppTaskListDto>
+@{
+    Layout = "_MemberLayout";
+    ViewBag.Title = "İş Emri Tanımlama Ekranı";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/areas/Member/AppTask/list.css" asp-append-version="true" />
+
+<div class="container mt-5">
+
+    <form asp-action="List" asp-controller="AppTask" asp-area="Member" method="get">
+        <div id="search" class="mx-auto">
+            <input id="input" type="text" name="s" placeholder="İş Emri Ara..." />
+            <button id="button" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="note text-center">Kelime gir & enter'a bas</div>
+    </form>
+
+    @if (!string.IsNullOrEmpty(ViewBag.s))
+    {
+        <div class="alert alert-secondary mt-3" role="alert">
+            Şu anda <strong> @ViewBag.s </strong> arama filtresine göre kayıtları görmektesiniz
+            <a asp-action="List" asp-controller="AppTask" asp-route-s="" asp-area="Member" class="float-end">Filtreyi Kaldır</a>
+        </div>
+    }
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title m-b-0">İş Emirleri</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                             
+                                <th>İş Emri</th>
+                                <th>Aciliyet</th>
+                                <th>Durum</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody class="customtable">
+                            @if (Model.Data?.Count > 0)
+                            {
+                                foreach (var item in Model.Data)
+                                {
+                                    <tr>
+                                        
+                                        <td>@item.Title</td>
+                                        <td>@item.PriorityDefinition</td>
+                                        <td>@(item.State ? "Tamamlandı" : "Tamamlanmadı")</td>
+                                        <td>
+                                            @if (!item.State)
+                                            {
+                                                <a onclick="return confirm('Tamamlamak istediğinizden emin misiniz?')"
+                                                   asp-action="CompleteTask"
+                                                   asp-controller="AppTask"
+                                                   asp-area="Member"
+                                                   asp-route-id="@item.Id"
+                                                   class="btn btn-sm btn-secondary">
+                                                    Tamamla
+                                                </a>
+                                            }
+                                            <a asp-action="ReportList"
+                                               asp-controller="AppTask"
+                                               asp-area="Member"
+                                               asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-primary">
+                                                Raporları Görüntüle
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="5" class="text-center">Herhangi bir iş emri bulunamadı.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="float-end mt-3">
+        <nav aria-label="Sayfalama">
+            <ul class="pagination">
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+                    <li class="page-item @(Model.ActivePage == i ? "active" : "")">
+                        <a class="page-link" asp-route-activePage="@i" asp-route-s="@ViewBag.s" asp-action="List" asp-controller="AppTask" asp-area="Member">@i</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
 </div>

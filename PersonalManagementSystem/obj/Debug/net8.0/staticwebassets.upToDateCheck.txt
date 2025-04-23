@@ -1,3 +1,7 @@
+wwwroot\areas\Member\AppTask\list.css
+wwwroot\areas\Member\Shared\shared.css
+wwwroot\areas\Member\Shared\shared.js
+wwwroot\areas\Member\User\ProfileCard.css
 wwwroot\bootstrap\css\bootstrap.css
 wwwroot\bootstrap\css\bootstrap.css.map
 wwwroot\bootstrap\css\bootstrap.min.css
@@ -134,7 +138,8 @@ wwwroot\bootstrap\scss\mixins\_utilities.scss
 wwwroot\bootstrap\scss\mixins\_visually-hidden.scss
 wwwroot\bootstrap\scss\utilities\_api.scss
 wwwroot\bootstrap\scss\vendor\_rfs.scss
-wwwroot\css\site.css
+wwwroot\css\Account\images\login_icon.gif
+wwwroot\css\Account\login_sing_up.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

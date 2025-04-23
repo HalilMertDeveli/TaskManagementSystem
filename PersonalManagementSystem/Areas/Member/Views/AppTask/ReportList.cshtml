@@ -4,53 +4,77 @@
     ViewBag.Title = "Rapor Tanımlama Ekranı";
 }
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/areas/Member/AppTask/list.css" asp-append-version="true" />
 
-<h5>@ViewBag.TaskTitle  Raporları</h5>
-<a asp-action="CreateReport" asp-controller="AppTask" asp-route-taskId="@ViewBag.TaskId" asp-area="Member">Yeni Rapor Yaz</a>
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5>@ViewBag.TaskTitle Raporları</h5>
+        <a asp-action="CreateReport"
+           asp-controller="AppTask"
+           asp-route-taskId="@ViewBag.TaskId"
+           asp-area="Member"
+           class="btn btn-success">
+            Yeni Rapor Yaz
+        </a>
+    </div>
 
-<table class="table table-sm mt-2">
-    <thead>
-    <tr>
-
-        <th scope="col">Başlık</th>
-        <th scope="col">Açıklama</th>
-
-        <th scope="col"></th>
-
-
-
-    </tr>
-    </thead>
-    <tbody>
-    @if (Model.Count > 0)
-    {
-        foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Definition</td>
-                <td>@item.Detail</td>
-                  
-
-                <td>
-                    <a asp-action="UpdateReport" asp-controller="AppTask" asp-area="Member" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">Düzenle</a>
-                    <a asp-action="DeleteReport" onclick="return confirm('silmek istediğiniz emin misin ?')" class="btn btn-sm btn-primary" asp-controller="AppTask" asp-area="Member" asp-route-id="@item.Id" asp-route-taskId="@ViewBag.TaskId">Sil</a>
-
-                </td>
-
-            </tr>
-        }
-    }
-    else
-    {
-        <tr>
-
-            <td colspan="5">Herhangi bir rapor bulunamadı.</td>
-
-        </tr>
-    }
-
-
-
-
-    </tbody>
-</table>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title m-b-0">Rapor Listesi</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                               
+                                <th>Başlık</th>
+                                <th>Açıklama</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody class="customtable">
+                            @if (Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                      
+                                        <td>@item.Definition</td>
+                                        <td>@item.Detail</td>
+                                        <td>
+                                            <a asp-action="UpdateReport"
+                                               asp-controller="AppTask"
+                                               asp-area="Member"
+                                               asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-secondary">
+                                                Düzenle
+                                            </a>
+                                            <a asp-action="DeleteReport"
+                                               onclick="return confirm('Silmek istediğinizden emin misiniz?')"
+                                               asp-controller="AppTask"
+                                               asp-area="Member"
+                                               asp-route-id="@item.Id"
+                                               asp-route-taskId="@ViewBag.TaskId"
+                                               class="btn btn-sm btn-primary">
+                                                Sil
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center">Herhangi bir rapor bulunamadı.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

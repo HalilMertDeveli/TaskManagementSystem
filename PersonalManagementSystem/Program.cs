@@ -12,7 +12,7 @@ namespace PersonalManagementSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            
             //IOC
             builder.Services.AddPersistenceServices(builder.Configuration);
             builder.Services.AddApplicationServices();
