@@ -1,3 +1,7 @@
+wwwroot\areas\Admin\AppTask\List.css
+wwwroot\areas\Admin\Shared\Shared.css
+wwwroot\areas\Admin\Shared\Shared.js
+wwwroot\areas\Admin\User\UserCard.css
 wwwroot\areas\Member\AppTask\list.css
 wwwroot\areas\Member\Shared\shared.css
 wwwroot\areas\Member\Shared\shared.js

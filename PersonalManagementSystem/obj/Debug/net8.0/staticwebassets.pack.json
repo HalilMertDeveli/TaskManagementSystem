@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\HMD.TaskManagement.UI.oax6olu0ju.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\AppTask\\List.css",
+      "PackagePath": "staticwebassets\\areas\\Admin\\AppTask\\List.css"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Shared\\Shared.css",
+      "PackagePath": "staticwebassets\\areas\\Admin\\Shared\\Shared.css"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Shared\\Shared.js",
+      "PackagePath": "staticwebassets\\areas\\Admin\\Shared\\Shared.js"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\User\\UserCard.css",
+      "PackagePath": "staticwebassets\\areas\\Admin\\User\\UserCard.css"
+    },
+    {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Member\\AppTask\\list.css",
       "PackagePath": "staticwebassets\\areas\\Member\\AppTask\\list.css"
     },

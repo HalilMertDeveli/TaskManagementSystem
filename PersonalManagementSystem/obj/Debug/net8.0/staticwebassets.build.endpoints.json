@@ -85,6 +85,334 @@
       ]
     },
     {
+      "Route": "areas/Admin/AppTask/List.css",
+      "AssetFile": "areas/Admin/AppTask/List.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1103"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:55:03 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/AppTask/List.yntydylivd.css",
+      "AssetFile": "areas/Admin/AppTask/List.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1103"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:55:03 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yntydylivd"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4="
+        },
+        {
+          "Name": "label",
+          "Value": "areas/Admin/AppTask/List.css"
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Shared/Shared.28lj69ubcl.css",
+      "AssetFile": "areas/Admin/Shared/Shared.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3341"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zuOX0NpG+f7Vxc4HM7cBUNosEQ+bMLWPUusBWbz87Ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:31:40 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "28lj69ubcl"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zuOX0NpG+f7Vxc4HM7cBUNosEQ+bMLWPUusBWbz87Ag="
+        },
+        {
+          "Name": "label",
+          "Value": "areas/Admin/Shared/Shared.css"
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Shared/Shared.css",
+      "AssetFile": "areas/Admin/Shared/Shared.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3341"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zuOX0NpG+f7Vxc4HM7cBUNosEQ+bMLWPUusBWbz87Ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:31:40 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zuOX0NpG+f7Vxc4HM7cBUNosEQ+bMLWPUusBWbz87Ag="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Shared/Shared.hnqd0j40z9.js",
+      "AssetFile": "areas/Admin/Shared/Shared.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LTRnXP4AM3x/qGRyffLzDA0pbOpJDLyH0ZvlSY0EDWg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:31:40 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hnqd0j40z9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LTRnXP4AM3x/qGRyffLzDA0pbOpJDLyH0ZvlSY0EDWg="
+        },
+        {
+          "Name": "label",
+          "Value": "areas/Admin/Shared/Shared.js"
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Shared/Shared.js",
+      "AssetFile": "areas/Admin/Shared/Shared.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LTRnXP4AM3x/qGRyffLzDA0pbOpJDLyH0ZvlSY0EDWg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:31:40 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LTRnXP4AM3x/qGRyffLzDA0pbOpJDLyH0ZvlSY0EDWg="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/User/UserCard.css",
+      "AssetFile": "areas/Admin/User/UserCard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1314"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G0BGxSYdBbnFdwmoV7UZqdJLF1QN5JcjkLjVAzt49Uw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:47:43 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G0BGxSYdBbnFdwmoV7UZqdJLF1QN5JcjkLjVAzt49Uw="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/User/UserCard.hl6ern7qji.css",
+      "AssetFile": "areas/Admin/User/UserCard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1314"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G0BGxSYdBbnFdwmoV7UZqdJLF1QN5JcjkLjVAzt49Uw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:47:43 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hl6ern7qji"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G0BGxSYdBbnFdwmoV7UZqdJLF1QN5JcjkLjVAzt49Uw="
+        },
+        {
+          "Name": "label",
+          "Value": "areas/Admin/User/UserCard.css"
+        }
+      ]
+    },
+    {
       "Route": "areas/Member/AppTask/list.css",
       "AssetFile": "areas/Member/AppTask/list.css",
       "Selectors": [],

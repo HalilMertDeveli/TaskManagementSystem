@@ -1,4 +1,4 @@
-﻿@model PagedResult<AppTaskListDto>
+﻿@* @model PagedResult<AppTaskListDto>
 @{
     Layout = "_AdminLayout";
     ViewBag.Title = "İş Emri Tanımalama tanımlama";
@@ -138,4 +138,126 @@
 
 
     </div>
+</div> *@
+
+
+
+
+<!-- admin-task-list.html -->
+ @model PagedResult<AppTaskListDto>
+@{
+    Layout = "_AdminLayout";
+    ViewBag.Title = "İş Emri Tanımlama";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<div class="row">
+    <div class="col-12 text-center mb-3">
+        <a asp-action="Create" asp-controller="AppTask" asp-area="Admin" class="btn btn-sm btn-warning">Yeni İş Emri Ekle</a>
+    </div>
+
+    <div class="col-12">
+        <form asp-action="List" asp-controller="AppTask" asp-area="Admin" method="get">
+            <div class="d-flex justify-content-center">
+                <div class="input-group w-50">
+                    <input type="text" name="s" class="form-control" placeholder="Search..." />
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    @if (!string.IsNullOrEmpty(ViewBag.s))
+    {
+        <div class="col-12 mt-3">
+            <div class="alert alert-success" role="alert">
+                Şu anda <strong>@ViewBag.s</strong> arama filtresine göre kayıtları görmektesiniz
+                <a asp-action="List" asp-controller="AppTask" asp-route-s="" asp-area="Admin" class="float-end">Filtreyi kaldır</a>
+            </div>
+        </div>
+    }
+
+    <div class="page-content page-container mt-4" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">İş Emri Listesi</h4>
+                            <p class="card-description">Detaylı iş emri tablosu</p>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Avatar</th>
+                                        <th>Atanan işçi</th>
+                                        <th>İş Emri</th>
+                                        <th>Aciliyet</th>
+                                        <th>Durum</th>
+                                        <th>İlerleme</th>
+                                        <th>Bitiş Tarihi</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @if (Model.Data?.Count > 0)
+                                    {
+                                        foreach (var item in Model.Data)
+                                        {
+                                            <tr>
+                                                <td class="py-1">
+                                                    <img src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="image">
+                                                </td>
+                                                <td>
+                                                    @(item.AppUserId.HasValue ? item.AppUserFullName : "Atanmadı")
+                                                </td>
+                                                <td>@item.Title</td>
+                                                <td>@item.PriorityDefinition</td>
+                                                <td>@(item.State ? "Tamamlandı" : "Tamamlanmadı")</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td>01.06.2025</td>
+                                                <td>
+                                                    <a asp-action="Update" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detay</a>
+                                                    <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz?')" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="8">Herhangi bir iş emri bulunamadı.</td>
+                                        </tr>
+                                    }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-3 text-end">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+                            @for (int i = 1; i <= Model.TotalPage; i++)
+                            {
+                                <li class="page-item @(Model.ActivePage == i ? "active" : "")">
+                                    <a class="page-link" asp-route-s="@ViewBag.s" asp-route-activePage="@i" asp-action="List" asp-controller="AppTask" asp-area="Admin">@i</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+ 
