@@ -9,6 +9,18 @@
       "PackagePath": "staticwebassets\\areas\\Admin\\AppTask\\List.css"
     },
     {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Home\\dashboard.css",
+      "PackagePath": "staticwebassets\\areas\\Admin\\Home\\dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Home\\dashboard.js",
+      "PackagePath": "staticwebassets\\areas\\Admin\\Home\\dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Priority\\List.css",
+      "PackagePath": "staticwebassets\\areas\\Admin\\Priority\\List.css"
+    },
+    {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Shared\\Shared.css",
       "PackagePath": "staticwebassets\\areas\\Admin\\Shared\\Shared.css"
     },
@@ -19,6 +31,10 @@
     {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\User\\UserCard.css",
       "PackagePath": "staticwebassets\\areas\\Admin\\User\\UserCard.css"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\User\\UserList.css",
+      "PackagePath": "staticwebassets\\areas\\Admin\\User\\UserList.css"
     },
     {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Member\\AppTask\\list.css",

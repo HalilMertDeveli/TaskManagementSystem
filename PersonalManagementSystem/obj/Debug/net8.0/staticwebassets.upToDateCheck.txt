@@ -1,7 +1,11 @@
 wwwroot\areas\Admin\AppTask\List.css
+wwwroot\areas\Admin\Home\dashboard.css
+wwwroot\areas\Admin\Home\dashboard.js
+wwwroot\areas\Admin\Priority\List.css
 wwwroot\areas\Admin\Shared\Shared.css
 wwwroot\areas\Admin\Shared\Shared.js
 wwwroot\areas\Admin\User\UserCard.css
+wwwroot\areas\Admin\User\UserList.css
 wwwroot\areas\Member\AppTask\list.css
 wwwroot\areas\Member\Shared\shared.css
 wwwroot\areas\Member\Shared\shared.js

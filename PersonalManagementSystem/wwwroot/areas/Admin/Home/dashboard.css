@@ -1,0 +1,69 @@
+﻿body {
+    background: #edf1f5;
+    margin-top: 20px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.57rem;
+}
+
+.note-has-grid .single-note-item .side-stick {
+    position: absolute;
+    width: 3px;
+    height: 35px;
+    left: 0;
+    background-color: rgba(82, 95, 127, .5);
+}
+
+.note-has-grid .single-note-item .point {
+    color: rgba(82, 95, 127, .5);
+}
+
+.page-content.container {
+    padding-top: 20px;
+}
+
+.note-has-grid .note-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.side-stick {
+    position: absolute;
+    width: 3px;
+    height: 35px;
+    left: 0;
+    top: 20px;
+    border-radius: 5px;
+}
+
+.bg-primary {
+    background-color: #007bff !important;
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+

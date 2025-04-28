@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2Lwq9a6Xwbkga7Wk79/f3TXLfx1+UzfI3xxiWvEEkuM=",
+  "Hash": "ELvevC31Gjr0GKXa6lJtyFJi6SeQ4Z9np7h8kMavO9s=",
   "Source": "HMD.TaskManagement.UI",
   "BasePath": "_content/HMD.TaskManagement.UI",
   "Mode": "Default",
@@ -80,6 +80,69 @@
       "OriginalItemSpec": "wwwroot\\areas\\Admin\\AppTask\\List.css"
     },
     {
+      "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Home\\dashboard.css",
+      "SourceId": "HMD.TaskManagement.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\",
+      "BasePath": "_content/HMD.TaskManagement.UI",
+      "RelativePath": "areas/Admin/Home/dashboard#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vqe8gg94pw",
+      "Integrity": "p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\areas\\Admin\\Home\\dashboard.css"
+    },
+    {
+      "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Home\\dashboard.js",
+      "SourceId": "HMD.TaskManagement.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\",
+      "BasePath": "_content/HMD.TaskManagement.UI",
+      "RelativePath": "areas/Admin/Home/dashboard#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ljh2wtv50x",
+      "Integrity": "UalIZoWL7L9323kI5B5UWMbqrv+GPav1G+8cSWsGwNE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\areas\\Admin\\Home\\dashboard.js"
+    },
+    {
+      "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Priority\\List.css",
+      "SourceId": "HMD.TaskManagement.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\",
+      "BasePath": "_content/HMD.TaskManagement.UI",
+      "RelativePath": "areas/Admin/Priority/List#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yntydylivd",
+      "Integrity": "UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\areas\\Admin\\Priority\\List.css"
+    },
+    {
       "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Shared\\Shared.css",
       "SourceId": "HMD.TaskManagement.UI",
       "SourceType": "Discovered",
@@ -141,6 +204,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\areas\\Admin\\User\\UserCard.css"
+    },
+    {
+      "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\User\\UserList.css",
+      "SourceId": "HMD.TaskManagement.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\",
+      "BasePath": "_content/HMD.TaskManagement.UI",
+      "RelativePath": "areas/Admin/User/UserList#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dyjx89twm7",
+      "Integrity": "u4DszuiY1WLPnENub5+KbAlwyJCcCHdKlyaXaKLaRqk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\areas\\Admin\\User\\UserList.css"
     },
     {
       "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Member\\AppTask\\list.css",
@@ -7388,6 +7472,252 @@
       ]
     },
     {
+      "Route": "areas/Admin/Home/dashboard.css",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Home\\dashboard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1173"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 18:22:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Home/dashboard.js",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Home\\dashboard.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "397"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UalIZoWL7L9323kI5B5UWMbqrv+GPav1G+8cSWsGwNE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 18:17:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UalIZoWL7L9323kI5B5UWMbqrv+GPav1G+8cSWsGwNE="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Home/dashboard.ljh2wtv50x.js",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Home\\dashboard.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "397"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UalIZoWL7L9323kI5B5UWMbqrv+GPav1G+8cSWsGwNE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 18:17:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ljh2wtv50x"
+        },
+        {
+          "Name": "label",
+          "Value": "areas/Admin/Home/dashboard.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UalIZoWL7L9323kI5B5UWMbqrv+GPav1G+8cSWsGwNE="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Home/dashboard.vqe8gg94pw.css",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Home\\dashboard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1173"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 18:22:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vqe8gg94pw"
+        },
+        {
+          "Name": "label",
+          "Value": "areas/Admin/Home/dashboard.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Priority/List.css",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Priority\\List.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1103"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 18:03:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/Priority/List.yntydylivd.css",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Priority\\List.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1103"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 18:03:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yntydylivd"
+        },
+        {
+          "Name": "label",
+          "Value": "areas/Admin/Priority/List.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4="
+        }
+      ]
+    },
+    {
       "Route": "areas/Admin/Shared/Shared.28lj69ubcl.css",
       "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\Shared\\Shared.css",
       "Selectors": [],
@@ -7630,6 +7960,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-G0BGxSYdBbnFdwmoV7UZqdJLF1QN5JcjkLjVAzt49Uw="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/User/UserList.css",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\User\\UserList.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u4DszuiY1WLPnENub5+KbAlwyJCcCHdKlyaXaKLaRqk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 18:24:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u4DszuiY1WLPnENub5+KbAlwyJCcCHdKlyaXaKLaRqk="
+        }
+      ]
+    },
+    {
+      "Route": "areas/Admin/User/UserList.dyjx89twm7.css",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\PersonalManagementSystem\\PersonalManagementSystem\\wwwroot\\areas\\Admin\\User\\UserList.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u4DszuiY1WLPnENub5+KbAlwyJCcCHdKlyaXaKLaRqk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 18:24:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dyjx89twm7"
+        },
+        {
+          "Name": "label",
+          "Value": "areas/Admin/User/UserList.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-u4DszuiY1WLPnENub5+KbAlwyJCcCHdKlyaXaKLaRqk="
         }
       ]
     },

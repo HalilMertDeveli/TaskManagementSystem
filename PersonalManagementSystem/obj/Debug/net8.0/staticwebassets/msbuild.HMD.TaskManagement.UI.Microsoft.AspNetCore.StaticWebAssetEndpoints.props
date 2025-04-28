@@ -12,6 +12,42 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yntydylivd"},{"Name":"integrity","Value":"sha256-UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4="},{"Name":"label","Value":"_content/HMD.TaskManagement.UI/areas/Admin/AppTask/List.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1103"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 23 Apr 2025 08:55:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/Home/dashboard.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\Home\dashboard.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1173"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 18:22:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/Home/dashboard.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\Home\dashboard.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-UalIZoWL7L9323kI5B5UWMbqrv\u002BGPav1G\u002B8cSWsGwNE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"397"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022UalIZoWL7L9323kI5B5UWMbqrv\u002BGPav1G\u002B8cSWsGwNE=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 18:17:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/Home/dashboard.ljh2wtv50x.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\Home\dashboard.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ljh2wtv50x"},{"Name":"integrity","Value":"sha256-UalIZoWL7L9323kI5B5UWMbqrv\u002BGPav1G\u002B8cSWsGwNE="},{"Name":"label","Value":"_content/HMD.TaskManagement.UI/areas/Admin/Home/dashboard.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"397"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022UalIZoWL7L9323kI5B5UWMbqrv\u002BGPav1G\u002B8cSWsGwNE=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 18:17:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/Home/dashboard.vqe8gg94pw.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\Home\dashboard.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vqe8gg94pw"},{"Name":"integrity","Value":"sha256-p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk="},{"Name":"label","Value":"_content/HMD.TaskManagement.UI/areas/Admin/Home/dashboard.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1173"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022p9zTtVuUlCp9TKki4nIqcp7rzpoImnsuPACVu2Uqowk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 18:22:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/Priority/List.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\Priority\List.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1103"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 18:03:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/Priority/List.yntydylivd.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\Priority\List.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yntydylivd"},{"Name":"integrity","Value":"sha256-UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4="},{"Name":"label","Value":"_content/HMD.TaskManagement.UI/areas/Admin/Priority/List.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1103"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022UnBAx02KM2jKUtQ4xMMbvJofLkUrruGbcrWp0tKfBN4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 18:03:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/Shared/Shared.28lj69ubcl.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\Shared\Shared.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -47,6 +83,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hl6ern7qji"},{"Name":"integrity","Value":"sha256-G0BGxSYdBbnFdwmoV7UZqdJLF1QN5JcjkLjVAzt49Uw="},{"Name":"label","Value":"_content/HMD.TaskManagement.UI/areas/Admin/User/UserCard.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1314"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022G0BGxSYdBbnFdwmoV7UZqdJLF1QN5JcjkLjVAzt49Uw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 23 Apr 2025 08:47:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/User/UserList.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\User\UserList.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-u4DszuiY1WLPnENub5\u002BKbAlwyJCcCHdKlyaXaKLaRqk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"14"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u4DszuiY1WLPnENub5\u002BKbAlwyJCcCHdKlyaXaKLaRqk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 18:24:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Admin/User/UserList.dyjx89twm7.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Admin\User\UserList.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dyjx89twm7"},{"Name":"integrity","Value":"sha256-u4DszuiY1WLPnENub5\u002BKbAlwyJCcCHdKlyaXaKLaRqk="},{"Name":"label","Value":"_content/HMD.TaskManagement.UI/areas/Admin/User/UserList.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u4DszuiY1WLPnENub5\u002BKbAlwyJCcCHdKlyaXaKLaRqk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 18:24:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HMD.TaskManagement.UI/areas/Member/AppTask/list.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\areas\Member\AppTask\list.css'))</AssetFile>

@@ -1,4 +1,4 @@
-﻿@model DashboardDto
+﻿@* @model DashboardDto
 
 @{
     Layout = "_AdminLayout";
@@ -39,4 +39,88 @@
             </div>
         </div>
     </div>
+</div> 
+
+                
+ *@
+ 
+@model DashboardDto
+
+@{
+    Layout = "_AdminLayout";
+    ViewBag.Title = "Yönetim Paneli";
+}
+
+<!-- İkonlar için FontAwesome çağırıyoruz -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+<link href="~/areas/Admin/Home/dashboard.css" rel="stylesheet" />
+
+<div class="page-content container note-has-grid">
+    <div class="tab-content bg-transparent">
+        <div id="note-full-container" class="note-has-grid row">
+
+            <!-- İş Emri Kartı -->
+            <div class="col-md-4 single-note-item all-category">
+                <div class="card card-body">
+                    <span class="side-stick bg-primary"></span>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-tasks fa-2x text-primary me-2"></i>
+                        <h5 class="note-title text-truncate w-100 mb-0">İş Emri Sayısı</h5>
+                    </div>
+                    <p class="note-date font-12 text-muted">Toplam İş Emri</p>
+                    <div class="note-content">
+                        <h1 class="note-inner-content text-muted">@Model.TaskCount</h1>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                        <a asp-action="List" asp-controller="AppTask" asp-area="Admin" class="btn btn-primary w-100">
+                            İş Emirlerine Git
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kullanıcı Kartı -->
+            <div class="col-md-4 single-note-item all-category">
+                <div class="card card-body">
+                    <span class="side-stick bg-success"></span>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-user fa-2x text-success me-2"></i>
+                        <h5 class="note-title text-truncate w-100 mb-0">Kullanıcı Sayısı</h5>
+                    </div>
+                    <p class="note-date font-12 text-muted">Toplam Kullanıcı</p>
+                    <div class="note-content">
+                        <h1 class="note-inner-content text-muted">@Model.UserCount</h1>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                        <a asp-action="List" asp-controller="User" asp-area="Admin" class="btn btn-success w-100">
+                            Kullanıcılara Git
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bildirim Kartı -->
+            <div class="col-md-4 single-note-item all-category">
+                <div class="card card-body">
+                    <span class="side-stick bg-danger"></span>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-bell fa-2x text-danger me-2"></i>
+                        <h5 class="note-title text-truncate w-100 mb-0">Okunmamış Bildirimler</h5>
+                    </div>
+                    <p class="note-date font-12 text-muted">Bildirimler</p>
+                    <div class="note-content">
+                        <h1 class="note-inner-content text-muted">@Model.NotificationCount</h1>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                        <a asp-action="List" asp-controller="Notification" asp-area="Admin" class="btn btn-danger w-100">
+                            Bildirimlere Git
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
+
+<script src="~/areas/Admin/Home/dashboard.js"></script>
