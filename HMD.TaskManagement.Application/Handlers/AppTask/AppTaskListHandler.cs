@@ -21,10 +21,21 @@ namespace HMD.TaskManagement.Application.Handlers
 
             foreach (var appTask in list.Data)
             {
-                var dto = new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description,
-                    appTask?.Priority?.Defination, appTask.State,appTask.AppUserId,appTask.AppUserId.HasValue? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname: null,appTask.PriorityId);
+                var dto = new AppTaskListDto(
+                    appTask.Id,
+                    appTask.Title,
+                    appTask.Description,
+                    appTask?.Priority?.Defination,
+                    appTask.State,
+                    appTask.AppUserId,
+                    appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null,
+                    appTask.PriorityId,
+                    appTask.StartDate ?? default(DateTime),  // StartDate ve EndDate nullable olduğu için varsayılan bir tarih değeri veriyoruz
+                    appTask.EndDate ?? default(DateTime)
+                );
                 result.Add(dto);
             }
+
 
             return new PagedResult<AppTaskListDto>(result, request.ActivePage, list.PageSize, list.TotalPages);
         }

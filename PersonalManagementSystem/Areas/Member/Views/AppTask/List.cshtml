@@ -1,4 +1,8 @@
-﻿@* @model PagedResult<AppTaskListDto>
+﻿
+@{
+    #region CoreCodes
+
+    @* @model PagedResult<AppTaskListDto>
 @{
     Layout = "_MemberLayout";
     ViewBag.Title = "İş Emri Tanımlama Ekranı";
@@ -119,8 +123,8 @@
 
 </div> *@
 
-    
-@* @model PagedResult<AppTaskListDto>
+
+    @* @model PagedResult<AppTaskListDto>
 @{
     Layout = "_MemberLayout";
     ViewBag.Title = "İş Emri Tanımlama Ekranı";
@@ -221,7 +225,15 @@
         </nav>
     </div>
 </div>
+
+
+
+
+
  *@
+
+    #endregion
+}
  
 @model PagedResult<AppTaskListDto>
 @{
@@ -263,6 +275,8 @@
                              
                                 <th>İş Emri</th>
                                 <th>Aciliyet</th>
+                                <th>Başlangıç Tarihi</th>
+                                <th>Bitiş Tarihi</th>
                                 <th>Durum</th>
                                 <th>İşlem</th>
                             </tr>
@@ -276,6 +290,8 @@
                                         
                                         <td>@item.Title</td>
                                         <td>@item.PriorityDefinition</td>
+                                        <td>@(item.StartDate.ToString("dd/MM/yyyy") ?? "-")</td>
+                                        <td>@(item.EndDate.ToString("dd/MM/yyyy") ?? "-")</td>
                                         <td>@(item.State ? "Tamamlandı" : "Tamamlanmadı")</td>
                                         <td>
                                             @if (!item.State)

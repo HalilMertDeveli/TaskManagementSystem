@@ -27,8 +27,18 @@ namespace HMD.TaskManagement.Application.Handlers.AppTask
 
             foreach (var appTask in list.Data)
             {
-
-                var dto = new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description, appTask?.Priority?.Defination, appTask.State, appTask.AppUserId, appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null, appTask.PriorityId);
+                var dto = new AppTaskListDto(
+                    appTask.Id,
+                    appTask.Title,
+                    appTask.Description,
+                    appTask?.Priority?.Defination,
+                    appTask.State,
+                    appTask.AppUserId,
+                    appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null,
+                    appTask.PriorityId,
+                    appTask.StartDate ?? default(DateTime),  // StartDate ve EndDate nullable ise, varsayılan değeri atıyoruz.
+                    appTask.EndDate ?? default(DateTime)
+                );
                 result.Add(dto);
             }
 

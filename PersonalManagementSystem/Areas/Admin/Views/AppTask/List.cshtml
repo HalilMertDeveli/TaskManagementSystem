@@ -1,144 +1,152 @@
-﻿@* @model PagedResult<AppTaskListDto>
-@{
-    Layout = "_AdminLayout";
-    ViewBag.Title = "İş Emri Tanımalama tanımlama";
+﻿@{
+
+    #region CoreCodes
+
+//     * @model PagedResult<AppTaskListDto>
+// @{
+//     Layout = "_AdminLayout";
+//     ViewBag.Title = "İş Emri Tanımalama tanımlama";
+// }
+
+
+// <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+// <div class="row">
+
+//     <div class="col-3">
+//         <a asp-action="Create" asp-controller="AppTask" asp-area="Admin" class="btn btn-sm btn-warning mb-2">Yeni İş Emri Ekle</a>
+
+//     </div>
+
+//     <div class="col-9">
+//         <form asp-action="List" asp-controller="AppTask" asp-area="Admin" method="get">
+
+
+//             <div class="container">
+//                 <style>
+//                     .search-container {
+//                         position: relative;
+//                     }
+
+//                     .search-input {
+//                         height: 50px;
+//                         border-radius: 30px;
+//                         padding-left: 35px;
+//                         border: none;
+//                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//                     }
+
+//                     .search-icon {
+//                         position: absolute;
+//                         top: 50%;
+//                         left: 15px;
+//                         transform: translateY(-50%);
+//                         color: #888;
+//                     }
+//                 </style>
+//                 <div class="row justify-content-center">
+//                     <div class="col-md-6">
+//                         <div class="search-container">
+//                             <input type="text" name="s" class="form-control search-input" placeholder="Search..." >
+//                             <i class="fas fa-search search-icon"></i>
+
+//                         </div>
+
+//                     </div>
+//                     <div class="col-md-6">
+
+//                         <button class="btn btn-primary px-4" type="submit">
+//                             <i class="bi bi-search">İş Emri ara</i>
+//                         </button>
+//                     </div>
+//                 </div>
+//             </div>
+//         </form>
+//     </div>
+//     @{
+//         if (!string.IsNullOrEmpty(ViewBag.s))   
+//         {
+//             <div class="row">
+//                 <div class="alert alert-success" role="alert">
+//                     Şuanda bu <strong>@ViewBag.s</strong>  arama filtresine göre kayıtları görmektesiniz
+//                     <a asp-action="List" asp-controller="AppTask" asp-route-s="" asp-area="Admin" class="float-end">Filtreyi kaldır</a>
+//                 </div>
+//             </div>
+//         }
+//     }
+   
+//     <div>
+
+
+
+//         <table class="table table-success table-striped-columns">
+//             <thead>
+//                 <tr>
+
+//                     <th scope="col">İş Emri</th>
+//                     <th scope="col">İşin Aciliyeti</th>>
+//                     <th scope="col">İşin Durumu</th>>
+//                     <th scope="col">Çalışan personel</th>
+//                     <th scope="col"></th>>
+//                 </tr>
+//             </thead>
+//             <tbody>
+//                 @if (Model.Data?.Count > 0)
+//                 {
+//                     foreach (var item in Model.Data)
+//                     {
+//                         <tr>
+
+//                             <td>@item.Title</td>
+//                             <td>@item.PriorityDefinition</td>
+//                             <td>@(item.State ? "Tamamlandı" : "Tamamlanmadı")</td>
+//                             <td>@(item.AppUserId.HasValue ? item.AppUserFullName: "Atanmadı")</td>
+
+//                             <td>
+//                                 <a asp-action="Update" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detay</a>
+//                                 <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz? ')" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+//                             </td>
+
+//                         </tr>
+//                     }
+//                 }
+//                 else
+//                 {
+//                     <tr>
+
+//                         <td colspan="5">Herhangi bir iş emri bulunamadı</td>
+
+
+//                     </tr>
+//                 }
+
+
+
+//             </tbody>
+//         </table>
+//         <div class="text-end">
+//             <nav aria-label="Page navigation example" class="float-end">
+//                 <ul class="pagination">
+//                     @for (int i = 1; i <= Model.TotalPage; i++)
+//                     {
+//                         <li class="page-item">
+//                             <a class="page-link @(Model.ActivePage==i ? "active":"")" asp-route-s="@ViewBag.s" asp-route-activePage="@i" asp-action="List" asp-controller="AppTask" asp-area="Admin">@i</a>
+//                         </li>
+
+//                     }
+
+//                 </ul>
+//             </nav>
+
+//         </div>
+
+
+//     </div>
+// </div> 
+
+    #endregion
 }
 
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-<div class="row">
-
-    <div class="col-3">
-        <a asp-action="Create" asp-controller="AppTask" asp-area="Admin" class="btn btn-sm btn-warning mb-2">Yeni İş Emri Ekle</a>
-
-    </div>
-
-    <div class="col-9">
-        <form asp-action="List" asp-controller="AppTask" asp-area="Admin" method="get">
-
-
-            <div class="container">
-                <style>
-                    .search-container {
-                        position: relative;
-                    }
-
-                    .search-input {
-                        height: 50px;
-                        border-radius: 30px;
-                        padding-left: 35px;
-                        border: none;
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                    }
-
-                    .search-icon {
-                        position: absolute;
-                        top: 50%;
-                        left: 15px;
-                        transform: translateY(-50%);
-                        color: #888;
-                    }
-                </style>
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="search-container">
-                            <input type="text" name="s" class="form-control search-input" placeholder="Search..." >
-                            <i class="fas fa-search search-icon"></i>
-
-                        </div>
-
-                    </div>
-                    <div class="col-md-6">
-
-                        <button class="btn btn-primary px-4" type="submit">
-                            <i class="bi bi-search">İş Emri ara</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    @{
-        if (!string.IsNullOrEmpty(ViewBag.s))   
-        {
-            <div class="row">
-                <div class="alert alert-success" role="alert">
-                    Şuanda bu <strong>@ViewBag.s</strong>  arama filtresine göre kayıtları görmektesiniz
-                    <a asp-action="List" asp-controller="AppTask" asp-route-s="" asp-area="Admin" class="float-end">Filtreyi kaldır</a>
-                </div>
-            </div>
-        }
-    }
-   
-    <div>
-
-
-
-        <table class="table table-success table-striped-columns">
-            <thead>
-                <tr>
-
-                    <th scope="col">İş Emri</th>
-                    <th scope="col">İşin Aciliyeti</th>>
-                    <th scope="col">İşin Durumu</th>>
-                    <th scope="col">Çalışan personel</th>
-                    <th scope="col"></th>>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model.Data?.Count > 0)
-                {
-                    foreach (var item in Model.Data)
-                    {
-                        <tr>
-
-                            <td>@item.Title</td>
-                            <td>@item.PriorityDefinition</td>
-                            <td>@(item.State ? "Tamamlandı" : "Tamamlanmadı")</td>
-                            <td>@(item.AppUserId.HasValue ? item.AppUserFullName: "Atanmadı")</td>
-
-                            <td>
-                                <a asp-action="Update" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detay</a>
-                                <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz? ')" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
-                            </td>
-
-                        </tr>
-                    }
-                }
-                else
-                {
-                    <tr>
-
-                        <td colspan="5">Herhangi bir iş emri bulunamadı</td>
-
-
-                    </tr>
-                }
-
-
-
-            </tbody>
-        </table>
-        <div class="text-end">
-            <nav aria-label="Page navigation example" class="float-end">
-                <ul class="pagination">
-                    @for (int i = 1; i <= Model.TotalPage; i++)
-                    {
-                        <li class="page-item">
-                            <a class="page-link @(Model.ActivePage==i ? "active":"")" asp-route-s="@ViewBag.s" asp-route-activePage="@i" asp-action="List" asp-controller="AppTask" asp-area="Admin">@i</a>
-                        </li>
-
-                    }
-
-                </ul>
-            </nav>
-
-        </div>
-
-
-    </div>
-</div> *@
 
 
 
@@ -198,7 +206,9 @@
                                         <th>Aciliyet</th>
                                         <th>Durum</th>
                                         <th>İlerleme</th>
+                                        <th>İş Veriliş Tarihi</th>
                                         <th>Bitiş Tarihi</th>
+                                        
                                         <th>İşlem</th>
                                     </tr>
                                     </thead>
@@ -222,7 +232,8 @@
                                                         <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
                                                 </td>
-                                                <td>01.06.2025</td>
+                                                <td>@(item.StartDate.ToString("dd/MM/yyyy") ?? "-")</td>
+                                                <td>@(item.EndDate.ToString("dd/MM/yyyy") ?? "-")</td>
                                                 <td>
                                                     <a asp-action="Update" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detay</a>
                                                     <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz?')" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>

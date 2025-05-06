@@ -11,6 +11,10 @@
         //look up table ? 
         public bool State { get; set; }
 
+        public DateTime? StartDate { get; set; }
+        public DateTime ?EndDate { get; set; }
+
+
         #region NavigationProperties
         public AppUser? AppUser { get; set; }
 

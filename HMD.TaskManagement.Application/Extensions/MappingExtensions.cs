@@ -34,16 +34,31 @@ namespace HMD.TaskManagement.Application.Extensions
         {
             return new AppTasks
             {
-                Description = request.Description,
-                Title = request.Title,
+                Description = request.Description ?? string.Empty, // null kontrolü ekledim
+                Title = request.Title ?? string.Empty, // null kontrolü ekledim
                 PriorityId = request.PriorityId,
-                State = false
+                State = false,
+                StartDate = request.StartDate, // ✅ Yeni eklendi
+                EndDate = request.EndDate      // ✅ Yeni eklendi
             };
         }
 
+
+
         public static AppTaskListDto ToMap(this AppTasks appTask)
         {
-            return new AppTaskListDto(appTask.Id, appTask.Title, appTask.Description, appTask?.Priority?.Defination, appTask?.State ?? false, appTask.AppUserId, appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null, appTask.PriorityId);
+            return new AppTaskListDto(
+                appTask.Id,
+                appTask.Title,
+                appTask.Description,
+                appTask?.Priority?.Defination,
+                appTask?.State ?? false,
+                appTask.AppUserId,
+                appTask.AppUserId.HasValue ? appTask.AppUser?.Name + " " + appTask.AppUser?.Surname : null,
+                appTask.PriorityId,
+                appTask.StartDate ?? DateTime.Now,  // Eğer StartDate null ise, minimum bir tarih verilir.
+                appTask.EndDate ?? DateTime.Today   // Eğer EndDate null ise, minimum bir tarih verilir.
+            );
         }
 
         public static List<MemberListDto> ToMap(this List<AppUser> users)
