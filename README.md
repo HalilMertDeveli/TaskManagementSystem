@@ -58,12 +58,13 @@ Member controllers are under `PersonalManagementSystem/Controllers/Member/` with
 
 #### Member UI (screenshots)
 
-Member-area screenshots are not included in this repository yet. When you add them, place files under `docs/images/member/` and link them from this section, for example:
+The UI may be localized; the screenshots below illustrate layout and workflows.
 
-- `docs/images/member/member-task-list.png` — assigned tasks list  
-- `docs/images/member/member-task-reports.png` — reports for a task  
-- `docs/images/member/member-notifications.png` — notifications  
-- `docs/images/member/member-profile.png` — profile  
+![Member profile — card, role, and editable name, surname, and password](docs/images/member/member-profile.png)
+
+![Member work orders — assigned tasks list with search](docs/images/member/member-work-orders-list.png)
+
+![Member shell — sidebar navigation and notifications in the main area](docs/images/member/member-dashboard.png)
 
 ---
 
@@ -83,6 +84,10 @@ PersonalManagementSystem.sln
 ```
 
 **Request flow:** MVC controllers send **MediatR** requests into the Application layer; handlers use the Persistence layer (EF Core) and return results/DTOs to the views.
+
+**Repository pattern:** Data access is abstracted with interfaces such as `IUserRepository`, `IAppTaskRepository`, `IPriorityRepository`, `ITaskReportRepository`, and `INotificationRepository` under `HMD.TaskManagement.Application/Interfaces/`. Implementations live in `HMD.TaskManagement.Persistence/Repositories/` and are wired in `HMD.TaskManagement.Persistence/IOCExtensions.cs` (`AddPersistenceServices`).
+
+**FluentValidation:** Validator classes under `HMD.TaskManagement.Application/Validators/` are injected into handlers as `IValidator<TRequest>`; handlers call `Validate` / `ValidateAsync` and map failures with `ValidationExtensions.ToMap` before executing use cases (no automatic MVC filter pipeline for validators in this codebase).
 
 **Routing** (`Program.cs`):
 
@@ -105,7 +110,7 @@ Verified from project files:
 | **ASP.NET Core MVC** | `PersonalManagementSystem` |
 | **Entity Framework Core 8** + **SQL Server** provider | `HMD.TaskManagement.Persistence` |
 | **MediatR** 12.x | `HMD.TaskManagement.Application` |
-| **FluentValidation** 11.x | Validators under `HMD.TaskManagement.Application/Validators/` |
+| **FluentValidation** 11.x | Validators under `HMD.TaskManagement.Application/Validators/`; invoked explicitly from MediatR handlers |
 | **EF Core tools / Design-time** | UI project references `Microsoft.EntityFrameworkCore.Design` for migrations |
 
 ---
@@ -170,6 +175,7 @@ Ensure `ConnectionStrings:Local` points to a valid server before running `databa
 | `HMD.TaskManagement.Application/` | Requests, handlers, validation |
 | `HMD.TaskManagement.Persistence/` | `TaskManagementContext`, migrations |
 | `docs/images/admin/` | README screenshots (admin) |
+| `docs/images/member/` | README screenshots (member) |
 
 ---
 
