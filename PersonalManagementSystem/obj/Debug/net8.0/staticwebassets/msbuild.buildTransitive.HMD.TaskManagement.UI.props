@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\HMD.TaskManagement.UI.props" />
-</Project>

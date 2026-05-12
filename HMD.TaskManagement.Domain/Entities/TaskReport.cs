@@ -3,7 +3,7 @@
     public class TaskReport : BaseEntity
     {
         public string Defination { get; set; } = null!;
-        public string Detail { get; set; }
+        public string Detail { get; set; } = string.Empty;
         public int AppTaskId { get; set; }
 
         #region NavigationProperty

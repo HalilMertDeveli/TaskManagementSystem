@@ -12,15 +12,15 @@
         public bool State { get; set; }
 
         public DateTime? StartDate { get; set; }
-        public DateTime ?EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
 
         #region NavigationProperties
         public AppUser? AppUser { get; set; }
 
-        public Priority Priority { get; set; }
+        public Priority Priority { get; set; } = null!;
 
-        public List<TaskReport> TaskReports { get; set; }
+        public List<TaskReport> TaskReports { get; set; } = [];
         #endregion
 
     }

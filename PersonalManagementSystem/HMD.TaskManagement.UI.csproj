@@ -18,4 +18,10 @@
     <ProjectReference Include="..\HMD.TaskManagement.Persistence\HMD.TaskManagement.Persistence.csproj" />
   </ItemGroup>
 
+  <!-- Stops MSB3021 when the site (or IIS Express) still has bin\Debug DLLs loaded. Safe no-ops if nothing is running. -->
+  <Target Name="StopRunningDevHostBeforeBuild" BeforeTargets="PrepareForBuild" Condition="'$(OS)' == 'Windows_NT' AND '$(DesignTimeBuild)' != 'true'">
+    <Exec Command="cmd /c taskkill /F /IM HMD.TaskManagement.UI.exe /T 2&gt;nul" IgnoreExitCode="true" />
+    <Exec Command="cmd /c taskkill /F /IM iisexpress.exe /T 2&gt;nul" IgnoreExitCode="true" />
+  </Target>
+
 </Project>

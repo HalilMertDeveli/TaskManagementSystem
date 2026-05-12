@@ -35,15 +35,22 @@ namespace HMD.TaskManagement.Application.Handlers.AppTask
 
             if (validationResult.IsValid)
             {
-                var effectedRow = await this.repository.CreateAsync(request.ToMap());
+                try
+                {
+                    var effectedRow = await this.repository.CreateAsync(request.ToMap());
 
-                if (effectedRow>0)
+                    if (effectedRow > 0)
                 
-                    return new Result<AppTaskDto>(new AppTaskDto(priorityDtoList), true, null, null);
+                        return new Result<AppTaskDto>(new AppTaskDto(priorityDtoList), true, null, null);
 
                 
 
-                return new Result<AppTaskDto>(new AppTaskDto(priorityDtoList), false, "Veritabanı hatası var, veritabanı tarafında", null);
+                    return new Result<AppTaskDto>(new AppTaskDto(priorityDtoList), false, "Veritabanı hatası var, veritabanı tarafında", null);
+                }
+                catch (Exception)
+                {
+                    return new Result<AppTaskDto>(new AppTaskDto(priorityDtoList), false, "Görev kaydı sırasında veritabanı hatası oluştu.", null);
+                }
 
             }
             else

@@ -1,6 +1,8 @@
 ﻿using HMD.TaskManagement.Application.Extensions;
 using HMD.TaskManagement.Persistence;
+using HMD.TaskManagement.Persistence.Context;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 
 namespace PersonalManagementSystem
 {
@@ -27,6 +29,78 @@ namespace PersonalManagementSystem
                 });
 
             var app = builder.Build();
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<TaskManagementContext>();
+                var pendingMigrations = 0;
+                try
+                {
+                    pendingMigrations = db.Database.GetPendingMigrations().Count();
+                }
+                catch (Exception ex)
+                {
+                    app.Logger.LogWarning(ex, "Could not read pending migrations (connection or model issue).");
+                }
+
+                try
+                {
+                    db.Database.Migrate();
+                }
+                catch (Exception ex)
+                {
+                    // Migrate() can fail while the DB is still usable (history mismatch, permissions, etc.).
+                    app.Logger.LogWarning(ex, "EF Core Migrate() failed; unassigned tasks may still fail until schema is fixed.");
+                }
+
+                try
+                {
+                    if (!db.Database.CanConnect())
+                    {
+                        app.Logger.LogWarning("Database is not reachable; skipped schema repair and role seed.");
+                    }
+                    else
+                    {
+                        // Matches EF model: unassigned tasks use NULL AppUserId. Some DBs never applied the nullable migration.
+                        db.Database.ExecuteSqlRaw(@"
+IF EXISTS (
+    SELECT 1 FROM sys.columns c
+    INNER JOIN sys.tables t ON c.object_id = t.object_id
+    INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
+    WHERE s.name = N'dbo' AND t.name = N'Tasks' AND c.name = N'AppUserId' AND c.is_nullable = 0)
+    ALTER TABLE [dbo].[Tasks] ALTER COLUMN [AppUserId] INT NULL;
+
+IF EXISTS (
+    SELECT 1 FROM sys.columns c
+    INNER JOIN sys.tables t ON c.object_id = t.object_id
+    INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
+    WHERE s.name = N'dbo' AND t.name = N'AppTasks' AND c.name = N'AppUserId' AND c.is_nullable = 0)
+    ALTER TABLE [dbo].[AppTasks] ALTER COLUMN [AppUserId] INT NULL;
+");
+
+                        // Register flow depends on these role ids (Admin=1, Member=2).
+                        // Some databases miss seed data, so we ensure required roles exist.
+                        db.Database.ExecuteSqlRaw(@"
+IF NOT EXISTS (SELECT 1 FROM [Roles] WHERE [Id] IN (1,2))
+BEGIN
+    SET IDENTITY_INSERT [Roles] ON;
+    IF NOT EXISTS (SELECT 1 FROM [Roles] WHERE [Id] = 1)
+        INSERT INTO [Roles] ([Id], [Defination]) VALUES (1, 'Admin');
+    IF NOT EXISTS (SELECT 1 FROM [Roles] WHERE [Id] = 2)
+        INSERT INTO [Roles] ([Id], [Defination]) VALUES (2, 'Member');
+    SET IDENTITY_INSERT [Roles] OFF;
+END");
+                    }
+
+                    if (pendingMigrations > 0)
+                    {
+                        app.Logger.LogInformation("There were {Count} pending migration(s) before Migrate(); verify __EFMigrationsHistory if errors persist.", pendingMigrations);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    app.Logger.LogError(ex, "Database schema repair or role seed failed; check connection string and SQL permissions.");
+                }
+            }
 
             // Configure the HTTP request pipeline".
             if (!app.Environment.IsDevelopment())
@@ -50,10 +124,11 @@ namespace PersonalManagementSystem
             //halil.com/admin/home/Index
             //hallil.com/home/index //ikisinde de özel olan, önde olan ilk olarak denenmesi gerekemektedir. 
 
-            //özel olan önde olacak 
+            // Area route must use {area:exists}; otherwise URLs like /Account/Login are parsed as
+            // Area=Account, Controller=Login and never reach AccountController.
             app.MapControllerRoute(
-                name: "default",
-                pattern: "{Area}/{Controller=Home}/{Action=Index}/{id?}");
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
             app.MapControllerRoute(
                 name: "default",

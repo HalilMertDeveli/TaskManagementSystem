@@ -14,7 +14,7 @@ namespace HMD.TaskManagement.Application.Requests
 
     public record MemberListPagedRequest : PagedRequest, IRequest<PagedResult<MemberListDto>>
     {
-        public MemberListPagedRequest(int activePage, string s) : base(activePage)
+        public MemberListPagedRequest(int activePage, string? s) : base(activePage)
         {
             S = s;
         }

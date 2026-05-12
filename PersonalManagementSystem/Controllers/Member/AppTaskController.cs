@@ -28,6 +28,12 @@ namespace HMD.TaskManagement.UI.Controllers.Member
         public async Task<IActionResult> ReportList(int id)
         {
             var appTaskInfo = await this.mediator.Send(new AppTaskGetByIdRequest(id));
+            if (appTaskInfo.Data is null)
+            {
+                TempData["Error"] = appTaskInfo.ErrorMessage ?? "Gorev bilgisi bulunamadi.";
+                return RedirectToAction("List");
+            }
+
             ViewBag.TaskTitle = appTaskInfo.Data.Title;
             ViewBag.TaskId = appTaskInfo.Data.Id;
             var result = await this.mediator.Send(new TaskReportGetByTaskIdRequest(id));
@@ -71,6 +77,12 @@ namespace HMD.TaskManagement.UI.Controllers.Member
         public async Task<IActionResult> UpdateReport(int id)
         {
             var result = await this.mediator.Send(new TaskReportGetByIdRequest(id));
+            if (result.Data is null)
+            {
+                TempData["Error"] = result.ErrorMessage ?? "Rapor bulunamadi.";
+                return RedirectToAction("List");
+            }
+
             return View(new TaskReportUpdateRequest(result.Data.Id, result.Data.Detail, result.Data.Definition, result.Data.AppTaskId));
         }
 

@@ -12,8 +12,8 @@
         #region NavigationProperties
 
         public AppRole? Role { get; set; }
-        public List<AppTasks> Tasks { get; set; }
-        public List<Notification>? Notifications { get; set; }
+        public List<AppTasks> Tasks { get; set; } = [];
+        public List<Notification> Notifications { get; set; } = [];
 
 
         #endregion

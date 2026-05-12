@@ -15,17 +15,16 @@ namespace HMD.TaskManagement.Application.Handlers
         }
 
 
-        public async Task<Result<PriorityListDto?>> Handle(PriorityGetByIdRequest request, CancellationToken cancellationToken)
+        public async Task<Result<PriorityListDto>> Handle(PriorityGetByIdRequest request, CancellationToken cancellationToken)
         {
             var priority = await this.repository.GetByFilterAsNoTrackingAsync(x => x.Id == request.Id);
             if (priority != null)
             {
-                return new Result<PriorityListDto?>(new PriorityListDto(priority.Id, priority.Defination), true, null,
+                return new Result<PriorityListDto>(new PriorityListDto(priority.Id, priority.Defination), true, null,
                     null);
             }
 
-            return new Result<PriorityListDto?>(null, false, "Priority bulunamadı", null);
-
+            return new Result<PriorityListDto>(default!, false, "Priority bulunamadı", null);
         }
     }
 

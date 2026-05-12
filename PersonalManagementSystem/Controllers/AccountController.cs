@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace HMD.TaskManagement.UI.Controllers
 {
@@ -28,30 +29,42 @@ namespace HMD.TaskManagement.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequest request)
         {
-            var result = await this.mediator.Send(request);
-            if (result.IsSuccess && result.Data != null)
+            try
             {
-                await SetAuthCookie(result.Data, request.RememberMe);
-
-                if (result.Data.Role == RoleType.Admin)
-                    return RedirectToAction("Index", "Home", new { area = "Admin" });
-                else
-                    return RedirectToAction("UserDetail", "User", new { area = "Member" });
-            }
-            else
-            {
-                if (result.Errors != null && result.Errors.Count > 0)
+                var result = await this.mediator.Send(request);
+                if (result.IsSuccess && result.Data != null)
                 {
-                    foreach (var error in result.Errors)
+                    await SetAuthCookie(result.Data, request.RememberMe);
+
+                    if (result.Data.Role == RoleType.Admin)
+                        return RedirectToAction("Index", "Home", new { area = "Admin" });
+                    else
+                        return RedirectToAction("UserDetail", "User", new { area = "Member" });
+                }
+                else
+                {
+                    if (result.Errors != null && result.Errors.Count > 0)
                     {
-                        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                        }
                     }
-                }
-                else
-                {
-                    ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu, sistem üreticinize başvurun.");
-                }
+                    else
+                    {
+                        ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu, sistem üreticinize başvurun.");
+                    }
 
+                    return View(request);
+                }
+            }
+            catch (Exception ex)
+            {
+                // #region agent log
+                try { System.IO.File.AppendAllText("C:/Users/clt/Desktop/TaskManagementSystem/debug-8b40ae.log", JsonSerializer.Serialize(new { sessionId = "8b40ae", runId = "investigation-1", hypothesisId = "H2", location = "AccountController.cs:Login:catch", message = "Login POST exception", data = new { exceptionType = ex.GetType().FullName, ex.Message, inner = ex.InnerException?.Message }, timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() }) + Environment.NewLine); } catch { }
+                // #endregion
+
+                ModelState.AddModelError("", "Giriş işlemi sırasında sistemsel bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
                 return View(request);
             }
         }
@@ -66,27 +79,34 @@ namespace HMD.TaskManagement.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
-            var result = await this.mediator.Send(request);
-            if (result.IsSuccess)
+            try
             {
-                return RedirectToAction("Login");
-            }
-            else
-            {
-                if (result.Errors != null && result.Errors.Count > 0)
+                var result = await this.mediator.Send(request);
+                if (result.IsSuccess)
                 {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
-                    }
+                    return RedirectToAction("Login");
                 }
                 else
                 {
-                    ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu, sistem üreticinize  başvurun");
+                    if (result.Errors != null && result.Errors.Count > 0)
+                    {
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu, sistem üreticinize  başvurun");
+                    }
+                    return View(request);
                 }
+            }
+            catch
+            {
+                ModelState.AddModelError("", "Kayıt işlemi sırasında sistemsel bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
                 return View(request);
             }
-
         }
 
         public async Task<IActionResult> LogOut()

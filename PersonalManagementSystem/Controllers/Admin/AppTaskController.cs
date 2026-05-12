@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using HMD.TaskManagement.Application.Requests;
+﻿using HMD.TaskManagement.Application.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +32,7 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             var result = await this.mediator.Send(new PriorityListRequest());
 
             ViewBag.Priorities =
-                new List<SelectListItem>(result.Data.Select(x => new SelectListItem(x.Definition, x.Id.ToString())));
+                new List<SelectListItem>((result.Data ?? []).Select(x => new SelectListItem(x.Definition, x.Id.ToString())));
 
             //Definition
 
@@ -49,7 +48,7 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
 
             ViewBag.Priorities =
                 new List<SelectListItem>(
-                    result.Data.Priorities.Select(x => new SelectListItem(x.Definition, x.Id.ToString())));
+                    (result.Data?.Priorities ?? []).Select(x => new SelectListItem(x.Definition, x.Id.ToString())));
 
 
             if (result.IsSuccess)
@@ -91,15 +90,22 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             var memberListResult = await this.mediator.Send(new MemberListRequest());
 
 
+            var updatedTask = updated.Data;
+            if (updatedTask is null)
+            {
+                TempData["Error"] = updated.ErrorMessage ?? "Gorev bilgisi bulunamadi.";
+                return RedirectToAction("List");
+            }
+
             ViewBag.Priorities =
-                new List<SelectListItem>(priorityResult.Data.Select(x => new SelectListItem(x.Definition, x.Id.ToString(), updated.Data.PriorityId == x.Id)));
+                new List<SelectListItem>((priorityResult.Data ?? []).Select(x => new SelectListItem(x.Definition, x.Id.ToString(), updatedTask.PriorityId == x.Id)));
 
 
             var members =
-                 new List<SelectListItem>(memberListResult.Data.Select(x => new SelectListItem(x.Name + " " + x.Surname, x.Id.ToString(), updated.Data.AppUserId == x.Id)));
+                 new List<SelectListItem>((memberListResult.Data ?? []).Select(x => new SelectListItem(x.Name + " " + x.Surname, x.Id.ToString(), updatedTask.AppUserId == x.Id)));
 
 
-            if (updated.Data.AppUserId == null)
+            if (updatedTask.AppUserId == null)
             {
                 members.Add(new SelectListItem("Personel Seçilmemiş", "0", true));
             }
@@ -107,7 +113,7 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
 
             ViewBag.Members = members;
 
-            return View(new AppTaskUpdateRequest(updated.Data.Id,updated.Data.Title,updated.Data.Description,updated.Data.PriorityId,updated.Data.AppUserId));
+            return View(new AppTaskUpdateRequest(updatedTask.Id, updatedTask.Title, updatedTask.Description, updatedTask.PriorityId, updatedTask.AppUserId));
         }
 
         [HttpPost]
@@ -118,11 +124,11 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
 
             ViewBag.Priorities =
                 new List<SelectListItem>(
-                    result.Data.Priorities.Select(x => new SelectListItem(x.Definition, x.Id.ToString(),x.Id==request.PriorityId)));
+                    (result.Data?.Priorities ?? []).Select(x => new SelectListItem(x.Definition, x.Id.ToString(), x.Id == request.PriorityId)));
 
             ViewBag.Members =
                 new List<SelectListItem>(
-                    result.Data.Employees.Select(x => new SelectListItem(x.Name + " " + x.Surname, x.Id.ToString(),x.Id==request.AppUserId)));
+                    (result.Data?.Employees ?? []).Select(x => new SelectListItem(x.Name + " " + x.Surname, x.Id.ToString(), x.Id == request.AppUserId)));
 
 
             if (result.IsSuccess)

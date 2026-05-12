@@ -19,13 +19,15 @@ namespace HMD.TaskManagement.Application.Handlers.Account
             this.repository = userRepository;
         }
 
-        public async Task<Result<MemberListDto?>> Handle(MemberGetByIdRequest request, CancellationToken cancellationToken)
+        public async Task<Result<MemberListDto>> Handle(MemberGetByIdRequest request, CancellationToken cancellationToken)
         {
             var result = await this.repository.GetByFilterAsync(x => x.Id == request.Id);
-            if(result!=null)
+            if (result != null)
+            {
+                return new Result<MemberListDto>(new MemberListDto(result.Id, result.Name, result.Surname, result.UserName), true, null, null);
+            }
 
-                return new Result<MemberListDto?>(new MemberListDto(result.Id, result.Name, result.Surname, result.UserName), true, null, null);
-            return new Result<MemberListDto?>(null, false, "", null);
+            return new Result<MemberListDto>(default!, false, "", null);
         }
     }
 }

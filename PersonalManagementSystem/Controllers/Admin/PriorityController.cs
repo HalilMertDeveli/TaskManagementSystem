@@ -9,9 +9,9 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
     [Authorize(Roles = "Admin")]
     public class PriorityController : Controller
     {
-        private readonly IMediator? mediator;
+        private readonly IMediator mediator;
 
-        public PriorityController(IMediator? mediator)
+        public PriorityController(IMediator mediator)
         {
             this.mediator = mediator;
         }
@@ -74,7 +74,7 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
         {
             ViewBag.Active = "Priority";
             var result = await this.mediator.Send(new PriorityGetByIdRequest(id));
-            if (result.IsSuccess)
+            if (result.IsSuccess && result.Data is not null)
             {
                 var requestModel = new PriorityUpdateRequest(result.Data.Id, result.Data.Definition);
 

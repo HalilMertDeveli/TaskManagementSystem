@@ -109,6 +109,12 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             ViewBag.Active = "Profil";
             var userId = int.Parse(User.Claims.SingleOrDefault(x => x.Type == "UserId")?.Value ?? "0");
             var updated = await this.mediator.Send(new UserDetailRequest(userId));
+            if (updated.Data is null)
+            {
+                ModelState.AddModelError("", updated.ErrorMessage ?? "Kullanici bilgisi bulunamadi.");
+                return View(new UserDetailUpdateRequest(userId, string.Empty, string.Empty, string.Empty));
+            }
+
             return View(new UserDetailUpdateRequest(updated.Data.Id, updated.Data.Name, updated.Data.Surname, updated.Data.Password));
         }
 

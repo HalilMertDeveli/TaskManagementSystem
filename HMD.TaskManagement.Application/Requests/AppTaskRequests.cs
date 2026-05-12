@@ -5,7 +5,7 @@ namespace HMD.TaskManagement.Application.Requests
 {
     public record AppTaskListRequest : PagedRequest, IRequest<PagedResult<AppTaskListDto>>
     {
-        public AppTaskListRequest(int activePage, string s) : base(activePage)
+        public AppTaskListRequest(int activePage, string? s) : base(activePage)
         {
             S = s;
         }
@@ -14,7 +14,7 @@ namespace HMD.TaskManagement.Application.Requests
 
     public record AppTaskListByUserIdRequest : PagedRequest, IRequest<PagedResult<AppTaskListDto>>
     {
-        public AppTaskListByUserIdRequest(int activePage, string s, int userId) : base(activePage)
+        public AppTaskListByUserIdRequest(int activePage, string? s, int userId) : base(activePage)
         {
             S = s;
             UserId = userId;
