@@ -1,184 +1,196 @@
 # Task Management System
 
-A layered **ASP.NET Core MVC** web application for managing users, work orders (tasks), priorities, notifications, and task reports. It was built as a **graduation (capstone) project** to demonstrate clean architecture, role-based access, and a full vertical slice from database to UI.
+A role-based work-order (task) management web application built with **ASP.NET Core MVC on .NET 8**, structured as an onion-style layered solution with **MediatR**, **FluentValidation** and **EF Core + SQL Server**. It was my Computer Engineering **capstone project**.
+
+> Status: completed academic project, not deployed anywhere. No automated tests or CI. See [Limitations](#limitations) before reusing any of it.
 
 ---
 
 ## Overview
 
-The system distinguishes two primary experiences:
+Two roles share one application:
 
-- **Administrators** manage the full catalog of work orders, member accounts, priorities, and notifications, and see a dashboard of aggregate metrics.
-- **Members** work on assignments they receive: they browse their tasks, file progress reports, mark work complete when appropriate, maintain their profile, and read notifications.
+- **Admin**: creates and assigns work orders, manages members and priority levels, reads task reports, and receives notifications.
+- **Member**: sees the work orders assigned to them, writes progress reports, marks work as completed, and receives assignment notifications.
 
-Authentication is **cookie-based** (ASP.NET Core Cookie Authentication). After login, users are routed by role into the **Admin** or **Member** MVC area.
+Users sign in with cookie authentication and are routed to an `Admin` or `Member` MVC area based on their role. The UI text is in Turkish.
 
----
+## Problem & Solution
 
-## Features by role
+**Problem:** In a small team, work requests, who owns them and how far along they are tend to live in chat messages and spreadsheets, so nobody has a single, current view.
 
-### Admin area
+**Solution:** One web app where an admin records each work order with a priority and start/end dates, assigns it to a member, and follows progress through the reports the member writes. Assignment, new reports and completion generate in-app notifications.
 
-| Capability | Description |
-|------------|-------------|
-| **Dashboard** | Summary cards for work orders, users, and unread notifications (MediatR-driven). |
-| **Work orders (tasks)** | Paginated list with search; create and edit tasks with priority, dates, assignment, and status. |
-| **Users** | List, search, create, edit, delete members; administrative password reset. |
-| **Priorities** | Maintain priority levels used when creating or editing tasks. |
-| **Notifications** | View and manage notification entries relevant to administration. |
-| **Profile** | Update the signed-in administrator’s name, surname, and password. |
+## Features
 
-All admin controllers live under `PersonalManagementSystem/Controllers/Admin/` with views under `PersonalManagementSystem/Areas/Admin/Views/`, and are protected with `[Authorize(Roles = "Admin")]`.
+**Admin area** (`[Authorize(Roles = "Admin")]`)
+- Dashboard with counts of work orders, members and unread notifications.
+- Work orders: paginated list with search; create (title, description, priority, start/end date), update and assign to a member, delete. The edit page shows the task's reports.
+- Members: paginated list with search; create, update, delete, reset password.
+- Priorities: create, update, delete.
+- Notifications: list and mark as read.
+- Own profile: update name, surname and password.
 
-#### Admin UI (screenshots)
+**Member area** (`[Authorize(Roles = "Member")]`)
+- Assigned work orders: paginated list with search.
+- Task reports: create, edit and delete progress reports per task.
+- Mark a task as completed.
+- Notifications and own profile.
 
-The UI may be localized; the screenshots below illustrate layout and workflows.
+**Account**
+- Login, self-registration (always creates a Member), logout.
 
-![Admin dashboard — summary cards for work orders, users, and notifications](docs/images/admin/admin-dashboard.png)
+## Tech Stack
 
-![Admin user management — list, search, and actions](docs/images/admin/admin-users.png)
-
-![Admin work order list](docs/images/admin/admin-work-orders.png)
-
-![Admin profile](docs/images/admin/admin-profile.png)
-
-![Admin work order create/edit form](docs/images/admin/admin-task-form.png)
-
-### Member area
-
-| Capability | Description |
-|------------|-------------|
-| **My tasks** | Paginated list of tasks assigned to the signed-in member, with search. |
-| **Task reports** | Per-task report list; create, edit, and delete reports for documentation of progress. |
-| **Complete task** | Action to mark an assigned task as completed (via application request/handler). |
-| **Notifications** | List notifications for the member; mark individual items as read/updated. |
-| **Profile** | View and update name, surname, and password (`UserDetail`). |
-
-Member controllers are under `PersonalManagementSystem/Controllers/Member/` with views under `PersonalManagementSystem/Areas/Member/Views/`, protected with `[Authorize(Roles = "Member")]`. After login, members are redirected to **Member → User → UserDetail** by default.
-
-#### Member UI (screenshots)
-
-The UI may be localized; the screenshots below illustrate layout and workflows.
-
-![Member profile — card, role, and editable name, surname, and password](docs/images/member/member-profile.png)
-
-![Member work orders — assigned tasks list with search](docs/images/member/member-work-orders-list.png)
-
-![Member shell — sidebar navigation and notifications in the main area](docs/images/member/member-dashboard.png)
-
----
+| Area | Technology (version from project files) |
+|---|---|
+| Runtime | .NET 8 (`net8.0`, all four projects) |
+| Web | ASP.NET Core MVC, Razor views, MVC Areas, a view component |
+| Application | MediatR 12.4.1 (requests and handlers), FluentValidation 11.11.0 |
+| Data | Entity Framework Core 8.0.0, SQL Server provider, code-first migrations |
+| Auth | ASP.NET Core cookie authentication with role claims |
+| Front end | Bootstrap 5, jQuery and jQuery Validation (vendored in `wwwroot`), Font Awesome (CDN) |
 
 ## Architecture
 
-The solution follows a **layered (clean-style) layout**: domain in the center, application services depending only on abstractions, persistence implementing data access, and the web UI composing everything at the edge.
+Dependencies point inward. This is taken from the `ProjectReference` entries in the `.csproj` files:
 
-```text
-PersonalManagementSystem.sln
-├── PersonalManagementSystem/          ← ASP.NET Core MVC UI (HMD.TaskManagement.UI.csproj)
-│   ├── Controllers/                   ← Account + Admin/* + Member/* (areas)
-│   ├── Areas/Admin/Views, Areas/Member/Views
-│   └── Program.cs                     ← DI, auth, EF, routing
-├── HMD.TaskManagement.Application/    ← MediatR requests/handlers, DTOs, FluentValidation
-├── HMD.TaskManagement.Domain/         ← Entities and domain model
-└── HMD.TaskManagement.Persistence/    ← EF Core DbContext, SQL Server, migrations
+```mermaid
+flowchart LR
+    UI["HMD.TaskManagement.UI<br/>(folder: PersonalManagementSystem)<br/>MVC controllers, Razor views, Program.cs"]
+    APP["HMD.TaskManagement.Application<br/>MediatR requests/handlers, DTOs,<br/>FluentValidation validators, repository interfaces"]
+    PER["HMD.TaskManagement.Persistence<br/>EF Core DbContext, configurations,<br/>migrations, repository implementations"]
+    DOM["HMD.TaskManagement.Domain<br/>Entities (no dependencies)"]
+
+    UI --> APP
+    UI --> PER
+    PER --> APP
+    APP --> DOM
 ```
 
-**Request flow:** MVC controllers send **MediatR** requests into the Application layer; handlers use the Persistence layer (EF Core) and return results/DTOs to the views.
+- **Request flow:** controller → `IMediator.Send(request)` → handler in Application → repository interface → EF Core implementation in Persistence → SQL Server.
+- **Repository interfaces** (`IUserRepository`, `IAppTaskRepository`, `IPriorityRepository`, `ITaskReportRepository`, `INotificationRepository`) are defined in Application and implemented in Persistence. The Application project has no EF Core reference.
+- **Validation:** each handler creates its FluentValidation validator and runs it before executing the use case. Validators are not registered in DI or in an MVC/MediatR pipeline.
+- **Composition root:** `PersonalManagementSystem/Program.cs` calls `AddPersistenceServices` and `AddApplicationServices`, configures the cookie (HttpOnly, `SameSite=Strict`) and maps the area and default routes. The default route opens `Account/Login`.
+- **Domain entities:** `AppUser`, `AppRole`, `AppTasks`, `Priority`, `TaskReport`, `Notification`.
 
-**Repository pattern:** Data access is abstracted with interfaces such as `IUserRepository`, `IAppTaskRepository`, `IPriorityRepository`, `ITaskReportRepository`, and `INotificationRepository` under `HMD.TaskManagement.Application/Interfaces/`. Implementations live in `HMD.TaskManagement.Persistence/Repositories/` and are wired in `HMD.TaskManagement.Persistence/IOCExtensions.cs` (`AddPersistenceServices`).
+## Screenshots
 
-**FluentValidation:** Validator classes under `HMD.TaskManagement.Application/Validators/` are injected into handlers as `IValidator<TRequest>`; handlers call `Validate` / `ValidateAsync` and map failures with `ValidationExtensions.ToMap` before executing use cases (no automatic MVC filter pipeline for validators in this codebase).
+These are the screenshots already in `docs/images/`. The UI is in Turkish.
 
-**Routing** (`Program.cs`):
+| Admin dashboard | Admin: member management |
+|---|---|
+| ![Admin dashboard with work order, member and unread notification counts](docs/images/admin/admin-dashboard.png) | ![Admin member list with search and actions](docs/images/admin/admin-users.png) |
+| **Admin: work order form** | **Member: assigned work orders** |
+| ![Admin work order form with title, description, priority and dates](docs/images/admin/admin-task-form.png) | ![Member work order list with search](docs/images/member/member-work-orders-list.png) |
 
-- Area routes: `{area:exists}/{controller=Home}/{action=Index}/{id?}` (e.g. `/Admin/Home/Index`, `/Member/AppTask/List`).
-- Default route: `{controller=Account}/{action=Login}/{id?}` so unauthenticated users land on login.
+More screenshots: [admin work order list](docs/images/admin/admin-work-orders.png), [admin profile](docs/images/admin/admin-profile.png), [member profile](docs/images/member/member-profile.png), [member layout](docs/images/member/member-dashboard.png).
 
-**Authentication:** Cookie scheme with an application-specific cookie name, **HttpOnly**, **SameSite = Strict**, and **Secure** policy aligned with the request (HTTPS in production recommended).
+## Getting Started
 
-**Startup:** On boot, the app optionally ensures seed **Role** rows exist (Admin = 1, Member = 2) when the database is reachable, so registration and authorization stay consistent.
-
----
-
-## Tech stack
-
-Verified from project files:
-
-| Technology | Where |
-|------------|--------|
-| **.NET 8** | All projects (`net8.0`) |
-| **ASP.NET Core MVC** | `PersonalManagementSystem` |
-| **Entity Framework Core 8** + **SQL Server** provider | `HMD.TaskManagement.Persistence` |
-| **MediatR** 12.x | `HMD.TaskManagement.Application` |
-| **FluentValidation** 11.x | Validators under `HMD.TaskManagement.Application/Validators/`; invoked explicitly from MediatR handlers |
-| **EF Core tools / Design-time** | UI project references `Microsoft.EntityFrameworkCore.Design` for migrations |
-
----
-
-## Prerequisites
+### Prerequisites
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- A **SQL Server** instance you can connect to — commonly **LocalDB** for local development (`(localdb)\MSSQLLocalDB`) or a named SQL Server instance.
+- SQL Server. LocalDB (`(localdb)\MSSQLLocalDB`, installed with Visual Studio) works for local development.
+- Optional: `dotnet-ef` for running migrations by hand (`dotnet tool install --global dotnet-ef`).
 
----
+### Configuration
 
-## Configuration
+The app reads the connection string named **`Local`** (`ConnectionStrings:Local`). `PersonalManagementSystem/appsettings.json` ships with a LocalDB default that uses Windows integrated security and contains no password. If that works for you, you can skip this step.
 
-Connection strings are read from **`PersonalManagementSystem/appsettings.json`** (and optional environment-specific overrides).
+To point at another server without editing tracked files, use an **environment variable**, which ASP.NET Core always reads:
 
-Set the **`ConnectionStrings:Local`** entry to your database. Use a placeholder or development-only values in source control; do not commit production credentials.
-
-**Example shape (not a real secret — adjust server and database names):**
-
-```json
-"ConnectionStrings": {
-  "Local": "Server=(localdb)\\MSSQLLocalDB;Database=YourTaskDb;Integrated Security=True;TrustServerCertificate=True"
-}
+```powershell
+# PowerShell
+$env:ConnectionStrings__Local = "Server=<host>;Database=TaskManagementDb;User Id=<user>;Password=<password>;TrustServerCertificate=True"
 ```
-
-For a full SQL Server instance, replace `Server=` with your host and use appropriate authentication (`Integrated Security` or SQL login) per your environment policy.
-
----
-
-## Setup and run
-
-From the repository root (`TaskManagementSystem`):
 
 ```bash
-dotnet restore PersonalManagementSystem.sln
-dotnet build PersonalManagementSystem.sln
-dotnet run --project PersonalManagementSystem/HMD.TaskManagement.UI.csproj
+# bash
+export ConnectionStrings__Local="Server=<host>;Database=TaskManagementDb;User Id=<user>;Password=<password>;TrustServerCertificate=True"
 ```
 
-Then open the HTTPS or HTTP URL shown in the console (Kestrel). The default route opens **Account/Login**.
+You can also use **user-secrets**. The UI project has no `UserSecretsId` yet, so initialise it first (this adds a `UserSecretsId` to the `.csproj` on your machine):
 
-### Database migrations
+```bash
+dotnet user-secrets init --project PersonalManagementSystem
+dotnet user-secrets set "ConnectionStrings:Local" "<your connection string>" --project PersonalManagementSystem
+```
 
-Apply migrations using the Persistence project as the EF project and the UI project as startup:
+Do not commit credentials to `appsettings*.json`.
+
+### Database and migrations
+
+Migrations live in `HMD.TaskManagement.Persistence/Migrations`. **On startup the app calls `Database.Migrate()`**, so the database is created and updated automatically if the connection string works. Startup also inserts the two role rows (`1 = Admin`, `2 = Member`) when they are missing.
+
+To apply migrations by hand instead:
 
 ```bash
 dotnet ef database update --project HMD.TaskManagement.Persistence --startup-project PersonalManagementSystem
 ```
 
-Ensure `ConnectionStrings:Local` points to a valid server before running `database update`.
+### Run
 
----
+```bash
+dotnet restore PersonalManagementSystem.sln
+dotnet build PersonalManagementSystem.sln
+dotnet run --project PersonalManagementSystem --launch-profile https
+```
 
-## Repository map (quick reference)
+Then open `https://localhost:7276` (from `Properties/launchSettings.json`).
 
-| Path | Role |
-|------|------|
-| `PersonalManagementSystem.sln` | Solution entry |
-| `PersonalManagementSystem/Program.cs` | Middleware, cookie auth, area + default routes |
-| `PersonalManagementSystem/appsettings.json` | Logging, `ConnectionStrings:Local` |
-| `PersonalManagementSystem/Controllers/` | `AccountController` + area controllers |
-| `HMD.TaskManagement.Application/` | Requests, handlers, validation |
-| `HMD.TaskManagement.Persistence/` | `TaskManagementContext`, migrations |
-| `docs/images/admin/` | README screenshots (admin) |
-| `docs/images/member/` | README screenshots (member) |
+> On Windows, the UI `.csproj` has a pre-build step that runs `taskkill` on any running `HMD.TaskManagement.UI.exe` and `iisexpress.exe` processes to avoid locked-file errors.
 
----
+### First admin account
 
-## License / academic use
+No users are seeded, and self-registration always creates a **Member**. To get an admin:
 
-This project is intended for **educational and capstone demonstration** purposes. Adapt licensing as required by your institution or employer.
+1. Register at `/Account/Register`.
+2. Promote that user in SQL Server:
+   ```sql
+   UPDATE Users SET AppRoleId = 1 WHERE UserName = N'<your-username>';
+   ```
+3. Sign out and sign in again.
+
+Notifications for new reports and completed tasks are always sent to the user with **Id 1** (see [Limitations](#limitations)), so on a fresh database the first registered account should be the admin.
+
+## Testing
+
+There are **no automated tests** in this repository and **no CI pipeline**. The solution builds with the .NET 8 SDK (`dotnet build`). The first build reports nullable-reference warnings in the Application handlers. All verification so far has been manual, through the UI.
+
+## Project Status
+
+- Built as a Computer Engineering capstone project between February and May 2025.
+- Small follow-up changes in May 2026: a migration that makes a task's assignee nullable, plus documentation and screenshots.
+- Not deployed, and not maintained as a product.
+
+## My Contributions
+
+This is a solo project. Every commit in the history is mine. I designed the layered solution structure, the domain model and EF Core mappings, the MediatR request/handler and validation flow, cookie-based role authorization, and the Admin and Member MVC areas with their Razor views and styling. The vendored front-end libraries and the UI template listed below are third-party code.
+
+## Limitations
+
+These are known issues in the current code. I am listing them openly rather than hiding them:
+
+- **Passwords are stored and compared in plain text.** There is no hashing (`AppUser.Password`, `LoginRequestHandler`).
+- **Admin-created members and password resets use a fixed default password** that is hard-coded in the Application handlers.
+- **No per-user authorization checks on member actions.** Reports and task completion are addressed by id, and the handlers do not check that the task belongs to the signed-in member. Several state-changing actions (delete, complete, mark as read) are plain `GET` links, and no anti-forgery validation is applied. The `SameSite=Strict` cookie reduces, but does not remove, the CSRF exposure.
+- **Notifications assume a single admin with user Id 1** (hard-coded in `TaskReportCreateHandler` and `AppTaskCompleteRequestHandler`).
+- **Leftover debug instrumentation:** `LoginRequestHandler`, `AccountController` and the Persistence `IOCExtensions` append JSON lines (including login usernames) to a hard-coded local file path. Any failure is swallowed, so on other machines this does nothing, but it should be removed.
+- Startup runs `Database.Migrate()` and raw SQL schema fixes automatically. That is convenient for a demo but not what you want in production.
+- No tests, no CI, no containerisation, no logging or monitoring setup.
+- The UI is Turkish-only. The `wwwroot` folder contains three copies of Bootstrap (see below).
+
+## Third-party code and licences
+
+Vendored under `PersonalManagementSystem/wwwroot/` (all MIT-licensed, with their licence headers or files kept in place):
+
+| Path | Component |
+|---|---|
+| `lib/bootstrap`, `lib/jquery`, `lib/jquery-validation`, `lib/jquery-validation-unobtrusive` | Default ASP.NET Core MVC template libraries (Bootstrap 5.1, jQuery 3.6, jQuery Validation 1.19.5, jQuery Validation Unobtrusive), each with its `LICENSE` file |
+| `bootstrap/`, `twitter-bootstrap/` | Bootstrap 5.3.3, restored via LibMan (`libman.json`) |
+| `theme/` | [Start Bootstrap "Simple Sidebar"](https://startbootstrap.com/template/simple-sidebar) v6.0.6, MIT, by Start Bootstrap |
+
+Font Awesome and one Bootstrap bundle are loaded from public CDNs at runtime. NuGet dependencies (MediatR, FluentValidation, EF Core) are restored at build time and are not vendored.
+
+The repository does not currently include a licence for its own code.
