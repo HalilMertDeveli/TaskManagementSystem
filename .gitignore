@@ -1,9 +1,50 @@
+# Build output
 .vs/
+.vscode/
+.idea/
 bin/
 obj/
-node_modules/
+[Dd]ebug/
+[Rr]elease/
+*.dll
+*.pdb
+*.exe
+
+# Local verification / scratch output
+.verify/
+.tmp*
+*.tmp
+
+# Test results / coverage
+TestResults/
+*.trx
+coverage*.xml
+coverage*.json
+
+# User-specific files
 *.user
 *.suo
+*.rsuser
+*.userprefs
+launchSettings.local.json
 
-# Logs
+# Node
+node_modules/
+
+# Logs (including local debug logs)
 *.log
+
+# Secrets / local configuration
+appsettings.*.local.json
+*.pfx
+*.p12
+.env
+.env.*
+
+# Cookie jars and HTTP captures
+*cookie*.txt
+*.har
+
+# OS files
+Thumbs.db
+.DS_Store

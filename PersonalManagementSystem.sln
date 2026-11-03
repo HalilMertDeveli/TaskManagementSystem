@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMD.TaskManagement.Persiste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMD.TaskManagement.Application", "HMD.TaskManagement.Application\HMD.TaskManagement.Application.csproj", "{5D903143-5E26-432C-A035-BD891FC8F671}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMD.TaskManagement.Tests", "HMD.TaskManagement.Tests\HMD.TaskManagement.Tests.csproj", "{457C6FC6-37EA-4B99-AF8E-7454E508A97B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5D903143-5E26-432C-A035-BD891FC8F671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D903143-5E26-432C-A035-BD891FC8F671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D903143-5E26-432C-A035-BD891FC8F671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{457C6FC6-37EA-4B99-AF8E-7454E508A97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{457C6FC6-37EA-4B99-AF8E-7454E508A97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{457C6FC6-37EA-4B99-AF8E-7454E508A97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{457C6FC6-37EA-4B99-AF8E-7454E508A97B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

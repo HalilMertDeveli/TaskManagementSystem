@@ -39,7 +39,8 @@ namespace HMD.TaskManagement.Application.Requests
 
     public record AppTaskUpdateRequest(int Id, string? Title, string? Description, int PriorityId, int? AppUserId) : IRequest<Result<AppTaskDto>>;
 
-    public record AppTaskCompleteRequest(int Id) : IRequest<Result<NoData>>;
+    /// <summary>Marks a task as completed. Only succeeds when the task is assigned to <paramref name="UserId"/> (the signed-in member).</summary>
+    public record AppTaskCompleteRequest(int Id, int UserId) : IRequest<Result<NoData>>;
 
 
 }

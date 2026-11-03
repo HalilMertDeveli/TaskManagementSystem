@@ -74,6 +74,7 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
             return View(request);
         }
 
+        [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
             ViewBag.Active = "AppTask";

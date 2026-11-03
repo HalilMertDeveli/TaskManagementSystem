@@ -1,4 +1,5 @@
 ﻿using HMD.TaskManagement.Application.Requests;
+using HMD.TaskManagement.UI.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace HMD.TaskManagement.UI.Controllers.Member
 
         public async Task<IActionResult> List(string? s, int activePage = 1)
         {
-            var userId = int.Parse(User.Claims.SingleOrDefault(x => x.Type == "UserId")?.Value ?? "0");
+            var userId = User.GetUserId();
             ViewBag.s = s;
             ViewBag.Active = "AppTask";
             var result = await this.mediator.Send(new AppTaskListByUserIdRequest(activePage, s, userId));
@@ -28,11 +29,10 @@ namespace HMD.TaskManagement.UI.Controllers.Member
         public async Task<IActionResult> ReportList(int id)
         {
             var appTaskInfo = await this.mediator.Send(new AppTaskGetByIdRequest(id));
-            if (appTaskInfo.Data is null)
-            {
-                TempData["Error"] = appTaskInfo.ErrorMessage ?? "Gorev bilgisi bulunamadi.";
-                return RedirectToAction("List");
-            }
+
+            // Members may only see reports of tasks assigned to them.
+            if (appTaskInfo.Data is null || appTaskInfo.Data.AppUserId != User.GetUserId())
+                return NotFound();
 
             ViewBag.TaskTitle = appTaskInfo.Data.Title;
             ViewBag.TaskId = appTaskInfo.Data.Id;
@@ -41,8 +41,12 @@ namespace HMD.TaskManagement.UI.Controllers.Member
             return View(result.Data);
         }
 
-        public IActionResult CreateReport(int taskId)
+        public async Task<IActionResult> CreateReport(int taskId)
         {
+            var appTaskInfo = await this.mediator.Send(new AppTaskGetByIdRequest(taskId));
+            if (appTaskInfo.Data is null || appTaskInfo.Data.AppUserId != User.GetUserId())
+                return NotFound();
+
             ViewBag.Active = "AppTask";
             return View(new TaskReportCreateRequest("", "", taskId));
         }
@@ -50,38 +54,34 @@ namespace HMD.TaskManagement.UI.Controllers.Member
         [HttpPost]
         public async Task<IActionResult> CreateReport(TaskReportCreateRequest request)
         {
-
             ViewBag.Active = "AppTask";
+            // The acting user always comes from the auth cookie, never from the form.
+            request = request with { UserId = User.GetUserId() };
+
             var result = await this.mediator.Send(request);
             if (result.IsSuccess)
             {
                 return RedirectToAction("ReportList", new { id = request.TaskId });
             }
-            else
+
+            if (result.Errors?.Count > 0)
             {
-                if (result.Errors?.Count > 0)
+                foreach (var error in result.Errors)
                 {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu, sistem üreticinize başvurun");
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                 }
 
                 return View(request);
             }
+
+            return NotFound();
         }
+
         public async Task<IActionResult> UpdateReport(int id)
         {
-            var result = await this.mediator.Send(new TaskReportGetByIdRequest(id));
+            var result = await this.mediator.Send(new TaskReportGetByIdRequest(id, User.GetUserId()));
             if (result.Data is null)
-            {
-                TempData["Error"] = result.ErrorMessage ?? "Rapor bulunamadi.";
-                return RedirectToAction("List");
-            }
+                return NotFound();
 
             return View(new TaskReportUpdateRequest(result.Data.Id, result.Data.Detail, result.Data.Definition, result.Data.AppTaskId));
         }
@@ -90,30 +90,44 @@ namespace HMD.TaskManagement.UI.Controllers.Member
         public async Task<IActionResult> UpdateReport(TaskReportUpdateRequest request)
         {
             ViewBag.Active = "AppTask";
+            request = request with { UserId = User.GetUserId() };
+
             var result = await this.mediator.Send(request);
             if (result.IsSuccess)
             {
-
                 return RedirectToAction("ReportList", new { id = request.TaskId });
             }
-            else
+
+            if (result.Errors?.Count > 0)
             {
-                ModelState.AddModelError("", result.ErrorMessage ?? "Bilinmeyen bir hata oluştu, sistem üreticinize başvurun");
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
 
                 return View(request);
             }
 
+            return NotFound();
         }
 
+        [HttpPost]
         public async Task<IActionResult> DeleteReport(int id, int taskId)
         {
-            await this.mediator.Send(new TaskReportDeleteRequest(id));
+            var result = await this.mediator.Send(new TaskReportDeleteRequest(id, User.GetUserId()));
+            if (!result.IsSuccess)
+                return NotFound();
+
             return RedirectToAction("ReportList", new { id = taskId });
         }
 
+        [HttpPost]
         public async Task<IActionResult> CompleteTask(int id)
         {
-            await this.mediator.Send(new AppTaskCompleteRequest(id));
+            var result = await this.mediator.Send(new AppTaskCompleteRequest(id, User.GetUserId()));
+            if (!result.IsSuccess)
+                return NotFound();
+
             return RedirectToAction("List");
         }
 

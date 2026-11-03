@@ -1,4 +1,6 @@
 ﻿using HMD.TaskManagement.Application.Requests;
+using HMD.TaskManagement.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HMD.TaskManagement.Application.Extensions
@@ -10,6 +12,8 @@ namespace HMD.TaskManagement.Application.Extensions
 
             services.AddMediatR(configuration =>
                 configuration.RegisterServicesFromAssembly(typeof(LoginRequest).Assembly));
+
+            services.AddSingleton<IPasswordHasher<AppUser>, PasswordHasher<AppUser>>();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HMD.TaskManagement.Application.Dtos;
+using HMD.TaskManagement.Application.Enums;
 using HMD.TaskManagement.Application.Extensions;
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Application.Requests;
@@ -27,7 +28,7 @@ namespace HMD.TaskManagement.Application.Handlers.Account
             var validationResult = validator.Validate(request);
             if (validationResult.IsValid)
             {
-                var updated = await repository.GetByFilterAsync(x => x.Id == request.Id, false);
+                var updated = await repository.GetByFilterAsync(x => x.Id == request.Id && x.AppRoleId == (int)RoleType.Member, false);
                 if (updated == null)
                     return new Result<NoData>(new NoData(), false, "Üye Bulunamadı", null);
                 updated.Name = request.Name;

@@ -23,6 +23,9 @@ namespace HMD.TaskManagement.Application.Handlers.AppTask
         public async Task<Result<NoData>> Handle(AppTaskDeleteRequest request, CancellationToken cancellationToken)
         {
             var deletedAppTask = await this.repository.GetByFilterAsync(x => x.Id == request.Id);
+            if (deletedAppTask == null)
+                return new Result<NoData>(new NoData(), false, "İş emri bulunamadı", null);
+
             await this.repository.DeleteAsync(deletedAppTask);
 
             return new Result<NoData>(new NoData(), true, null, null);

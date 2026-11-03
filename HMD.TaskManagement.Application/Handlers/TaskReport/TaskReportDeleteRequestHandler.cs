@@ -2,11 +2,6 @@
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Application.Requests;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HMD.TaskManagement.Application.Handlers.TaskReport
 {
@@ -21,7 +16,8 @@ namespace HMD.TaskManagement.Application.Handlers.TaskReport
 
         public async Task<Result<NoData>> Handle(TaskReportDeleteRequest request, CancellationToken cancellationToken)
         {
-            var deletedEntity = await this.repository.GetByFilter(x => x.Id == request.Id, false);
+            // Resource-level check: the report's task must be assigned to the signed-in member.
+            var deletedEntity = await this.repository.GetByFilter(x => x.Id == request.Id && x.AppTask!.AppUserId == request.UserId, false);
             if (deletedEntity != null)
             {
                 await this.repository.DeleteAsync(deletedEntity);

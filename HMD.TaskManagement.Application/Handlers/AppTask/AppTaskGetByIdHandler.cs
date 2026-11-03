@@ -26,6 +26,9 @@ namespace HMD.TaskManagement.Application.Handlers.AppTask
             
 
             var result= await this.repository.GetByFilterAsNoTrackingAsync(x => x.Id == request.Id);
+            if (result == null)
+                return new Result<AppTaskListDto>(null!, false, "İş emri bulunamadı", null);
+
             return new Result<AppTaskListDto>(result.ToMap(), true, null, null);
         }
     }

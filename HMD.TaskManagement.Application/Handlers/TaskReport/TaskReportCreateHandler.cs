@@ -3,11 +3,6 @@ using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Application.Requests;
 using HMD.TaskManagement.Application.Validators.TaskReport;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HMD.TaskManagement.Application.Extensions;
 
 namespace HMD.TaskManagement.Application.Handlers.TaskReport
@@ -16,11 +11,15 @@ namespace HMD.TaskManagement.Application.Handlers.TaskReport
     {
         private readonly ITaskReportRepository repository;
         private readonly INotificationRepository notificationRepository;
+        private readonly IAppTaskRepository appTaskRepository;
+        private readonly IUserRepository userRepository;
 
-        public TaskReportCreateHandler(ITaskReportRepository repository, INotificationRepository notificationRepository)
+        public TaskReportCreateHandler(ITaskReportRepository repository, INotificationRepository notificationRepository, IAppTaskRepository appTaskRepository, IUserRepository userRepository)
         {
             this.repository = repository;
             this.notificationRepository = notificationRepository;
+            this.appTaskRepository = appTaskRepository;
+            this.userRepository = userRepository;
         }
 
         public async Task<Result<NoData>> Handle(TaskReportCreateRequest request, CancellationToken cancellationToken)
@@ -28,33 +27,28 @@ namespace HMD.TaskManagement.Application.Handlers.TaskReport
             var validator = new TaskReportCreateRequestValidator();
             var validationResult = validator.Validate(request);
 
-
-            if (validationResult.IsValid)
+            if (!validationResult.IsValid)
             {
-                var rowCount = await this.repository.CreateAsync(new Domain.Entities.TaskReport
-                {
-                    AppTaskId = request.TaskId,
-                    Defination = request.Definition,
-                    Detail = request.Detail
-                });
-                if (rowCount > 0)
-                {
-                    await this.notificationRepository.SendNotification(new Domain.Entities.Notification
-                    {
-                        AppUserID = 1,//admin değişecek sadece 1 tane admin varmış gibi atama yapılıyor
-                        Description = $"Bir rapor yazıldı, başlık : {request.Definition}",
-                        State = false,
+                return new Result<NoData>(new NoData(), false, null, validationResult.Errors.ToMap());
+            }
 
-                    });
-                    return new Result<NoData>(new NoData(), true, null, null);
-                }
-                return new Result<NoData>(new NoData(), false, "Sistemsel bir hata oluştu, sistem üreticinize başvurun", null);
-            }
-            else
+            // Resource-level check: reports can only be written for tasks assigned to the signed-in member.
+            var task = await this.appTaskRepository.GetByFilterAsNoTrackingAsync(x => x.Id == request.TaskId && x.AppUserId == request.UserId);
+            if (task == null)
+                return new Result<NoData>(new NoData(), false, "İş emri bulunamadı", null);
+
+            var rowCount = await this.repository.CreateAsync(new Domain.Entities.TaskReport
             {
-                var errors = validationResult.Errors.ToMap();
-                return new Result<NoData>(new NoData(), false, null, errors);
+                AppTaskId = task.Id,
+                Defination = request.Definition!,
+                Detail = request.Detail!
+            });
+            if (rowCount > 0)
+            {
+                await this.notificationRepository.NotifyAdminsAsync(this.userRepository, $"Bir rapor yazıldı, başlık : {request.Definition}");
+                return new Result<NoData>(new NoData(), true, null, null);
             }
+            return new Result<NoData>(new NoData(), false, "Sistemsel bir hata oluştu, sistem üreticinize başvurun", null);
         }
     }
 }

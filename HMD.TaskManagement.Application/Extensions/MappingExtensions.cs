@@ -13,9 +13,10 @@ namespace HMD.TaskManagement.Application.Extensions
             return new AppUser
             {
                 AppRoleId = (int)RoleType.Member,
-                Name = request.Name,
-                Password = request.Password,
-                Surname = request.Surname,
+                Name = request.Name!,
+                // Password is hashed by RegisterRequestHandler; the plain value is never mapped onto the entity.
+                Password = string.Empty,
+                Surname = request.Surname!,
                 UserName = request.Username,
 
             };

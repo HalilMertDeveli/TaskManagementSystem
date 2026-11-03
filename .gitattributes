@@ -1,0 +1,10 @@
+# GitHub Linguist: third-party front-end assets copied into wwwroot are excluded from the
+# repository language statistics so the language bar reflects the first-party C# / Razor code.
+PersonalManagementSystem/wwwroot/lib/** linguist-vendored
+PersonalManagementSystem/wwwroot/bootstrap/** linguist-vendored
+PersonalManagementSystem/wwwroot/twitter-bootstrap/** linguist-vendored
+PersonalManagementSystem/wwwroot/theme/** linguist-vendored
+
+# EF Core generated migration code
+HMD.TaskManagement.Persistence/Migrations/*.Designer.cs linguist-generated
+HMD.TaskManagement.Persistence/Migrations/*ModelSnapshot.cs linguist-generated

@@ -11,7 +11,9 @@
         @item.Description   @{
             if (item.State == false)
             {
-                <a asp-action="Update" asp-route-id="@item.Id" asp-controller="Notification">Okundu olarak işaretle</a>
+                <form asp-action="Update" asp-controller="Notification" asp-area="Admin" asp-route-id="@item.Id" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-link p-0 align-baseline">Okundu olarak işaretle</button>
+                </form>
             }
         }
     </div>

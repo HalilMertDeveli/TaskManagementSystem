@@ -6,17 +6,18 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using System.Text.Json;
 
 namespace HMD.TaskManagement.UI.Controllers
 {
     public class AccountController : Controller
     {
         private readonly IMediator mediator;
+        private readonly ILogger<AccountController> logger;
 
-        public AccountController(IMediator mediator)
+        public AccountController(IMediator mediator, ILogger<AccountController> logger)
         {
             this.mediator = mediator;
+            this.logger = logger;
         }
 
         [HttpGet]
@@ -60,9 +61,8 @@ namespace HMD.TaskManagement.UI.Controllers
             }
             catch (Exception ex)
             {
-                // #region agent log
-                try { System.IO.File.AppendAllText("C:/Users/clt/Desktop/TaskManagementSystem/debug-8b40ae.log", JsonSerializer.Serialize(new { sessionId = "8b40ae", runId = "investigation-1", hypothesisId = "H2", location = "AccountController.cs:Login:catch", message = "Login POST exception", data = new { exceptionType = ex.GetType().FullName, ex.Message, inner = ex.InnerException?.Message }, timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() }) + Environment.NewLine); } catch { }
-                // #endregion
+                // No user name, password or request data is logged.
+                logger.LogError(ex, "Unexpected error while processing a login request.");
 
                 ModelState.AddModelError("", "Giriş işlemi sırasında sistemsel bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
                 return View(request);
@@ -109,6 +109,7 @@ namespace HMD.TaskManagement.UI.Controllers
             }
         }
 
+        [HttpPost]
         public async Task<IActionResult> LogOut()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

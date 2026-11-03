@@ -236,7 +236,9 @@
                                                 <td>@(item.EndDate.ToString("dd/MM/yyyy") ?? "-")</td>
                                                 <td>
                                                     <a asp-action="Update" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detay</a>
-                                                    <a asp-action="Delete" onclick="return confirm('Silmek istediğinizden emin misiniz?')" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+                                                    <form asp-action="Delete" asp-controller="AppTask" asp-area="Admin" asp-route-id="@item.Id" method="post" class="d-inline" onsubmit="return confirm('Silmek istediğinizden emin misiniz?')">
+                                                        <button type="submit" class="btn btn-sm btn-danger">Sil</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         }

@@ -21,15 +21,16 @@ namespace HMD.TaskManagement.Application.Requests
         public string? S { get; set; }
     };
 
-    public record MemberCreateRequest(string? Username, string? Name, string? Surname) : IRequest<Result<NoData>>;
+    public record MemberCreateRequest(string? Username, string? Name, string? Surname) : IRequest<Result<TemporaryPasswordDto?>>;
     public record MemberUpdateRequest(int Id, string? Name, string? Surname) : IRequest<Result<NoData>>;
-    public record MemberResetPasswordRequest(int Id) : IRequest<Result<NoData>>;
+    public record MemberResetPasswordRequest(int Id) : IRequest<Result<TemporaryPasswordDto?>>;
 
     public record MemberDeleteRequest(int Id) : IRequest<Result<NoData>>;
 
-    public record UserDetailRequest(int Id) : IRequest<Result<UserDetailDto>>;
+    public record UserDetailRequest(int Id) : IRequest<Result<UserDetailDto?>>;
 
-    public record UserDetailUpdateRequest(int Id, string Name, string Surname, string Password) : IRequest<Result<NoData>>;
+    /// <summary>Profile update. <paramref name="Id"/> is overwritten with the signed-in user's id by the controller; an empty password keeps the current one.</summary>
+    public record UserDetailUpdateRequest(int Id, string? Name, string? Surname, string? Password) : IRequest<Result<NoData>>;
 
 
 }

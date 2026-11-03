@@ -52,15 +52,16 @@
                                                class="btn btn-sm btn-secondary">
                                                 Düzenle
                                             </a>
-                                            <a asp-action="DeleteReport"
-                                               onclick="return confirm('Silmek istediğinizden emin misiniz?')"
-                                               asp-controller="AppTask"
-                                               asp-area="Member"
-                                               asp-route-id="@item.Id"
-                                               asp-route-taskId="@ViewBag.TaskId"
-                                               class="btn btn-sm btn-primary">
-                                                Sil
-                                            </a>
+                                            <form asp-action="DeleteReport"
+                                                  asp-controller="AppTask"
+                                                  asp-area="Member"
+                                                  asp-route-id="@item.Id"
+                                                  asp-route-taskId="@ViewBag.TaskId"
+                                                  method="post"
+                                                  class="d-inline"
+                                                  onsubmit="return confirm('Silmek istediğinizden emin misiniz?')">
+                                                <button type="submit" class="btn btn-sm btn-primary">Sil</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 }

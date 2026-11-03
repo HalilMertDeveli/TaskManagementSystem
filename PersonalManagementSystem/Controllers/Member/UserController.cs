@@ -1,4 +1,5 @@
 ﻿using HMD.TaskManagement.Application.Requests;
+using HMD.TaskManagement.UI.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,15 +20,25 @@ namespace HMD.TaskManagement.UI.Controllers.Member
         public async Task<IActionResult> UserDetail()
         {
             ViewBag.Active = "Profil";
-            var userId = int.Parse(User.Claims.SingleOrDefault(x => x.Type == "UserId")?.Value ?? "0");
+            var userId = User.GetUserId();
             var updated = await this.mediator.Send(new UserDetailRequest(userId));
-            return View(new UserDetailUpdateRequest(updated.Data.Id, updated.Data.Name, updated.Data.Surname, updated.Data.Password));
+            if (updated.Data is null)
+            {
+                ModelState.AddModelError("", updated.ErrorMessage ?? "Kullanici bilgisi bulunamadi.");
+                return View(new UserDetailUpdateRequest(userId, string.Empty, string.Empty, null));
+            }
+
+            // The password field is always rendered empty; the current password is never sent to the browser.
+            return View(new UserDetailUpdateRequest(updated.Data.Id, updated.Data.Name, updated.Data.Surname, null));
         }
 
         [HttpPost]
         public async Task<IActionResult> UserDetail(UserDetailUpdateRequest request)
         {
             ViewBag.Active = "Profil";
+
+            // Users can only edit their own profile: the id comes from the auth cookie, not from the form.
+            request = request with { Id = User.GetUserId() };
 
             var result = await this.mediator.Send(request);
 
@@ -51,7 +62,7 @@ namespace HMD.TaskManagement.UI.Controllers.Member
             }
 
 
-            return View(request);
+            return View(request with { Password = null });
 
 
         }

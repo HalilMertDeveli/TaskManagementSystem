@@ -31,7 +31,6 @@
                                 <div class="card-block">
                                     <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Profil Bilgileri</h6>
                                     <form asp-action="UserDetail" asp-controller="User" asp-area="Admin" method="post">
-                                        <input type="hidden" asp-for="Id" />
 
                                         <div class="mb-3">
                                             <label class="form-label">Ad :</label>
@@ -44,8 +43,8 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="form-label">Parola :</label>
-                                            <input asp-for="Password" class="form-control" />
+                                            <label class="form-label">Yeni Parola :</label>
+                                            <input asp-for="Password" type="password" autocomplete="new-password" class="form-control" placeholder="Değiştirmek istemiyorsanız boş bırakın" />
                                         </div>
 
                                         <div class="mb-3">

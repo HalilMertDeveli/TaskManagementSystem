@@ -2,11 +2,6 @@
 using HMD.TaskManagement.Application.Interfaces;
 using HMD.TaskManagement.Application.Requests;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HMD.TaskManagement.Application.Handlers.Notification
 {
@@ -21,7 +16,8 @@ namespace HMD.TaskManagement.Application.Handlers.Notification
 
         public async Task<Result<NoData>> Handle(NotificationUpdateRequest request, CancellationToken cancellationToken)
         {
-            var updated = await this.repository.GetByFilterAsync(x => x.Id == request.Id);
+            // Resource-level check: users can only mark their own notifications as read.
+            var updated = await this.repository.GetByFilterAsync(x => x.Id == request.Id && x.AppUserID == request.UserId);
             if (updated == null)
                 return new Result<NoData>(new NoData(), false, "Bildirim bulunamadı", null);
 
