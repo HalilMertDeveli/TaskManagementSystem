@@ -46,6 +46,13 @@ namespace HMD.TaskManagement.Application.Handlers.AppTask
 
             if (validationResult.IsValid)
             {
+                // Tasks may only be assigned to existing members (not admins or arbitrary ids).
+                if (request.AppUserId is > 0 && !memberDtoList.Any(m => m.Id == request.AppUserId))
+                {
+                    return new Result<AppTaskDto>(new AppTaskDto(priorityDtoList, memberDtoList), false, null,
+                        [new ValidationError(nameof(AppTaskUpdateRequest.AppUserId), "Geçersiz personel seçimi")]);
+                }
+
                 var updated = await this.repository.GetByFilterAsync(x => x.Id == request.Id);
                 if (updated == null)
                 {

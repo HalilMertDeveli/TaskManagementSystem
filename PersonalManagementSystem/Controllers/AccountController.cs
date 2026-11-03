@@ -109,6 +109,7 @@ namespace HMD.TaskManagement.UI.Controllers
             }
         }
 
+        [HttpPost]
         public async Task<IActionResult> LogOut()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

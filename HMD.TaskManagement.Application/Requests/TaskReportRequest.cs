@@ -1,23 +1,21 @@
 ﻿using HMD.TaskManagement.Application.Dtos;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HMD.TaskManagement.Application.Requests
 {
 
     public record TaskReportGetByTaskIdRequest(int Id) : IRequest<Result<List<TaskReportListDto>>>;
 
-    public record TaskReportGetByIdRequest(int Id) : IRequest<Result<TaskReportListDto>>;
+    // Member-side report operations. UserId is always set by the controller from the signed-in user's
+    // claims (never from form data); handlers only act on reports whose task is assigned to that user.
 
-    public record TaskReportCreateRequest(string? Detail, string? Definition, int TaskId) : IRequest<Result<NoData>>;
+    public record TaskReportGetByIdRequest(int Id, int UserId) : IRequest<Result<TaskReportListDto?>>;
 
-    public record TaskReportUpdateRequest(int Id, string? Detail, string? Definition, int TaskId) : IRequest<Result<NoData>>;
+    public record TaskReportCreateRequest(string? Detail, string? Definition, int TaskId, int UserId = 0) : IRequest<Result<NoData>>;
 
-    public record TaskReportDeleteRequest(int Id) : IRequest<Result<NoData>>;
+    public record TaskReportUpdateRequest(int Id, string? Detail, string? Definition, int TaskId, int UserId = 0) : IRequest<Result<NoData>>;
+
+    public record TaskReportDeleteRequest(int Id, int UserId) : IRequest<Result<NoData>>;
 
 
 }

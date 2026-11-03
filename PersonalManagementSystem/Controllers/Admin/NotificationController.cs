@@ -1,4 +1,5 @@
 ﻿using HMD.TaskManagement.Application.Requests;
+using HMD.TaskManagement.UI.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,14 +20,17 @@ namespace HMD.TaskManagement.UI.Controllers.Admin
         public async Task<IActionResult> List()
         {
             ViewBag.Active = "Notification";
-            var userId = int.Parse(User.Claims.SingleOrDefault(x => x.Type == "UserId")?.Value ?? "0");
-            var result = await this.mediator.Send(new NotificationListByUserIdRequest(userId));
+            var result = await this.mediator.Send(new NotificationListByUserIdRequest(User.GetUserId()));
             return View(result.Data);
         }
 
+        [HttpPost]
         public async Task<IActionResult> Update(int id)
         {
-            await this.mediator.Send(new NotificationUpdateRequest(id));
+            var result = await this.mediator.Send(new NotificationUpdateRequest(id, User.GetUserId()));
+            if (!result.IsSuccess)
+                return NotFound();
+
             return RedirectToAction("List");
         }
     }

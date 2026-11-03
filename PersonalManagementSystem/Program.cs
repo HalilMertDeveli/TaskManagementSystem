@@ -2,6 +2,7 @@
 using HMD.TaskManagement.Persistence;
 using HMD.TaskManagement.Persistence.Context;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace PersonalManagementSystem
@@ -13,8 +14,11 @@ namespace PersonalManagementSystem
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
-            
+            // Every unsafe HTTP method (POST/PUT/PATCH/DELETE) must carry a valid antiforgery token.
+            // Forms rendered with the form tag helper include the token automatically.
+            builder.Services.AddControllersWithViews(options =>
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()));
+
             //IOC
             builder.Services.AddPersistenceServices(builder.Configuration);
             builder.Services.AddApplicationServices();
