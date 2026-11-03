@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      # Integration tests run against a real SQL Server. The SA password is generated per run,
+      # masked in the log and never stored in the repository.
+      - name: Start SQL Server container
+        run: |
+          SA_PASSWORD="Aa1!$(openssl rand -hex 16)"
+          echo "::add-mask::$SA_PASSWORD"
+          docker run -d --name mssql \
+            -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD="$SA_PASSWORD" -e MSSQL_PID=Developer \
+            -p 1433:1433 mcr.microsoft.com/mssql/server:2022-latest
+          for i in $(seq 1 60); do
+            if docker exec -e SQLCMDPASSWORD="$SA_PASSWORD" mssql /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -Q "SELECT 1" > /dev/null 2>&1; then
+              echo "SQL Server is ready"
+              break
+            fi
+            if [ "$i" -eq 60 ]; then
+              echo "SQL Server did not become ready" >&2
+              docker logs mssql | tail -50
+              exit 1
+            fi
+            sleep 2
+          done
+          echo "TMS_TEST_SQLSERVER=Server=localhost,1433;User ID=sa;Password=$SA_PASSWORD;Encrypt=True;TrustServerCertificate=True" >> "$GITHUB_ENV"
+
+      - name: Restore
+        run: dotnet restore PersonalManagementSystem.sln
+
+      - name: Build
+        run: dotnet build PersonalManagementSystem.sln --configuration Release --no-restore
+
+      - name: Test
+        run: >
+          dotnet test PersonalManagementSystem.sln --configuration Release --no-build
+          --logger "trx;LogFileName=test-results.trx" --logger "console;verbosity=normal"
+          --results-directory TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults/
+          if-no-files-found: ignore
