@@ -2,7 +2,7 @@
 
 A role-based work-order (task) management web application built with **ASP.NET Core MVC on .NET 8**, structured as an onion-style layered solution with **MediatR**, **FluentValidation** and **EF Core + SQL Server**. It was my Computer Engineering **capstone project**.
 
-> Status: completed academic project, not deployed anywhere. No automated tests or CI. See [Limitations](#limitations) before reusing any of it.
+> Status: completed academic project, not deployed anywhere. Security-hardened afterwards (hashed passwords, POST + anti-forgery for state changes, per-user ownership checks) with integration tests and CI. See [Security](#security) and [Limitations](#limitations) before reusing any of it.
 
 ---
 
@@ -26,7 +26,7 @@ Users sign in with cookie authentication and are routed to an `Admin` or `Member
 **Admin area** (`[Authorize(Roles = "Admin")]`)
 - Dashboard with counts of work orders, members and unread notifications.
 - Work orders: paginated list with search; create (title, description, priority, start/end date), update and assign to a member, delete. The edit page shows the task's reports.
-- Members: paginated list with search; create, update, delete, reset password.
+- Members: paginated list with search; create, update, delete, reset password. Creating a member or resetting a password generates a random temporary password that is shown to the admin once.
 - Priorities: create, update, delete.
 - Notifications: list and mark as read.
 - Own profile: update name, surname and password.
@@ -47,8 +47,9 @@ Users sign in with cookie authentication and are routed to an `Admin` or `Member
 | Runtime | .NET 8 (`net8.0`, all four projects) |
 | Web | ASP.NET Core MVC, Razor views, MVC Areas, a view component |
 | Application | MediatR 12.4.1 (requests and handlers), FluentValidation 11.11.0 |
-| Data | Entity Framework Core 8.0.0, SQL Server provider, code-first migrations |
-| Auth | ASP.NET Core cookie authentication with role claims |
+| Data | Entity Framework Core 8.0.21, SQL Server provider, code-first migrations |
+| Auth | ASP.NET Core cookie authentication with role claims; passwords hashed with ASP.NET Core Identity's `PasswordHasher<T>` (`Microsoft.Extensions.Identity.Core` 8.0.21) |
+| Tests | xUnit 2.9, `Microsoft.AspNetCore.Mvc.Testing` (`WebApplicationFactory`) against SQL Server |
 | Front end | Bootstrap 5, jQuery and jQuery Validation (vendored in `wwwroot`), Font Awesome (CDN) |
 
 ## Architecture
@@ -71,7 +72,7 @@ flowchart LR
 - **Request flow:** controller → `IMediator.Send(request)` → handler in Application → repository interface → EF Core implementation in Persistence → SQL Server.
 - **Repository interfaces** (`IUserRepository`, `IAppTaskRepository`, `IPriorityRepository`, `ITaskReportRepository`, `INotificationRepository`) are defined in Application and implemented in Persistence. The Application project has no EF Core reference.
 - **Validation:** each handler creates its FluentValidation validator and runs it before executing the use case. Validators are not registered in DI or in an MVC/MediatR pipeline.
-- **Composition root:** `PersonalManagementSystem/Program.cs` calls `AddPersistenceServices` and `AddApplicationServices`, configures the cookie (HttpOnly, `SameSite=Strict`) and maps the area and default routes. The default route opens `Account/Login`.
+- **Composition root:** `PersonalManagementSystem/Program.cs` calls `AddPersistenceServices` and `AddApplicationServices`, registers a global `AutoValidateAntiforgeryTokenAttribute`, configures the cookie (HttpOnly, `SameSite=Strict`) and maps the area and default routes. The default route opens `Account/Login`.
 - **Domain entities:** `AppUser`, `AppRole`, `AppTasks`, `Priority`, `TaskReport`, `Notification`.
 
 ## Screenshots
@@ -152,11 +153,48 @@ No users are seeded, and self-registration always creates a **Member**. To get a
    ```
 3. Sign out and sign in again.
 
-Notifications for new reports and completed tasks are always sent to the user with **Id 1** (see [Limitations](#limitations)), so on a fresh database the first registered account should be the admin.
+Notifications for new reports and completed tasks are sent to every user with the Admin role.
+
+## Security
+
+What the application does today:
+
+- **Password storage.** Passwords are hashed with ASP.NET Core Identity's `PasswordHasher<AppUser>` (PBKDF2, per-user salt). Registration, admin-created members, admin password resets and profile changes all store hashes. The hash is never returned to the UI, and the profile page has an empty "new password" field (blank keeps the current password).
+- **Minimum password length.** New passwords (registration and profile) must be 8–128 characters.
+- **No default password.** Creating a member or resetting a member's password generates a random 16-character temporary password. It is rendered once in the POST response (with `Cache-Control: no-store`); only its hash is stored. Hand it to the user over a secure channel and ask them to change it on their profile page.
+- **Legacy plain-text passwords** are migrated on login without locking anyone out. See [Upgrading an existing database](#upgrading-an-existing-database).
+- **State-changing requests** (delete, complete, reset password, mark as read, log out, and all forms) are `POST` only and need a valid anti-forgery token. A global `AutoValidateAntiforgeryTokenAttribute` rejects a missing or invalid token with `400`. A `GET` to these URLs is rejected (`405`, or `404` where no `GET` route exists) and changes nothing.
+- **Authorization.** The Admin and Member areas keep their role checks. Member actions also check ownership in the Application handlers: a member can only complete, report on, edit or delete reports of tasks assigned to them, and anyone can only mark their own notifications as read. Profile updates always use the signed-in user's id, never one from the form. Admin member-management actions only affect users with the Member role. If a resource is not found or belongs to someone else, the response is `404`.
+- **Logging.** The debug code that wrote usernames and exception messages to a local file has been removed. Unexpected login errors go to the standard ASP.NET Core logger, without request data.
+
+### Upgrading an existing database
+
+No schema change was needed: the `Password` column is `nvarchar(200)` and a hash is 84 characters. There is no new migration.
+
+Existing rows that still hold a plain-text password keep working. On the next successful login the stored value is detected as "not a hasher-format hash" and compared to the supplied password in constant time (both sides are reduced to SHA-256 digests first, then compared with `CryptographicOperations.FixedTimeEquals`). If they match, the value is replaced with a hash right away. Hashes that `PasswordHasher` reports as `SuccessRehashNeeded` (older format or iteration count) are rehashed the same way. Accounts that never log in again keep their plain-text value until an admin resets their password. To close that gap, reset those accounts or run a one-off script that resets every row which is not in hasher format.
 
 ## Testing
 
-There are **no automated tests** in this repository and **no CI pipeline**. The solution builds with the .NET 8 SDK (`dotnet build`). The first build reports nullable-reference warnings in the Application handlers. All verification so far has been manual, through the UI.
+`HMD.TaskManagement.Tests` (xUnit) has unit tests for the password helpers and integration tests that boot the real application with `WebApplicationFactory<Program>`. They use the real `Program.cs` pipeline (MVC filters, cookie auth, anti-forgery) and a real SQL Server database. Each test run creates a database named `TmsTests_<guid>`, applies the EF Core migrations through the normal startup path and drops the database at the end.
+
+SQL Server rather than SQLite or the in-memory provider: the migrations and the startup schema fixes are SQL Server specific, and the in-memory provider would not exercise real queries, constraints or cascades.
+
+They cover: hashing on register, member create, reset and profile change; correct, wrong and unknown-user logins; legacy plain-text login being migrated to a hash; `GET` not deleting or changing data; missing, invalid or foreign anti-forgery tokens being rejected; unauthenticated requests being redirected to login; members not reaching admin pages or actions; members not acting on another member's tasks, reports, notifications or profile; and the valid, authorized versions of these operations succeeding.
+
+```bash
+# Uses SQL Server LocalDB by default: (localdb)\MSSQLLocalDB
+dotnet test PersonalManagementSystem.sln
+
+# Any other SQL Server: give a connection string without a database name
+export TMS_TEST_SQLSERVER="Server=localhost,1433;User ID=sa;Password=<password>;TrustServerCertificate=True"
+dotnet test PersonalManagementSystem.sln
+```
+
+The account in `TMS_TEST_SQLSERVER` must be allowed to create and drop databases. On Windows, building the tests also builds the UI project, and its pre-build step runs `taskkill` on `HMD.TaskManagement.UI.exe` and `iisexpress.exe`. Stop any instance you care about first.
+
+### CI
+
+`.github/workflows/ci.yml` runs on pushes to `master`, on pull requests and on manual dispatch. It runs on `ubuntu-latest` and starts a SQL Server 2022 container with a per-run random SA password. It then restores, builds (Release) and runs all tests, and uploads the TRX results as an artifact.
 
 ## Project Status
 
@@ -172,13 +210,13 @@ This is a solo project. Every commit in the history is mine. I designed the laye
 
 These are known issues in the current code. I am listing them openly rather than hiding them:
 
-- **Passwords are stored and compared in plain text.** There is no hashing (`AppUser.Password`, `LoginRequestHandler`).
-- **Admin-created members and password resets use a fixed default password** that is hard-coded in the Application handlers.
-- **No per-user authorization checks on member actions.** Reports and task completion are addressed by id, and the handlers do not check that the task belongs to the signed-in member. Several state-changing actions (delete, complete, mark as read) are plain `GET` links, and no anti-forgery validation is applied. The `SameSite=Strict` cookie reduces, but does not remove, the CSRF exposure.
-- **Notifications assume a single admin with user Id 1** (hard-coded in `TaskReportCreateHandler` and `AppTaskCompleteRequestHandler`).
-- **Leftover debug instrumentation:** `LoginRequestHandler`, `AccountController` and the Persistence `IOCExtensions` append JSON lines (including login usernames) to a hard-coded local file path. Any failure is swallowed, so on other machines this does nothing, but it should be removed.
+- **Plain-text passwords remain until the next login.** Legacy accounts are migrated only when they log in successfully (see [Upgrading an existing database](#upgrading-an-existing-database)).
+- **Temporary passwords are not forced to change.** After an admin creates a member or resets a password, nothing forces the user to change it at the next login. That would need a new column and a migration.
+- **No brute-force protection.** There is no account lockout, rate limiting or CAPTCHA on login. Changing your password on the profile page does not ask for the current password. Existing auth cookies stay valid after a password change, because there is no security-stamp check.
+- **User names are not unique in the schema.** Registration and member creation now reject a user name that is already taken, but the database has no unique index on `UserName`. Instead, the existing unique index is on `Surname`, which is a schema quirk. Login checks every row with the given user name.
+- **Access denied page:** the cookie handler redirects forbidden requests to `/Account/AccessDenied`, which has no action, so the user sees a 404 page.
 - Startup runs `Database.Migrate()` and raw SQL schema fixes automatically. That is convenient for a demo but not what you want in production.
-- No tests, no CI, no containerisation, no logging or monitoring setup.
+- No containerisation, no logging or monitoring setup.
 - The UI is Turkish-only. The `wwwroot` folder contains three copies of Bootstrap (see below).
 
 ## Third-party code and licences
@@ -190,6 +228,8 @@ Vendored under `PersonalManagementSystem/wwwroot/` (all MIT-licensed, with their
 | `lib/bootstrap`, `lib/jquery`, `lib/jquery-validation`, `lib/jquery-validation-unobtrusive` | Default ASP.NET Core MVC template libraries (Bootstrap 5.1, jQuery 3.6, jQuery Validation 1.19.5, jQuery Validation Unobtrusive), each with its `LICENSE` file |
 | `bootstrap/`, `twitter-bootstrap/` | Bootstrap 5.3.3, restored via LibMan (`libman.json`) |
 | `theme/` | [Start Bootstrap "Simple Sidebar"](https://startbootstrap.com/template/simple-sidebar) v6.0.6, MIT, by Start Bootstrap |
+
+`.gitattributes` marks these folders as `linguist-vendored`, so GitHub's language bar counts only the first-party code. It also marks EF Core migration designer files as `linguist-generated`.
 
 Font Awesome and one Bootstrap bundle are loaded from public CDNs at runtime. NuGet dependencies (MediatR, FluentValidation, EF Core) are restored at build time and are not vendored.
 
